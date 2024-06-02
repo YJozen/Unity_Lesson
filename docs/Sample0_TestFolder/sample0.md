@@ -3,17 +3,17 @@
 
 ![Unity Logo](images/U_Logo_MadeWith_RichBlack_RGB.png "Unityのロゴ")
 
-\```C#:PrefabObject.cs
-[SereializeField]HierarchyObject hierarchyObject;//インスペクターではセットできない
-public void SetHierarchyObject(HierarchyObject hObject){
-　this.hierarchyObject = hObject;
+`style.css`
+~~~css:./hoge/style.css
+body {
+  color: #abc;
 }
-\```
+~~~
 
-
-\```cs:PrefabObject.cs
+`style.css`
+```cs
     [SereializeField]HierarchyObject hierarchyObject;//インスペクターではセットできない
     public void SetHierarchyObject(HierarchyObject hObject){
     　this.hierarchyObject = hObject;
     }
-\```
+```

@@ -1,16 +1,23 @@
-**InputSystem**
+**InputSystem 1**
+
+# Input Systemを使用し、「Action」に登録した入力を検知する
+1.
+Window > Package Managerを選択し、Package Managerウィンドウを開きます。
+
+![](images/unity-input-system-intro-v2-1-940x563.png.avif "")
+
+---
+2.
+Packages: ～ボタンをクリックし、Unity Registryを選択
+
+![](images\unity-input-system-intro-v2-2.png.avif "")
+
+---
+3.
 
 
-
-[InputSystem　はじめ](https://nekojara.city/unity-input-system-actions "InputSystem　はじめ")
-
-
-
-
-## タイトルありの画像を埋め込む
-![代替テキスト](画像のURL "画像タイトル")
-
-
+---
+4.
 
 
 

@@ -2,16 +2,16 @@
 
 ## **目次**
 
-1. [Unity前提知識](1/1.md)
+1. [Unity前提知識]
 2. [Unity基本](2_BasicKnowledge/2.md)
-3. [Unity機能](3/3.md)
-   - [Unity機能_その他](3/3_1/3_1.md)
-   - [Unity機能_NetCode for GameObjects](3/3_2/3_2.md)
-   - [Unity機能_ML-Agents](3/3_3/3_3.md)
-4. [小ネタ](4/4.md)
-5. [ミニゲーム](5/5.md)
-6. [Unity雑学](6/6.md)
-7. [プログラム基本](7/7.md)
-8. [UnrealEngine](8/8.md)
-9. [ゲーム以外](9/9.md)
+3. [Unity機能](3_OtherKnowledge/3.md)
+   - [Unity機能_その他](3_OtherKnowledge/3_1_Other/3_1_Other.md)
+   - [Unity機能_NetCode for GameObjects]
+   - [Unity機能_ML-Agents]
+4. [小ネタ]
+5. [ミニゲーム]
+6. [Unity雑学]
+7. [プログラム基本]
+8. [UnrealEngine]
+9. [ゲーム以外]
 

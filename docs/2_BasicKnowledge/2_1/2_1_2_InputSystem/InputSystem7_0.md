@@ -46,7 +46,7 @@ InteractionsがMulti Tapの場合
 
 
 
-
+# ひとまずInteractionを触ってみる
 
 ## 1.Interaction  
 
@@ -82,7 +82,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 
 対象となるActionが含まれているInput Action Assetファイル（拡張子が.inputactionsのファイル）をダブルクリックで開き、対象のActionを選択
-![](images/7/unity-input-system-hold-1.png.avif "")
+![](images/7/7_0/unity-input-system-hold-1.png.avif "")
 
 
 
@@ -91,7 +91,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 
 すると、以下のようにHold Interactionが適用された状態になります。
-![](images/7/unity-input-system-hold-2.png.avif "")
+![](images/7/7_0/unity-input-system-hold-2.png.avif "")
 
 
 Press Point  
@@ -146,7 +146,7 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 2軸アナログ入力（Vector2型） – 入力（ベクトル）の大きさ。Vector2.magnitudeとなる。
 内部的には次のような状態遷移を行うステートマシンとして管理されています。
 
-![](images/7/unity-input-system-hold-3.png.avif "")
+![](images/7/7_0/unity-input-system-hold-3.png.avif "")
 
 
 
@@ -252,11 +252,10 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 また、ゲージとして使用するImage側のImage TypeをFilledに設定しておく必要があります。
 
-![](images/7/unity-input-system-hold-4.png.avif "")
+![](images/7/7_0/unity-input-system-hold-4.png.avif "")
 
 
 
 
 ボタンを押すと徐々にゲージが増えていくことが確認できるかと思います
 
-[![title](サムネイルURL)](unity-input-system-hold-m6.mp4.webm "タイトルなど")

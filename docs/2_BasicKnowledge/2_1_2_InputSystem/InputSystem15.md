@@ -1,58 +1,17 @@
-**InputSystem 1**
+**InputSystem 2**
 
-# Input Systemを使用し、キーボードとマウスの入力を検知する
-
-1.キーボードのAキーが押されているかどうかを判定する例
-
-適当なゲームオブジェクトにアタッチして実行確認してください
-
-```cs:KeyboardExample.cs
-
-using UnityEngine;
-using UnityEngine.InputSystem;
-
-public class KeyboardExample : MonoBehaviour
-{
-    private void Update()
-    {
-        var keyboardCurrent = Keyboard.current;// 現在のキーボード情報
-
-        if (keyboardCurrent == null)// キーボード接続チェック // キーボードが接続されていないと // Keyboard.currentがnullになる  
-        {            
-            return;
-        }
-            
-        var aKey = keyboardCurrent.aKey; // Aキーの入力状態取得
-
-        if (aKey.wasPressedThisFrame) // Aキーが押された瞬間かどうか
-        {
-            Debug.Log("Aキーが押された！");
-        }
-            
-        if (aKey.wasReleasedThisFrame) // Aキーが離された瞬間かどうか
-        {
-            Debug.Log("Aキーが離された！");
-        }
-
-        if (aKey.isPressed) // Aキーが押されているかどうか
-        {
-            Debug.Log("Aキーが押されている！");
-        }
-    }
-}
-```
+# コントローラーの振動
+Update以外での入力状態更新
+1.
 
 
-[その他のキーの取得](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/api/UnityEngine.InputSystem.Keyboard.html "その他のキーの取得")
-
-
-
+![](images/1/unity-input-system-intro-v2-1-940x563.png.avif "")
 
 ---
 2.
-Packages: ～ボタンをクリックし、Unity Registryを選択
 
-![](images\unity-input-system-intro-v2-2.png.avif "")
+
+![](images/1/unity-input-system-intro-v2-2.png.avif "")
 
 ---
 3.

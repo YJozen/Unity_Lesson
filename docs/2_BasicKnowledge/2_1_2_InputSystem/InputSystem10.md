@@ -1,16 +1,16 @@
-**InputSystem 1**
+**InputSystem 2**
 
-# Input Systemを使用し、「Action」に登録した入力を検知する
+# Input Systemでキーコンフィグを実装する
 1.
-Window > Package Managerを選択し、Package Managerウィンドウを開きます。
 
-![](images/unity-input-system-intro-v2-1-940x563.png.avif "")
+
+![](images/1/unity-input-system-intro-v2-1-940x563.png.avif "")
 
 ---
 2.
-Packages: ～ボタンをクリックし、Unity Registryを選択
 
-![](images\unity-input-system-intro-v2-2.png.avif "")
+
+![](images/1/unity-input-system-intro-v2-2.png.avif "")
 
 ---
 3.

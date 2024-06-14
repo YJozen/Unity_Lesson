@@ -1,14 +1,14 @@
-**InputSystem 1**
+**InputSystem 2**
 
-# 「PlayerInput」コンポーネントで「Action」のアセットを管理してスクリプトから操作しやすくする
+# 接続されたコントローラーの入力状態をモニタリング
 1.
-Window > Package Managerを選択し、Package Managerウィンドウを開きます。
+
 
 ![](images/1/unity-input-system-intro-v2-1-940x563.png.avif "")
 
 ---
 2.
-Packages: ～ボタンをクリックし、Unity Registryを選択
+
 
 ![](images/1/unity-input-system-intro-v2-2.png.avif "")
 

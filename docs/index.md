@@ -3,7 +3,7 @@
 ## **目次**
 
 1. [Unity前提知識](1/1.md)
-2. [Unity基本](2/2.md)
+2. [Unity基本](2_BasicKnowledge/2.md)
 3. [Unity機能](3/3.md)
    - [Unity機能_その他](3/3_1/3_1.md)
    - [Unity機能_NetCode for GameObjects](3/3_2/3_2.md)

@@ -1,61 +1,15 @@
 **InputSystem 2**
 InteractionとProcessor
-# Interactionを使用し、長押しやダブルクリックなどを実装する
+# Interactionを使用し、長押しやダブルクリックなどを実装する(ひとまずInteractionを触ってみる)
+
+## 1.Interactionで元から用意されている挙動
 
 
-【Unity】Input Systemでボタンの押した瞬間／離した瞬間を判定する
-
-https://nekojara.city/unity-input-system-get-down-up
-
-Press Interactionで判定する
-Press Interactionの適用
-Player Inputの準備
-タイミングを検知するスクリプトの実装
-コールバックの登録
-実行結果
-Updateイベントでチェックする
-Input Action経由で判定する
-サンプルスクリプト
-実行結果
-スクリプトの説明
-低レベルAPIから参照する
-サンプルスクリプト
-スクリプトの説明
-使用上の注意点
-
-
-https://nekojara.city/unity-input-system-action-callback
-
-
-
-
-
-
-
-
-
-
-Interactionが設定されているときの挙動
-InteractionsがPressの場合
-InteractionsがHoldの場合
-InteractionsがTapの場合
-InteractionsがSlow Tapの場合
-InteractionsがMulti Tapの場合
-複数のInteractions指定された場合
-呼び元のInteractionの判別
-
-
-
-# ひとまずInteractionを触ってみる
-
-## 1.Interaction  
-
-
-+ Press     – ボタンの押した瞬間、離した瞬間、またはその両方を通知する  
-+ Hold      – 一定時間以上ボタンが押し込まれたら通知する  
-+ Tap       – 素早くボタンを押して離した瞬間に通知する  
-+ Slow Tap  – ゆっくりとボタンを押して離した瞬間に通知する  
-+ Multi Tap – 指定回数タップした瞬間に通知する  
++ Press     – ボタンを押した瞬間、離した瞬間、またはその両方  
++ Hold      – 一定時間以上ボタンが押し込まれたら  
++ Tap       – 素早くボタンを押して離した瞬間  
++ Slow Tap  – ゆっくりとボタンを押して離した瞬間
++ Multi Tap – 指定回数タップした瞬間
 
 
 
@@ -81,12 +35,12 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 長押しと判定された瞬間にperformedコールバックが発火されます。
 
 
-対象となるActionが含まれているInput Action Assetファイル（拡張子が.inputactionsのファイル）をダブルクリックで開き、対象のActionを選択
+対象となるActionが含まれているInput Action Assetファイルをダブルクリックで開き、対象のActionを選択（今回はLongPressというActionに設定していく）
 ![](images/7/7_0/unity-input-system-hold-1.png.avif "")
 
 
 
-ウィンドウ右のAction Properties > Interaction右の＋アイコン > Holdを選択
+ウィンドウ右のAction Properties > Interactions右の＋アイコン > Holdを選択
 
 
 
@@ -94,11 +48,13 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 ![](images/7/7_0/unity-input-system-hold-2.png.avif "")
 
 
-Press Point  
-入力あり判定となる閾値。この値より大きな入力値が入力されていると入力ありと判定される。デフォルトではInput Systemパッケージの設定内容が反映される。  
-Hold Time  
-長押し判定されるまでの時間（秒）。この時間以上の入力があると「長押し」判定となる。デフォルトではInput Systemパッケージの設定内容が反映される。
++ Press Point  
+入力あり判定となる閾値。この値より大きな入力値が入力されていると入力ありと判定される。  
++ Hold Time  
+長押し判定されるまでの時間（秒）。この時間以上の入力があると「長押し」判定となる。
 
+
+GetHoldExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチ
 
 ```cs:GetHoldExample.cs
 
@@ -131,8 +87,7 @@ Hold Time
 
 ```
 
-
-GetHoldExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、インスペクターの項目に長押しActionを指定すると機能します。
+インスペクターの項目に長押しActionを指定すると機能します。![](images/7/7_0/unity-input-system-hold-2_2.png "")
 
 
 
@@ -142,8 +97,13 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 入力値の大きさは、入力型によって例えば以下のように計算されます。
 
-ボタン入力、1軸アナログ入力（float型） – 入力値の絶対値。
-2軸アナログ入力（Vector2型） – 入力（ベクトル）の大きさ。Vector2.magnitudeとなる。
+・ボタン入力、1軸アナログ入力（float型）  
+入力値の絶対値。
+
+・2軸アナログ入力（Vector2型）   
+入力（ベクトル）の大きさ。Vector2.magnitude。
+
+
 内部的には次のような状態遷移を行うステートマシンとして管理されています。
 
 ![](images/7/7_0/unity-input-system-hold-3.png.avif "")
@@ -156,11 +116,14 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 
 ---
-## 3.
+## 3.長押し中の状況把握
 
-長押しの応用例として、次のように長押し中にゲージを表示したい場合を考えます
+長押しの応用例として、長押し中にゲージを表示したい場合を考えます
+
+下記スクリプトをHoldProgressExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、インスペクターよりActionを設定する
 
 
+ボタンを離すと進捗率は0%になり、ボタンを押し続けると進捗が上がり、長押し判定になった後はボタンを離すまで100%になります。
 ```cs:HoldProgressExample.cs
 
     using UnityEngine;
@@ -196,11 +159,7 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 ```
 
 
-上記をHoldProgressExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、インスペクターよりActionを設定する
 
-
-
-ボタンを離すと進捗率は0%になり、ボタンを押し続けると進捗が上がり、長押し判定になった後はボタンを離すまで100%になります。
 
 
 

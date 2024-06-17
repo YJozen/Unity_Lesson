@@ -1,0 +1,40 @@
+【Unity】Input Systemでボタンの押した瞬間／離した瞬間を判定する
+
+https://nekojara.city/unity-input-system-get-down-up
+
+Press Interactionで判定する
+Press Interactionの適用
+Player Inputの準備
+タイミングを検知するスクリプトの実装
+コールバックの登録
+実行結果
+Updateイベントでチェックする
+Input Action経由で判定する
+サンプルスクリプト
+実行結果
+スクリプトの説明
+低レベルAPIから参照する
+サンプルスクリプト
+スクリプトの説明
+使用上の注意点
+
+
+https://nekojara.city/unity-input-system-action-callback
+
+
+
+
+
+
+
+
+
+
+Interactionが設定されているときの挙動
+InteractionsがPressの場合
+InteractionsがHoldの場合
+InteractionsがTapの場合
+InteractionsがSlow Tapの場合
+InteractionsがMulti Tapの場合
+複数のInteractions指定された場合
+呼び元のInteractionの判別

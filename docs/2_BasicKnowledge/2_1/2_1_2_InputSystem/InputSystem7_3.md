@@ -204,9 +204,9 @@ UseExample.csという名前でUnityプロジェクトに保存し、適当な�
 
         private void Awake()
         {
-            _action.started += OnAction;
+            _action.started   += OnAction;
             _action.performed += OnAction;
-            _action.canceled += OnAction;
+            _action.canceled  += OnAction;
         }
 
         private void OnDestroy()

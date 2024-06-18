@@ -124,8 +124,23 @@ float版とは違い、入力値のベクトルを長さ１に正規化する処
 
 
 ### Scale
-入力値に対して係数を掛けるProcessorです。
+入力値に対して係数を掛けるProcessorです。  
+float、Vector2、Vector3型に対応したものが存在します。  
+Vector2、Vector3型に関しては、それぞれの要素毎に個別の係数を指定できます。  
+Scale系のProcessorは、一部のデバイスの入力感度を個別に変えたい場合などに重宝します。
+![](images/8/8_1/unity-input-system-processor-15.png.avif "")
+![](images/8/8_1/unity-input-system-processor-16.png.avif "")
+![](images/8/8_1/unity-input-system-processor-17.png.avif "")
 
-float、Vector2、Vector3型に対応したものが存在します。
 
+### Axis deadzone、Stick deadzone
+ゲームパッドのジョイスティックの中には、ニュートラル位置にあるにもかかわらず0以外の入力が得られてしまう（ドリフトが発生する）ことがあります。
 
+この問題は、センサの取り得る値の範囲を決めて、ソフトウェア的に遊びを設けることで解消できます。
+
+1軸入力版のAxis deadzone、  
+2軸入力版のStick deadzoneがあります。  
+(Operand TypeはAxis deadzoneがfloat、  
+Stick deadzoneがVector2です。)
+![](images/8/8_1/unity-input-system-processor-18.png.avif "")
+![](images/8/8_1/unity-input-system-processor-19.png.avif "")

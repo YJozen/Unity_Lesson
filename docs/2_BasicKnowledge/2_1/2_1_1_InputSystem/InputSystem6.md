@@ -27,7 +27,7 @@ Input Systemの入力を「仲介」するコンポーネントで、「Action�
 <br>
 
 Actions項目にInput Actionアセットを指定。
-(Input ActionはCreate Actions…ボタンから新規作成することも可能)
+(Input ActionはCreate Actions…ボタンから新規作成することも可能)  
 上の写真の中で特に重要な設定は「Actions」と「Behavior」です。
 
 「Behavior」の設定によって参照元のスクリプトのコードが異なります。
@@ -37,13 +37,14 @@ Actions項目にInput Actionアセットを指定。
 Input Actionアセットを指定
 
 + Default Scheme  
-デフォルトで使用するスキームを指定します。(どういったデバイスを使うか)
-<Any>が指定された場合は、使用するスキームが自動的に決定  
-設定しておく必要がある。（種類の追加設定は左上のAll Control SchemesからAddして下さい）
+デフォルトで使用するスキームを指定します。(どういったデバイスを使うか)  
+`<Any>`が指定された場合は、使用するスキームが自動的に決定  
+設定しておく必要がある。（種類の追加設定は左上のAll Control SchemesからAddして下さい）  
 
 <img src="images/6/unity-input-system-player-input-4.jpg.avif" width="50%" alt="" title="">
 
 <br>
+
 
 + Auto-Switch  
 使用中のスキームが使用不可になったとき、別のスキームに切り替えるかどうかの設定

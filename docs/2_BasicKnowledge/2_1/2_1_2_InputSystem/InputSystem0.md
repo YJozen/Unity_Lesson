@@ -12,6 +12,7 @@
     8_2. [Processorを自作](InputSystem8_2.md)  
     8_3. [Processorでデッドゾーンを設定](InputSystem8_3.md)   
     8_4. [](InputSystem8_4.md) 
+    8_5. [](InputSystem8_5.md) 
     
     9_1. [](InputSystem9_1.md)  
     9_2. [](InputSystem9_2.md)  

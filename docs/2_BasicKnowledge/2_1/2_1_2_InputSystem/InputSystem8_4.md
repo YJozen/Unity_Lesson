@@ -1,29 +1,22 @@
 **InputSystem 2**
 
-# Input SystemのカスタムInteractionで、ダブルタップなどでキャラクターをダッシュさせるダッシュ操作を実装する
+# Input SystemのカスタムInteractionで、特殊な操作を実装する
 
-https://nekojara.city/unity-input-system-custom-interaction-sprint
-
-
-
-
-Interactionで検知できる操作
-WASDキーのダブルタップ（ダブルタップスプリント）
-スティックを素早く倒す
+・今回カスタムInteractionで実装する操作
++ WASDキーのダブルタップ操作（ダッシュを行う想定）
 
 
 
-Input SystemのInteractionはこのような特定の入力パターンを検知した時に入力を通知する機能を有しているため、今回のケースに適したものと言えるでしょう。 [1]
-ダブルタップ操作のInteractionには、Multi Tap Interactionというプリセットが用意されていますが、ダブルタップ直後にダッシュキャンセルされてしまう問題があったため、今回は自作のInteractionを実装して対応することとしました。
-
-本記事では、自作のInteractionを実装して、ダブルタップやスティック早倒しによるダッシュ操作を実現する方法を解説
+Input SystemのInteractionは、このような特定の入力パターンを検知した時に入力を通知する機能を有しています。 
+ダブルタップ操作のInteractionには、Multi Tap Interactionというプリセットが用意されていますが、ダブルタップ直後にダッシュキャンセルされてしまう問題があったため、今回は自作のInteractionを実装して対応してみましょう。
 
 
 
+# WASDキーのダブルタップでダッシュを実装
 
 ## ダブルタップスプリントの実装の流れ
 
-本記事では、WASDキーのダブルタップ操作などを検知したときに「ダッシュボタンが押された」ような振る舞いをさせることを目標とします。
+WASDキーのダブルタップ操作などを検知したときに「ダッシュボタンが押された」ような振る舞いをさせることを目標とします。
 
 具体的には、ダッシュ操作を検知した時にPerformedコールバックを発火し、その後にボタンを離したらCanceledコールバックが発火するようなInteractionの実装を目指します。
 
@@ -36,8 +29,7 @@ Input SystemのInteractionはこのような特定の入力パターンを検知
 
 
 ２つ目のカスタムComposite Bindingの実装ですが、これはスクリプト側からボタン入力として入力値を受け取りたい場合に必要になることがあります。
-
-理由は、２軸のWASD入力がVector2型であるのに対し、ボタン入力はfloat型であり、両者の型不一致が生じるためです。
+（２軸のWASD入力がVector2型であるのに対し、ボタン入力はfloat型であり、両者の型不一致が生じることにも起因します。）
 
 
 
@@ -52,7 +44,8 @@ Input SystemのInteractionはこのような特定の入力パターンを検知
 
 指定された回数だけ素早くタップし、押しっぱなしになった時にPerformedコールバックを通知します。
 
-Performedコールバックの後に入力がなくなった場合、一定時間ウェイトを置いてからCanceledコールバックを通知することとします。これは、入力方向を切り替えた瞬間などにダッシュキャンセルにならなくするための処置です。
+Performedコールバックの後に入力がなくなった場合、一定時間ウェイトを置いてからCanceledコールバックを通知することとします。　　
+これは、入力方向を切り替えた瞬間などにダッシュキャンセルにならなくするための処置です。
 
 以下、Interactionの実装例です。
 
@@ -62,27 +55,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 internal class MultiTapAndHoldInteraction : IInputInteraction
-{
-    // 最大のタップ時間[s]
-    public float tapTime;
-
-    // 次のタップまでの最大待機時間[s]
-    public float tapDelay;
-
-    // 必要なタップ数
-    public int tapCount = 2;
-
-    // 入力判定の閾値(0でデフォルト値)
-    public float pressPoint;
-
-    // リリース判定の閾値(0でデフォルト値)
-    public float releasePoint;
-
-    // マルチタップ＆ホールド後、入力がなくなってから終了するまでの時間
-    public float endDelay;
-
-    // タップ状態の内部フェーズ
-    private enum TapPhase
+{  
+    public float tapTime;   // 最大のタップ時間[s]
+    public float tapDelay;  // 次のタップまでの最大待機時間[s]  
+    public int tapCount = 2;// 必要なタップ数    
+    public float pressPoint;// 入力判定の閾値(0でデフォルト値)    
+    public float releasePoint;// リリース判定の閾値(0でデフォルト値)    
+    public float endDelay;// マルチタップ＆ホールド後、入力がなくなってから終了するまでの時間
+   
+    private enum TapPhase// タップ状態の内部フェーズ
     {
         None,
         WaitingForNextRelease,
@@ -132,9 +113,7 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 
         switch (_currentTapPhase)
         {
-            case TapPhase.None:
-                // 初期状態
-
+            case TapPhase.None: // 初期状態
                 // タップされたかチェック
                 if (context.ControlIsActuated(pressPointOrDefault))
                 {
@@ -158,8 +137,7 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 
                 break;
 
-            case TapPhase.WaitingForNextRelease:
-                // 入力がなくなるまで待機している状態
+            case TapPhase.WaitingForNextRelease: // 入力がなくなるまで待機している状態
                 if (!context.ControlIsActuated(releasePointOrDefault))
                 {
                     if (context.time - _currentTapStartTime > tapTimeOrDefault)
@@ -177,8 +155,7 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 
                 break;
 
-            case TapPhase.WaitingForNextPress:
-                // 次の入力待ちの状態
+            case TapPhase.WaitingForNextPress:// 次の入力待ちの状態
                 if (context.ControlIsActuated(pressPointOrDefault))
                 {
                     if (context.time - _lastTapReleaseTime > tapDelayOrDefault)
@@ -210,9 +187,7 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 
                 break;
 
-            case TapPhase.WaitingForRelease:
-                // マルチタップ判定後、入力がなくなるまで待機している状態
-
+            case TapPhase.WaitingForRelease:// マルチタップ判定後、入力がなくなるまで待機している状態
                 // 入力チェック
                 if (!context.ControlIsActuated(releasePointOrDefault))
                 {
@@ -224,8 +199,7 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 
                 break;
 
-            case TapPhase.WaitingForEnd:
-                // 入力がなくなってからInteractionを終了するまで待機している状態
+            case TapPhase.WaitingForEnd: // 入力がなくなってからInteractionを終了するまで待機している状態
                 if (context.time - _lastTapReleaseTime >= endDelay)
                 {
                     // 一定時間経過したので終了する
@@ -265,9 +239,9 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 
 <br>
 
-ダブルタップのみならず、任意回数のタップにも対応することとしました。
+ダブルタップのみならず、任意回数のタップにも対応できます。
 
-処理内容については、ソースコード中のコメントをご覧ください。
+処理内容については、ソースコード中のコメントを見てください。
 
 
 ## カスタムComposite Bindingの実装
@@ -280,7 +254,7 @@ WASDキー入力などをComposite BindingとしてActionに定義している�
 InvalidOperationException: Cannot read value of type 'Single' from composite 'UnityEngine.InputSystem.Composites.Vector2Composite' bound to action 'Player/Sprint[/Keyboard/leftShift,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]' (composite is a 'Int32' with value type 'Vector2')
 ```
 
-本記事のようなWASDキー入力の大きさを１軸入力（float）として扱いたい場合、４方向入力の大きさをfloat型入力とするカスタムComposite Bindingを実装して適用すれば解決できます。
+WASDキー入力の大きさを１軸入力（float）として扱いたい場合、４方向入力の大きさをfloat型入力とするカスタムComposite Bindingを実装して適用すれば解決できます。
 
 以下、カスタムComposite Bindingの実装例です。
 
@@ -347,12 +321,47 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 ## Actionへの適用
 該当するダッシュ操作のActionにInteractionとComposite Bindingを適用します。
 
-例では、SprintというActionに対して適用するものとします。
-
-まず、該当Actionの下に、先ほど実装したComposite Bindingを追加します。
+まず、該当Action(ここではSprint)の下に、先ほど実装したComposite Bindingを追加します。
 
 <img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m2.mp4.gif" width="50%" alt="" title="">
 
 <br>
 
+<br>
+
 そして、方向キーを設定します。例ではWASDキーを上下左右の入力として設定することにします。
+
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m3.mp4.gif" width="50%" alt="" title="">
+
+<br>
+
+<br>
+
+追加したComposite Bindingに先のカスタムInteractionを適用して設定します。
+
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m4.mp4.gif" width="50%" alt="" title="">
+
+<br>
+
+<br>
+
+もし、大本のAction TypeがValueになっていなかったらValueに設定しておきます。
+
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m5.mp4.gif" width="50%" alt="" title="">
+
+<br>
+
+<br>
+
+最後にSave AssetボタンをクリックしてInput Actionのアセット内容を保存します。
+
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m6.mp4.gif" width="50%" alt="" title="">
+
+<br>
+
+<br>
+
+以上で手順は完了です。
+
+あとは好きな方法でActionを実行してみてください。成功すると、WASDキーのマルチタップ＆ホールド操作で入力を受け取ることができます。
+

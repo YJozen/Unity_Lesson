@@ -45,7 +45,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 
 すると、以下のようにHold Interactionが適用された状態になります。
-![](images/7/7_0/unity-input-system-hold-2.png.avif "")
+<img src="images/7/7_0/unity-input-system-hold-2.png.avif" alt="" title="">
 
 
 + Press Point  

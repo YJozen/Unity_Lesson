@@ -36,7 +36,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 
 対象となるActionが含まれているInput Action Assetファイルをダブルクリックで開き、対象のActionを選択（今回はLongPressというActionに設定していく）
-![](images/7/7_0/unity-input-system-hold-1.png "")
+![hold_image1](images/7/7_0/unity-input-system-hold-1.png "")
 
 
 

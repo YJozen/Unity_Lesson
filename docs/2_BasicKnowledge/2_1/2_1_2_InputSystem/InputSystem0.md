@@ -10,7 +10,7 @@
     8_0. [Processorで入力感度を設定](InputSystem8_0.md)   
     8_1. [Processorで入力値を加工](InputSystem8_1.md)  
     8_2. [Processorを自作](InputSystem8_2.md)  
-    8_3. [](InputSystem8_3.md)   
+    8_3. [Processorでデッドゾーンを設定](InputSystem8_3.md)   
     8_4. [](InputSystem8_4.md) 
     
     9_1. [](InputSystem9_1.md)  

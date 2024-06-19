@@ -5,18 +5,26 @@
 
 Player Inputは、  
 Input Systemの入力を「仲介」するコンポーネントで、「Action」の入力をスクリプト側に通知します
-![](images/6/unity-input-system-player-input-1.png.avif "")
 
+<img src="images/6/unity-input-system-player-input-1.png.avif" width="50%" alt="" title="">
+
+<br>
 
 ---
 ## 2.Player Inputの利用
 
 動かす対象をSphereとして書いていきます
-![](images/6/unity-input-system-player-input-2.png "")
+
+<img src="images/6/unity-input-system-player-input-2.png" width="50%" alt="" title="">
+
+<br>
 
 動かす対象のオブジェクトにPlayer Inputコンポーネントをアタッチ  
 アタッチすると、次のようなPlayer Inputプロパティがインスペクターに表示されます
-![](images/6/unity-input-system-player-input-3.png "")
+
+<img src="images/6/unity-input-system-player-input-3.png" width="50%" alt="" title="">
+
+<br>
 
 Actions項目にInput Actionアセットを指定。
 (Input ActionはCreate Actions…ボタンから新規作成することも可能)
@@ -32,7 +40,10 @@ Input Actionアセットを指定
 デフォルトで使用するスキームを指定します。(どういったデバイスを使うか)
 <Any>が指定された場合は、使用するスキームが自動的に決定  
 設定しておく必要がある。（種類の追加設定は左上のAll Control SchemesからAddして下さい）
-![](images/6/unity-input-system-player-input-4.jpg.avif "")
+
+<img src="images/6/unity-input-system-player-input-4.jpg.avif" width="50%" alt="" title="">
+
+<br>
 
 + Auto-Switch  
 使用中のスキームが使用不可になったとき、別のスキームに切り替えるかどうかの設定

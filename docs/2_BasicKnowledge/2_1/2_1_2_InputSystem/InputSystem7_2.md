@@ -89,7 +89,9 @@
 
 上記をMyButtonInteraction.csという名前でUnityプロジェクトに保存すると、Input System側にInteractionとして登録され、使用できるようになります。
 
-![](images/7/7_2/unity-input-system-interaction-15.png.avif "")
+<img src="images/7/7_2/unity-input-system-interaction-15.png.avif" width="50%" alt="" title="">
+
+
 
 <br>
 

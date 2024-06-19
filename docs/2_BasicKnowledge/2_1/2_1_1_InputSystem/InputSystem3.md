@@ -3,13 +3,15 @@
 ## 1.Input Systemを使用し、「Action」に登録した入力を検知する
 
 キャラクターの『移動』や『ジャンプ』などといった操作を「Action」として扱います
+ 
+<img src="images/3/unity-input-system-intro-v2-1.png.avif" width="50%" alt="" title="">
 
-![](images/3/unity-input-system-intro-v2-1.png.avif "")  
 <br>  
 <br>     
 例えば、PCであればスペースキー、GamePadであればButton South(XBoxコントローラーのAボタン)を押せば、『ジャンプ』という「Action」を行うことができます
 
-![](images/3/unity-input-system-intro-v2-2.png.avif "")
+<img src="images/3/unity-input-system-intro-v2-2.png.avif" width="50%" alt="" title="">
+
 <br>  
 <br>    
 ＊　これから色々とややこしく感じるかもしれませんが、「InputActionというクラスを生成し、入力やAction設定をインスタンス化し、入力情報を操る」ということは変わりません。少しずつ慣れていって下さい。
@@ -70,23 +72,31 @@ public class InputActionExample : MonoBehaviour
     入力アクションを完全に破棄し、リソースを解放します。これを呼び出すと、再度有効化することはできません。アプリケーションの終了時や、もうその入力アクションを一切使用しないことが確定している場合に使用します。
 
 <br>
+
 例として、スペースキーをBindingとして追加してみましょう。  
 <br>
 <br>
 
+
 インスペクタからActionを編集していきます。
-![](images/3/unity-input-system-intro-v2-3.png.avif "")
+
+<img src="images/3/unity-input-system-intro-v2-3.png.avif" width="50%" alt="" title="">
 
 Action右の「＋」アイコンをクリックし、Add Bindingを選択
-![](images/3/unity-input-system-intro-v2-4.png.avif "")
+
+<img src="images/3/unity-input-system-intro-v2-4.png.avif" width="50%" alt="" title="">
 
 Path右のドロップダウンをクリック
-![](images/3/unity-input-system-intro-v2-5.png.avif "")
+
+<img src="images/3/unity-input-system-intro-v2-5.png.avif" width="50%" alt="" title="">
+
 
 Listenボタンから実際に入力されたキーで割り当てる  
 もしくは、その下の一覧から手動で選択  
 スペースキーを割り当てて下さい
-![](images/3/unity-input-system-intro-v2-6.png.avif "")
+
+<img src="images/3/unity-input-system-intro-v2-6.png.avif" width="50%" alt="" title="">
+
 
 
 float型（1軸）の入力値として受け取っているため、0か1の値が出力される。

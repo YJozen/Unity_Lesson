@@ -88,8 +88,9 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 ```
 
-インスペクターの項目に長押しActionを指定すると機能します。![](images/7/7_0/unity-input-system-hold-2_2.png "")
+インスペクターの項目に長押しActionを指定すると機能します。
 
+<img src="images/7/7_0/unity-input-system-hold-2_2.png" width="50%" alt="" title="">
 
 
 入力値の大きさが閾値Press Point以上の状態がHold Time秒以上続いたらperformedコールバックを実行します。
@@ -107,7 +108,7 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 内部的には次のような状態遷移を行うステートマシンとして管理されています。
 
-![](images/7/7_0/unity-input-system-hold-3.png.avif "")
+<img src="images/7/7_0/unity-input-system-hold-3.png.avif" width="50%" alt="" title="">
 
 
 
@@ -212,7 +213,7 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 また、ゲージとして使用するImage側のImage TypeをFilledに設定しておく必要があります。
 
-![](images/7/7_0/unity-input-system-hold-4.png.avif "")
+<img src="images/7/7_0/unity-input-system-hold-4.png.avif" width="50%" alt="" title="">
 
 
 

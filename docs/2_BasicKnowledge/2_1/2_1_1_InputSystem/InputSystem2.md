@@ -48,7 +48,6 @@ public class KeyboardExample : MonoBehaviour
 
 
 
-
 ---
 
 ## 2. マウスのボタンとカーソル位置を取得してログ出力する例

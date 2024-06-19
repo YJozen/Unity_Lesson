@@ -2,8 +2,6 @@
 InteractionとProcessor
 # Input Systemで連打防止を実現するInteraction
 
-https://nekojara.city/unity-input-system-prevent-button-mashing
-
 ---
 ## Input Systemでボタンを短い間隔で連打できないようにする
 
@@ -18,8 +16,7 @@ Interactionで連打防止を実装するメリットとして
 次のような状態遷移のInteractionを実装すれば連打防止が実現できます。
 
 
-![](images/7/7_4/unity-input-system-prevent-button-mashing-1.png.avif "")
-
+<img src="images/7/7_4/unity-input-system-prevent-button-mashing-1.png.avif" width="50%" alt="" title="">
 
 Performedに遷移するための２つの条件
 + 入力値がPress以上
@@ -118,15 +115,13 @@ public class PreventMashInteraction : IInputInteraction
 ## Interactionの適用例
 Actionに対して連打防止を適用させます。
 
-
-![](images/7/7_4/unity-input-system-prevent-button-mashing-2.png.avif "")
+<img src="images/7/7_4/unity-input-system-prevent-button-mashing-2.png.avif" width="50%" alt="" title="">
 
 適用したい対象のActionを選択し、Action PropertiesのInteractions右の＋アイコンをクリックし、Pervent Mashを選択。
 
 以下のように自作のInteractionが追加されますので、必要に応じてパラメータを調整してください。
 
-
-![](images/7/7_4/unity-input-system-prevent-button-mashing-3.png.avif "")
+<img src="images/7/7_4/unity-input-system-prevent-button-mashing-3.png.avif" width="50%" alt="" title="">
 
 
 例ではボタンが押されてから入力を受け付けない時間（Min Input Duration）を1秒としました。Press Pointはデフォルト値を示す0としました。
@@ -157,7 +152,7 @@ public class CheckSubmitExample : MonoBehaviour
 
 上記スクリプトをCheckSubmitExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチしておきます。
 
-![](images/7/7_4/unity-input-system-prevent-button-mashing-4.png.avif "")
+<img src="images/7/7_4/unity-input-system-prevent-button-mashing-4.png.avif" width="50%" alt="" title="">
 
 入力を受け取れるように、適当なゲームオブジェクトにPlayer Inputコンポーネントをアタッチします。次に、インスペクターのPlayer InputコンポーネントのActions項目に、該当するInput Action Assetを指定。Behaviourには ”Invoke Unity Events” を指定し、Eventsに、該当GameObjectとActionを登録。
 
@@ -165,8 +160,8 @@ public class CheckSubmitExample : MonoBehaviour
 
 ボタンを連打しても、一定時間より短い間隔では、performedコールバックが発火されないようになっているはずです。  
 （startedコールバックは押される度に、canceledコールバックは離される度に発火するようにしているため、連打するとperformedコールバックだけが少ない回数になるかと思います。）
-![](images/7/7_4/unity-input-system-prevent-button-mashing-5.png.avif "")
 
+<img src="images/7/7_4/unity-input-system-prevent-button-mashing-5.png.avif" width="50%" alt="" title="">
 
 
 ## スクリプトの解説

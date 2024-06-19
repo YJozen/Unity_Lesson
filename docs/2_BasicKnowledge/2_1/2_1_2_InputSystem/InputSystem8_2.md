@@ -67,7 +67,6 @@ public class Vector2DValueShiftProcessor : InputProcessor<Vector2>
 public class Vector2DValueShiftProcessor : InputProcessor<Vector2>
 InputProcessor<T>はProcessorを表す基底クラスです。
 
-参考：Class InputProcessor| Input System | 1.3.0
 
 Processorのプロパティとして編集可能なパラメータは、publicフィールドとして定義する必要があります。
 
@@ -154,3 +153,6 @@ InputParameterEditor.OnEnable()メソッドはprotected
 公式リファレンスのエディタ拡張サンプルでは、アクセス修飾子がpublicになっていますが、実装上はprotectedが正解です。publicのままではエラーが出てしまう状況です。
 
 スクリプトリファレンスでもprotectedとなっているので、こちらに合わせると問題なく動くようになります。
+
+
+

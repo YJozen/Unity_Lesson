@@ -109,7 +109,7 @@ Broadcast Messagesを設定した場合は、Player Inputがアタッチされ�
 Player Inputから通知を受け取るためには、「On + Action名」という名前のメソッドを定義する必要があります。
 
 ---
-## 4.Invoke Unity Eventsを設定
+## 4.Invoke Unity Eventsを設定した場合
 
 ```cs:UnityEventExample.cs
     using UnityEngine;
@@ -141,7 +141,7 @@ Player Inputから通知を受け取るためには、「On + Action名」とい
 Events項目が出現するため、該当するイベントの＋ボタンより通知を受け取るスクリプトのメソッドを指定して下さい
 
 ---
-## 5.Invoke C Sharp Eventsを設定
+## 5.Invoke C Sharp Eventsを設定した場合
 
 
 + 書き方１ -  onActionTriggeredを使用する方法  

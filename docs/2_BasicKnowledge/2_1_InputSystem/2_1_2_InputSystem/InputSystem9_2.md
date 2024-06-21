@@ -36,11 +36,10 @@ Composite Bindingの合成元となるBindingは、必ずデジタル入力と�
 + Negative – 負方向の入力
 + Positive – 正方向の入力
 
-また、プロパティでは以下パラメータがあります。
-
-    * Min Value – 出力値の最小値。Negativeの入力値が最大になった時にこの値になる。
-    - Max Value – 出力値の最大値。Positiveの入力値が最大になった時にこの値になる。
-    - Which Side Wins – NegativeとPositive両方の入力があった時の挙動設定。
+  - プロパティでは以下パラメータがあります。   
+     * Min Value – 出力値の最小値。Negativeの入力値が最大になった時にこの値になる。
+     * Max Value – 出力値の最大値。Positiveの入力値が最大になった時にこの値になる。
+     * Which Side Wins – NegativeとPositive両方の入力があった時の挙動設定。
 
 
 ###  Which Side Winsの設定

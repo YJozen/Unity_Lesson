@@ -4,8 +4,8 @@
 
 1. [Unity前提知識]
 2. [Unity基本](2_BasicKnowledge/2.md)
-3. [Unity機能](3_OtherKnowledge/3.md)
-   - [Unity機能_その他](3_OtherKnowledge/3_1_Other/3_1_Other.md)
+3. [Unity機能]
+   - [Unity機能_その他]
    - [Unity機能_NetCode for GameObjects]
    - [Unity機能_ML-Agents]
 4. [小ネタ]

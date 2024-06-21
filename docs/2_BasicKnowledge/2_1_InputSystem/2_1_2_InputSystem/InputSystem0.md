@@ -12,8 +12,6 @@
     8_2. [Processorを自作](InputSystem8_2.md)  
     8_3. [Processorでデッドゾーンを設定](InputSystem8_3.md)  
 
-    
-<<<<<<< HEAD:docs/2_BasicKnowledge/2_1_InputSystem/2_1_2_InputSystem/InputSystem0.md
     9_0. [Composite Bindingで入力値を合成](InputSystem9_0.md)  
     9_1. [カスタムComposite Binding](InputSystem9_1.md)  
     9_2. [Composite Bindingのモードによる挙動の違い](InputSystem9_2.md)  
@@ -24,5 +22,4 @@
 
     10_1. [カスタムInteractionとComposite Binding(ダブルタップからのperformed)](InputSystem10_1.md)   
     10_2. [カスタムInteractionとComposite Binding(素早くスティックを倒してからのperformed)](InputSystem10_2.md) 
-=======
->>>>>>> parent of 7a1c8d3 (Composite Bindingについて書いていく):docs/2_BasicKnowledge/2_1/2_1_2_InputSystem/InputSystem0.md
+

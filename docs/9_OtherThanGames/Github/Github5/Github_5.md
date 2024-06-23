@@ -31,54 +31,47 @@ temp.txt を右クリックして、 Ignore > Ignore ‘temp.txt’ をクリッ
 
 すると、 .gitignore（ギットイグノア） というファイルが生成されます。
 
-
 <img src="images/4.png" width="50%" alt="" title="">
 
 <br>
 
-この .gitignore が、無視リストの設定ファイルです。
-
+この .gitignore が、無視リストの設定ファイルです。  
 中身を見ると、temp.txtが登録されていることがわかります。
 
 <img src="images/5.png" width="50%" alt="" title="">
 
 <br>
 
-この .gitignore をコミットしてください。
-
+この .gitignore をコミットしてください。  
 temp.txt が Unstaged から消えたはずです。
 
-temp.txt を .gitignore よりも先にコミットしないようにご注意ください。
-
-.gitignore より先にコミットしたファイルは、無理リストの対象外になってしまいます。
+temp.txt を .gitignore よりも先にコミットしないように注意してください。  
+.gitignore より先にコミットしたファイルは、無視リストの対象外になります。
 
 # フォルダー毎に無視リストを作る
 フォルダーによって無視したいファイルが違うことがあります。
 そんなときは、 .gitignore をフォルダー毎に作りましょう！
 
-## example.txt を２つのフォルダーに設置する
-以下の図のように、 FolderA と FolderB を作成し、その中にそれぞれ example.txt を設置してください。
+# 例：example.txt を２つのフォルダーに設置する
+FolderA と FolderB を作成し、その中にそれぞれ example.txt を設置してください。  
 
+FolderA/example.txt は無視したくないけど、  
+ FolderB/example.txt は無視したいという状況だとします。
 
 <img src="images/6.png" width="50%" alt="" title="">
 
 <br>
 
 
-FolderA/example.txt は無視したくないけど、 FolderB/example.txt は無視したいという状況だとします。
 
 ## トップ階層の .gitignore に example.txt を追加すると、全部無視される
 .gitignore をテキストエディターで開き、 example.txt という行を追加して保存してみてください。
-
-
 
 <img src="images/7.png" width="50%" alt="" title="">
 
 <br>
 
-
 そうすると、 FolderA と FolderB の両方の example.txt が無視されます！
-
 
 <img src="images/8.png" width="50%" alt="" title="">
 
@@ -86,9 +79,8 @@ FolderA/example.txt は無視したくないけど、 FolderB/example.txt は無
 
 これだと困るので、 example.txt の行はやっぱり削除してください。
 
-## トップ階層の .gitignore に FolderB/example.txt を追加すると、 FolderB だけ無視される
+## トップ階層の .gitignoreに FolderB/example.txt を追加すると、 FolderB だけ無視される
 今度は、 .gitignore に FolderB/example.txt という行を追加してみてください。
-
 
 <img src="images/9.png" width="50%" alt="" title="">
 
@@ -96,37 +88,33 @@ FolderA/example.txt は無視したくないけど、 FolderB/example.txt は無
 
 すると、 FolderB だけ無視されました！
 
-
 <img src="images/10.png" width="50%" alt="" title="">
 
 <br>
 
-ただしこれだと、将来 FolderB の名前が変わったときに、 .gitignore を編集する必要があります！
+ただしこれだと、将来 FolderB の名前が変わったときに、 .gitignore を編集する必要があります
 
-それは非常に面倒なので、この案もボツです！
-やっぱり FolderB/example.txt の行を削除してください。
+また、 FolderB/example.txt の行を削除してください。
 
 ## FolderB の直下に .gitignore を設置する
-FolderB の中に .gitignore というファイルを作りましょう！
+FolderB の中に .gitignore というファイルを作りましょう
 example.txt という行を書いて保存してください。
-
 
 <img src="images/11.png" width="50%" alt="" title="">
 
 <br>
 
-これでも、 FolderB だけ無視されました！
-
+これでも、 FolderB だけ無視されます
 
 <img src="images/12.png" width="50%" alt="" title="">
 
 <br>
 
-これなら、 FolderB の名前が将来変わっても、 .gitignore を編集する必要はありませんね！
+これなら、 FolderB の名前が将来変わっても、 .gitignore を編集する必要はありません。
 
-これは gitignore が下のフォルダーにしか影響を及ぼせない性質があるからです！
+これは、 gitignore が下のフォルダーにしか影響を及ぼせない性質があるからです。
 
-この性質を活用すると、無視リストの管理がしやすくなるので、覚えておきましょう！
+この性質を活用すると、無視リストの管理がしやすくなるので、覚えておきましょう。
 
 
 

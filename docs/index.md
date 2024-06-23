@@ -13,5 +13,5 @@
 6. [Unity雑学]
 7. [プログラム基本]
 8. [UnrealEngine]
-9. [ゲーム以外]
+9. [ゲーム以外](9_OtherThanGames/9.md)
 

@@ -1,31 +1,37 @@
+<style type="text/css">
+hr{
+	max-width: 300px;
+    border: 1px solid #808080;
+}
+</style> 
 **InputSystem 2**
-
-
 # Input SystemのAxis／Vector系Compositeのモードによる挙動の違い
 
-Input Systemでは、矢印キーやWASDキー、十字キーなどの複数ボタンを一つのスティック入力のように合成して扱うようにする手段をComposite Bindingとして提供しています。 
+Input Systemでは、矢印キー・WASDキー・十字キーなどの複数ボタンを一つのスティック入力のように合成して扱えるものが
+Composite Bindingになります 
 
 
-**複数ボタンを合成するComposite Bindingの種類**  
+#### 複数ボタンを合成するComposite Bindingの種類  
 + 1D axis – 正負の2ボタンを1軸の入力に合成する
 + 2D vector – 4方向ボタンを2軸のベクトル入力に合成する
 + 3D vector – 6方向ボタンを3軸のベクトル入力に合成する
 
 
-Composite Bindingの合成元となるBindingは、必ずデジタル入力とは限らず、連続的に変化するアナログ入力である可能性もあります。
-
+Composite Bindingの合成元となるBindingは、必ずデジタル入力(WASDキー・十字キーなど)とは限らず、連続的に変化するアナログ入力である可能性もあります。  
 このような入力値をどのように計算して処理するかの設定も可能です。
 
-**設定による挙動**  
+#### 設定による挙動
 + 元のBindingの入力値をそのまま加工せずに加減算して使用
 + 閾値を元に0または1に2値化してから使用
 + 2値化する際、斜め移動は長さ1になるように正規化
 
-3種類のComposite Bindingの使い方および設定による挙動の違いについて見ていきます
+<br>
 
+「Composite Bindingの種類」と「設定による挙動」について見ていきます
 
+---
 ## 1.  1D axis
-正と負の2つのボタンから1軸の入力に合成するComposite Bindingです。
+正と負の2つのボタンから1軸の入力に合成するComposite Binding
 
 <img src="images/9/9_2/unity-input-system-axis-vector-composite-2.png.avif" width="50%" alt="" title="">
 
@@ -36,14 +42,16 @@ Composite Bindingの合成元となるBindingは、必ずデジタル入力と�
 + Negative – 負方向の入力
 + Positive – 正方向の入力
 
-また、プロパティでは以下パラメータがあります。
+  - プロパティとして以下パラメータがあります。   
+     * Min Value   
+     – 出力値の最小値。Negativeの入力値が最大になった時にこの値になる。
+     * Max Value   
+     – 出力値の最大値。Positiveの入力値が最大になった時にこの値になる。
+     * Which Side Wins  
+      – NegativeとPositive両方の入力があった時の挙動設定。
 
-    * Min Value – 出力値の最小値。Negativeの入力値が最大になった時にこの値になる。
-    - Max Value – 出力値の最大値。Positiveの入力値が最大になった時にこの値になる。
-    - Which Side Wins – NegativeとPositive両方の入力があった時の挙動設定。
 
-
-###  Which Side Winsの設定
+###  プロパティ　Which Side Winsの設定について
 ####  ①Which Side Wins = Negativeのとき  
 PositiveとNegative両方の入力があったとき、Negative側の入力が優先されます。  
 この時、Positiveの入力値は0とみなされます。
@@ -104,9 +112,7 @@ Positiveの入力値を横軸、出力値を縦軸に取ると次のようなグ
 
 両方の入力がある間はニュートラル値になっていることが確認できます。
 
-
-
-
+<hr > 
 
 ## 2.   2D vector
 4つの入力を2軸入力値に合成するComposite Bindingです。
@@ -243,7 +249,7 @@ modeによる挙動は次のようになります。
 出力値が離散的になっています。
 
 
-### mode = DigitalNormalizedのとき
+### ③ mode = DigitalNormalizedのとき
 modeがDigitalの時の計算結果に対し、出力値（Vector3）を長さ1に正規化する処理を施します。
 
 ただし、正規化する前の結果が(0, 0, 0)の場合はそのまま(0, 0, 0)を出力します。内部的にはVector3.normalizeプロパティの結果を返しているだけです。
@@ -267,7 +273,7 @@ modeがDigitalの時の計算結果に対し、出力値（Vector3）を長さ1�
 
 
 
-2D vectorで円形領域の出力を得たい場合  
+## 2D vectorで円形領域の出力を得たい場合  
 2D vectorのAnalogモード時、2軸の連続的な値が得られますが、その領域は正方形です。
 
 例えば得られる値（Vector2型）の長さが1を超えないようにしたい場合は、この出力値に対して更に補正をかける必要があります。

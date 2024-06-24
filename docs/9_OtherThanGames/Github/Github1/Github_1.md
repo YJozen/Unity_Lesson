@@ -47,9 +47,9 @@ GitHubサイトにフォルダを作成すると思ってくれて大丈夫で�
 
 
 # 作成ボタンをクリックする
-Create Repositoryボタンをクリック。
+Create Repositoryボタンをクリックして、以下のような画面を出して下さい。ここでのUrlを後ほど利用します。
 
-<img src="images/1_5.png" width="50%" alt="" title="">
+<img src="images/1_5.png" width="70%" alt="" title="">
 
 <br>
 
@@ -77,7 +77,7 @@ PC側のリポジトリを「ローカルリポジトリ」
 
 さきほど作成したリポジトリURLを Repository Url 欄に入力。
 
-<img src="images/1_8.png" width="50%" alt="" title="">
+<img src="images/1_8.png" width="70%" alt="" title="">
 
 <br>
 
@@ -123,7 +123,7 @@ README.md をテキストエディターで開き、以下のように入力し�
 文字コードはUTF-8で保存。でないとForkで文字化けします。
 
 # README.mdをStageに追加
-<img src="images/1_11.png" width="50%" alt="" title="">
+<img src="images/1_11.png" width="90%" alt="" title="">
 
 <br>
 
@@ -138,13 +138,13 @@ Stage ボタンをクリックすると、 Unstaged から Staged へREADME.md�
 
 右下の Commit Message 欄に READMEを追加 と入力し、 Commit File ボタンをクリック。
 
-<img src="images/1_12.png" width="50%" alt="" title="">
+<img src="images/1_12.png" width="90%" alt="" title="">
 
 <br>
 
 左側の Branches > main をクリックすると、 READMEを追加 という行が追加されています。
 
-<img src="images/1_13.png" width="50%" alt="" title="">
+<img src="images/1_13.png" width="90%" alt="" title="">
 
 <br>
 
@@ -156,7 +156,7 @@ Stage ボタンをクリックすると、 Unstaged から Staged へREADME.md�
 ```
 Forkで Local Changes を確認すると、再び Unstaged に README.md が表示されます。
 
-<img src="images/1_14.png" width="50%" alt="" title="">
+<img src="images/1_14.png" width="90%" alt="" title="">
 
 <br>
 
@@ -164,7 +164,7 @@ Forkで Local Changes を確認すると、再び Unstaged に README.md が表�
 
 もし、差分が2列表示になっていない場合は、右上にある
 
-<img src="images/1_15.png" width="20%" alt="" title="">
+<img src="images/1_15.png" width="10%" alt="" title="">
 <br>
 をクリックしてください。  
 
@@ -179,7 +179,7 @@ READMEを更新という行が新たに追加されていることを確認し�
 
 このようにコミットという単位で編集履歴を管理します！
 
-<img src="images/1_16.png" width="50%" alt="" title="">
+<img src="images/1_16.png" width="90%" alt="" title="">
 
 <br>
 
@@ -208,7 +208,7 @@ Forkの左上のPushボタンを押す。
 
 以下のようなダイアログが出ます
 
-<img src="images/1_20.png" width="50%" alt="" title="">
+<img src="images/1_20.png" width="70%" alt="" title="">
 
 <br>
 

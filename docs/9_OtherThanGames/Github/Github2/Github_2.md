@@ -9,7 +9,7 @@
 
 たとえば、アイデアAとアイデアBのどちらを採用すべきか悩むような場面はよくあります。そんなときに、ブランチは効果を発揮します。
 
-<img src="images/2_1.png" width="50%" alt="" title="">
+<img src="images/2_1.png" width="70%" alt="" title="">
 
 <br>
 
@@ -46,7 +46,7 @@ Forkの上部にあるBranchをクリックすると、ダイアログが表示�
 今回は試しに Branch name 欄に、 「自分の名前/practice」 を入力してください。  
 Checkout after createにチェックを入れて、Create and Checkoutボタンをクリックしてください。
 
-<img src="images/2_3.png" width="50%" alt="" title="">
+<img src="images/2_3.png" width="90%" alt="" title="">
 
 <br>
 
@@ -82,7 +82,7 @@ mainの隣に、自分の作ったブランチが表示されていれば成功
 画面上部の Push ボタンをクリックすると、ダイアログが出てきます。  
 そのまま Push ボタンをクリックすると、プッシュが開始されます。
 
-<img src="images/2_7.png" width="50%" alt="" title="">
+<img src="images/2_7.png" width="90%" alt="" title="">
 
 <br>
 
@@ -103,7 +103,7 @@ fetch は、遠くにある物を取りに行って持って帰るという意�
 画面上部の Fetch ボタンをクリックすると、ダイアログが表示されます。    
 Fetch all remotes にチェックを入れた状態で、 Fetch ボタンをクリックすると、フェッチが始まります。
 
-<img src="images/2_10.png" width="50%" alt="" title="">
+<img src="images/2_10.png" width="90%" alt="" title="">
 
 <br>
 
@@ -116,13 +116,13 @@ Fetch all remotes にチェックを入れた状態で、 Fetch ボタンをク�
 # 他のメンバーのブランチをチェックアウトする
 他のメンバーのブランチを右クリック > ブランチ名 > Checkout をクリックします。
 
-<img src="images/2_12.png" width="50%" alt="" title="">
+<img src="images/2_12.png" width="90%" alt="" title="">
 
 <br>
 
 ダイアログが表示されるので、そのまま Track をクリックします。
 
-<img src="images/2_13.png" width="50%" alt="" title="">
+<img src="images/2_13.png" width="70%" alt="" title="">
 
 <br>
 
@@ -144,7 +144,7 @@ mainブランチをチェックアウトしてください。
 （ここからは1人ずつ作業）  
 1人目は、自分の名前/practiceブランチを右クリックして Merge into ‘main’ をクリックしてください。
 
-<img src="images/2_16.png" width="50%" alt="" title="">
+<img src="images/2_16.png" width="90%" alt="" title="">
 
 <br>
 
@@ -153,7 +153,7 @@ Merge Option を No Fast-Forward に変更。
 
 Merge ボタンをクリック。
 
-<img src="images/2_17.png" width="50%" alt="" title="">
+<img src="images/2_17.png" width="70%" alt="" title="">
 
 <br>
 
@@ -176,7 +176,7 @@ Merge ボタンをクリック。
 
 origin/main となっている箇所をダブルクリックすると、以下のようなダイアログが表示されます。
 
-<img src="images/2_20.png" width="50%" alt="" title="">
+<img src="images/2_20.png" width="90%" alt="" title="">
 
 <br>
 

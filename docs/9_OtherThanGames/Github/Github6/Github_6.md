@@ -14,7 +14,7 @@ LFSは Large File System の略で、巨大ファイル用システムという�
 これを、作業ディレクトリに設置してください。  
 コミットして、プッシュしようとすると、以下のようなエラーがでます。
 
-<img src="images/1.png" width="50%" alt="" title="">
+<img src="images/1.png" width="90%" alt="" title="">
 
 <br>
 
@@ -35,7 +35,7 @@ LFSを利用してください。
 
 Repository > Git LFS > Initialize Git LFS を実行してください。
 
-<img src="images/2.png" width="50%" alt="" title="">
+<img src="images/2.png" width="70%" alt="" title="">
 
 <br>
 
@@ -45,7 +45,7 @@ Repository > Git LFS > Initialize Git LFS を実行してください。
 # 巨大ファイルを設置する
 Sample101MB.bin を 右クリック > LFS > Track ‘Sample101MB.bin’ をクリックします。
 
-<img src="images/3.png" width="50%" alt="" title="">
+<img src="images/3.png" width="70%" alt="" title="">
 
 <br>
 
@@ -58,7 +58,7 @@ Sample101MB.bin を 右クリック > LFS > Track ‘Sample101MB.bin’ をク�
 .gitattributes というのは、LFSの設定ファイルです。  
 中身を見ると、 Sample101MB.bin が登録されていることがわかります。
 
-<img src="images/5.png" width="50%" alt="" title="">
+<img src="images/5.png" width="70%" alt="" title="">
 
 <br>
 
@@ -105,7 +105,7 @@ GitHub右上から Settings をクリック。
 
 下の方にスクロールして、 Git LFS Data > Storage をクリックします。
 
-<img src="images/10.png" width="50%" alt="" title="">
+<img src="images/10.png" width="70%" alt="" title="">
 
 <br>
 
@@ -133,13 +133,13 @@ GitHubのコストを削減するためにも、不要なファイルは削除�
 今回は、リポジトリを削除することで、LFSも削除する方法を見ていきます。  
 GitHubのリポジトリのページの右上にある Settings をクリックします。
 
-<img src="images/11.png" width="50%" alt="" title="">
+<img src="images/11.png" width="90%" alt="" title="">
 
 <br>
 
 一番下までスクロールし、 Danger Zone > Delete this repository をクリックします。
 
-<img src="images/12.png" width="50%" alt="" title="">
+<img src="images/12.png" width="80%" alt="" title="">
 
 <br>
 

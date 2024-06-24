@@ -25,7 +25,7 @@ Unstaged に temp.txt が表示されますが、これをコミットしたく�
 # 無視リストを作成する
 temp.txt を右クリックして、 Ignore > Ignore ‘temp.txt’ をクリックします。
 
-<img src="images/3.png" width="50%" alt="" title="">
+<img src="images/3.png" width="70%" alt="" title="">
 
 <br>
 
@@ -67,7 +67,7 @@ FolderA/example.txt は無視したくないけど、
 ## トップ階層の .gitignore に example.txt を追加すると、全部無視される
 .gitignore をテキストエディターで開き、 example.txt という行を追加して保存してみてください。
 
-<img src="images/7.png" width="50%" alt="" title="">
+<img src="images/7.png" width="70%" alt="" title="">
 
 <br>
 
@@ -82,7 +82,7 @@ FolderA/example.txt は無視したくないけど、
 ## トップ階層の .gitignoreに FolderB/example.txt を追加すると、 FolderB だけ無視される
 今度は、 .gitignore に FolderB/example.txt という行を追加してみてください。
 
-<img src="images/9.png" width="50%" alt="" title="">
+<img src="images/9.png" width="70%" alt="" title="">
 
 <br>
 
@@ -100,7 +100,7 @@ FolderA/example.txt は無視したくないけど、
 FolderB の中に .gitignore というファイルを作りましょう
 example.txt という行を書いて保存してください。
 
-<img src="images/11.png" width="50%" alt="" title="">
+<img src="images/11.png" width="70%" alt="" title="">
 
 <br>
 

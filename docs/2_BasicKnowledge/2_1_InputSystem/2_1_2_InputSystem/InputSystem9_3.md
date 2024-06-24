@@ -1,8 +1,6 @@
 **InputSystem 2**
 
-
 # 【Unity】Input Systemで同時押しを実現する
-
 
 Input Systemを使用している環境で、ボタンの同時押しや押しながら操作などを実現する方法の紹介です。
 

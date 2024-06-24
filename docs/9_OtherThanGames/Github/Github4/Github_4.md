@@ -35,7 +35,7 @@ Local Changes に (1) がついていれば下準備OKです。
 この状態で、別のブランチをチェックアウトしようとしてください。  
 すると、以下のようなダイアログが表示されます。
 
-<img src="images/3.png" width="50%" alt="" title="">
+<img src="images/3.png" width="70%" alt="" title="">
 
 <br>
 
@@ -48,7 +48,7 @@ Don’t change を選んでチェックアウトすると、
 
 Local Changesがない状態でチェックアウトするようにしましょう！
 
-<img src="images/4.png" width="50%" alt="" title="">
+<img src="images/4.png" width="70%" alt="" title="">
 
 <br>
 
@@ -57,7 +57,7 @@ Local Changesがない状態でチェックアウトするようにしましょ�
 
 ## Checkout Branch: Discard
 
-<img src="images/5.png" width="50%" alt="" title="">
+<img src="images/5.png" width="70%" alt="" title="">
 
 <br>
 Discardを選ぶとどうなるのでしょうか？
@@ -87,7 +87,7 @@ Unstaged にファイルがあればOKです。
 
 <br>
 
-<img src="images/6.png" width="50%" alt="" title="">
+<img src="images/6.png" width="70%" alt="" title="">
 
 <br>
 
@@ -118,7 +118,7 @@ Forkには、3種類のリセットがあります！
 
 非常によく使う機能ですが、選択を間違えると、取り返しのつかないことになります ので、十分に理解してから使いましょう！
 
-<img src="images/8.png" width="50%" alt="" title="">
+<img src="images/8.png" width="70%" alt="" title="">
 
 <br>
 
@@ -147,13 +147,13 @@ Soft は、コミットされてたファイル変更が Staged に移動しま�
 
 修正したいコミットを右クリックして、 Interactive Rebase > Reword をクリックします。
 
-<img src="images/10.png" width="50%" alt="" title="">
+<img src="images/10.png" width="70%" alt="" title="">
 
 <br>
 
 コミットメッセージを修正して、OK > Rebase で修正できます。
 
-<img src="images/11.png" width="50%" alt="" title="">
+<img src="images/11.png" width="90%" alt="" title="">
 
 <br>
 
@@ -168,7 +168,7 @@ Soft は、コミットされてたファイル変更が Staged に移動しま�
 ### 強制プッシュ
 こういうときは、強制プッシュをします。
 
-<img src="images/13.png" width="50%" alt="" title="">
+<img src="images/13.png" width="70%" alt="" title="">
 
 <br>
 

@@ -3,13 +3,13 @@ GitHubアカウントを持っていない方は、GitHubでアカウント作�
 
 詳しい手順は以下をご覧ください。
 
-https://reffect.co.jp/html/create_github_account_first_time
+[https://reffect.co.jp/html/create_github_account_first_time](https://reffect.co.jp/html/create_github_account_first_time)
 
 プランはFreeプランで大丈夫です。
 
 
 # ForkをPCにインストールする
-https://git-fork.com/ からPCにForkをインストールしてください。
+[https://git-fork.com/](https://git-fork.com/) からPCにForkをインストールしてください。
 
 これはGitをGUIで操作するためのPCアプリケーションです。
 

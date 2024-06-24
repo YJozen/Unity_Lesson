@@ -1,62 +1,44 @@
-**InputSystem 2**
-
-
 # 【Unity】Input Systemの同時押しを排他制御する
 
-
-
-
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-1.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-1.png.avif" width="70%" alt="" title="">
 
 <br>
 
-
-Input Systemでボタンの同時押しと片方押しを排他制御する方法の解説記事です。
-
 例えばTabキーを使ったナビゲーションを実装するとき、Tabキー単体では「進む」操作になるが、Shift + Tabキーが押された場合は「戻る」操作となり、「進む」操作は実行されないようにしたい場合を想定します。
 
-しかし、通常はShift + Tabを同時押しするとTabキーが押された時点で「進む」と「戻る」の両方の操作が実行されてしまいます。 [1]
-Input System 1.4.0以降ではこれらを排他制御する機能が追加されています。また、それ未満のバージョンでもComposite Bindingを自作すれば回避可能です。
+通常、Shift + Tabを同時押しするとTabキーが押された時点で「進む」と「戻る」の両方の操作が実行されるかと思います。 
 
-排他制御の実現方法
-Input System 1.4.0以降 – 排他制御の有効化設定で対応可能
-Input System 1.3.0以前 – カスタムComposite Bindingを実装して対応可能
-前者の排他制御の有効化設定はアプリケーション全体に影響を及ぼすため、注意する必要があります。これが許容できない場合は後者のComposite Bindingを自作する方法となります。
+これらを排他制御(一度に一つのプロセスだけが、データを操作できるように制御)する機能が追加されています。
 
-本記事では、このようなボタン操作の排他制御をInput Systemで実現する方法について解説します。バージョンによって手順が異なるため、この辺の差異も含めて解説します。
+排他制御の有効化設定は、アプリケーション全体に影響を及ぼすため、注意する必要があります。これが許容できない場合はComposite Bindingを自作する必要があります。
 
-
-
-
-
+<br>
 
 # 排他制御の設定方法
-Input System 1.4.0以降で可能ですが、バージョンによって手順が異なります。それぞれ使用バージョンに合った手順を実施してください。
 
-Input System 1.3.0以前では本手順は実施不可なので、カスタムComposite Bindingを実装する手順へ進んでください。
+（アプリケーション全体のInput Actionに対して排他制御が適用されます。既存のプロジェクトなどに適用する場合は、影響範囲に注意してください。一部のボタンのみに対して排他制御をかけたい場合、カスタムComposite Bindingを実装する手順で実現可能です。）
 
-注意
-本手順はアプリケーション全体のInput Actionに対して排他制御が適用されます。既存のプロジェクトなどに適用する場合は影響範囲にご注意ください。一部のボタンのみに対して排他制御をかけたい場合、カスタムComposite Bindingを実装する手順で実現可能です。
-
- Input System 1.4.4以降
 初期設定では排他制御は無効化されています。
 
 有効化するには、トップメニューのEdit > Project Settings…を選択してProject Settingsウィンドウを開き、Input System Package > Enable Input Consumptionにチェックを入れます。
 
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-2.png.avif" width="90%" alt="" title="">
 
+<br>
 
 # Input Actionの設定例
-排他制御を検証するための設定例を示します。本手順はあくまでも例のため、必須ではありません。
+排他制御を検証するための設定例です。
 
-Input Actionの定義
-本記事では、次のようなキー割り当てのActionに対して排他制御を適用することを例として解説を進めます。
+次のようなキー割り当てのActionに対して排他制御を適用することとします。
 
-Next – Tabキーで反応する。ただしShift + Tabキーでは反応しない。
-Prev – Shift + Tabキーの同時押しで反応する。
++ Next   
+  Tabキーで反応。Shift + Tabキーでは反応しないようにする。
++ Prev   
+  Shift + Tabキーの同時押しで反応するようにする。
 
 
 
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-3.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-3.png.avif" width="90%" alt="" title="">
 
 <br>
 

@@ -1,17 +1,15 @@
 # GitHubアカウントを作成する
-GitHubアカウントを持っていない方は、GitHubでアカウント作成。
-
-詳しい手順は以下をご覧ください。
-
-https://reffect.co.jp/html/create_github_account_first_time
+GitHubアカウントを持っていない方は、<a href="https://reffect.co.jp/html/create_github_account_first_time" target="_blank">GitHubでアカウント作成</a>。
 
 プランはFreeプランで大丈夫です。
 
 
 # ForkをPCにインストールする
-https://git-fork.com/ からPCにForkをインストールしてください。
-
+PCに<a href="https://git-fork.com/" target="_blank">Fork</a>をインストールしてください。  
 これはGitをGUIで操作するためのPCアプリケーションです。
+
+インストールが終了したらアカウント連携まで行って下さい  
+<a href="https://sunny10side.com/how-to-install-and-use-fork-git-gui-client/" target="_blank">アカウント連携の例</a>
 
 
 
@@ -186,7 +184,7 @@ READMEを更新という行が新たに追加されていることを確認し�
 # ステージ
 ステージは、コミットの候補となるファイル変更データを保管する場所。
 
-<img src="images/1_17.png" width="50%" alt="" title="">
+<img src="images/1_17.png" width="70%" alt="" title="">
 
 (ブランチについては次回)
 
@@ -196,13 +194,13 @@ READMEを更新という行が新たに追加されていることを確認し�
 
 プッシュとは、ローカルリポジトリの内容を、リモートリポジトリにコピーすること。
 
-<img src="images/1_18.png" width="50%" alt="" title="">
+<img src="images/1_18.png" width="60%" alt="" title="">
 
 <br>
 
 Forkの左上のPushボタンを押す。
 
-<img src="images/1_19.png" width="50%" alt="" title="">
+<img src="images/1_19.png" width="60%" alt="" title="">
 
 <br>
 

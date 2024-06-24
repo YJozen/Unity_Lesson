@@ -13,7 +13,7 @@ GitHubアカウントを持っていない方は、GitHubでアカウント作�
 
 これはGitをGUIで操作するためのPCアプリケーションです。
 
-インストールが終了したらアカウント連携まで行って下さい
+インストールが終了したらアカウント連携まで行って下さい  
 [アカウント連携例](https://sunny10side.com/how-to-install-and-use-fork-git-gui-client/)
 
 

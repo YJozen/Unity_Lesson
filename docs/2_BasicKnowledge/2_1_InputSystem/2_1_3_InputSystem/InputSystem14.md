@@ -1,7 +1,6 @@
 **InputSystem 2**
 
-# バーチャルマウスの実装
-Input Systemからマウスカーソルを操作する
-
-https://nekojara.city/unity-input-system-virtual-mouse
-
+# バーチャルパッドの実装
+Input Systemでバーチャルパッドを実装する
+1.
+https://nekojara.city/unity-input-system-on-screen-controls

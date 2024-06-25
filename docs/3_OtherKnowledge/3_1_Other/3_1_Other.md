@@ -40,6 +40,4 @@
          * [UniTask_CancelSample2](#unitask_cancelsample2)
          * [UniTask_CancelSample3](#unitask_cancelsample3)
        - [UniTask_StateMachine_Advanced](#unitask_statemachine_advanced)
-     + [NetCode for GameObjects](#netcode_for_gameobjects)
-     + [ML-Agents](#ml-agents)
 

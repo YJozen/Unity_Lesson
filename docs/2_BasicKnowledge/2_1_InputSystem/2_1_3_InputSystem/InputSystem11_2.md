@@ -1,5 +1,3 @@
-**InputSystem 2**
-
 # Input Systemでキーコンフィグを実装する
 
 https://nekojara.city/unity-input-system-rebinding

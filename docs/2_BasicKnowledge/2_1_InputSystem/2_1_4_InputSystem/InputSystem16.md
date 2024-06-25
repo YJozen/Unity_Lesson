@@ -2,8 +2,6 @@
 
 # コントローラーの振動
 
-https://nekojara.city/unity-input-system-rumble
-
 振動自体は以下のようなコードで簡単に指定できます。
 
 ```
@@ -11,9 +9,7 @@ https://nekojara.city/unity-input-system-rumble
 // 右モーターを停止させる
 Gamepad.current?.SetMotorSpeeds(0.5f, 0.0f);
 ```
-例ではゲームパッドのデバイスを直接参照していますが、この辺の処理は抽象化することも可能です。
 
-本記事では、ゲームパッドを振動させる方法とその注意点について解説していきます。
 
 <br>
 
@@ -60,24 +56,22 @@ public class GamepadRumbleExample : MonoBehaviour
 
 <br>
 
-# スクリプトの解説
+## スクリプトについて
 以下のコードでゲームパッドの左右モーターを振動させています。
-
+```
 gamepad.SetMotorSpeeds(1.0f, 0.0f);
-第1引数に左モーター（低周波）の回転数、第２引数に右モーター（高周波）の回転数を０～１の範囲で指定します。
-
+```
+第１引数に左モーター（低周波）の回転数  
+第２引数に右モーター（高周波）の回転数  
+これを０～１の範囲で指定します。  
 ０を指定するとモーターの回転が停止、１を指定すると最大出力でモーターが回転します。
 
-参考：Class Gamepad| Input System | 1.3.0
-
-注意
-SetMotorSpeeds()メソッドでコントローラのモーターを動かすと止まらずずっと振動し続けます。ゲームを停止しても動き続けますので、必ず回転数０を指定して振動を止める処理を入れてください。
+SetMotorSpeeds()メソッドでコントローラのモーターを動かすと、止まらずにずっと振動し続けます。ゲームを停止しても動き続けますので、必ず回転数０を指定して振動を止める処理を入れてください。
 
 <br>
 
 # コントローラの振動を一括で停止・再開する
 以下メソッドを実行すると、Input Systemで管理しているコントローラの振動を一括で停止・再開できます。
-
 
 ```
 // 振動を一時停止
@@ -90,20 +84,22 @@ InputSystem.ResumeHaptics();
 InputSystem.ResetHaptics();
 ```
 
++ InputSystem.PauseHaptics()メソッド  
+コントローラの振動を一時停止するメソッドです。回転数などの設定値は保持されます。
 
-InputSystem.PauseHaptics()メソッドは、コントローラの振動を一時停止するメソッドです。回転数などの設定値は保持されます。
++ InputSystem.ResumeHaptics()メソッド  
+コントローラの振動を再開するメソッドです。保持された設定値で振動が再開されます。
 
-InputSystem.ResumeHaptics()メソッドは、コントローラの振動を再開するメソッドです。保持された設定値で振動が再開されます。
-
-InputSystem.ResetHaptics()メソッドは、コントローラの振動を停止し、設定値を初期値にリセットします。
-
-
++ InputSystem.ResetHaptics()メソッド  
+コントローラの振動を停止し、設定値を初期値にリセットします。
 
 
-# サンプルスクリプト
-上記メソッドの挙動を確かめるためのサンプルスクリプトを示します。
+<br>
 
-```
+## サンプルスクリプト
+上記メソッドの挙動を確かめるためのサンプルスクリプトです。
+
+```cs
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -146,30 +142,18 @@ public class PauseResumeExample : MonoBehaviour
     }
 }
 ```
+ゲームパッドが接続された状態で起動すると、ゲームパッドの左モーターが２回だけ振動します。
 
+`InputSystem.PauseHaptics()`→`InputSystem.ResumeHaptics()`  
+の順に呼び出したタイミングでは振動が再開され、  
 
-実行結果
-ゲームパッドが接続された状態で起動すると、ゲームパッドの左モーターが２回だけ振動するようになります。
+`InputSystem.ResetHaptics()`→`InputSystem.ResumeHaptics()`の順に呼び出した際は振動しません。
 
-
-
-InputSystem.PauseHaptics()→InputSystem.ResumeHaptics()の順に呼び出したタイミングでは振動が再開されるのに対し、InputSystem.ResetHaptics()→InputSystem.ResumeHaptics()の順に呼び出した際は振動しません。
-
-これは、InputSystem.ResetHaptics()呼び出しの時点で回転数が初期値（=0）に戻っているためです。
-
-
-
-
-
+これは、`InputSystem.ResetHaptics()`呼び出しの時点で回転数が初期値（=0）に戻っているためです。
 
 # Player Input経由で抽象化されたコントローラを振動させる
-Player Inputコンポーネントを経由して、抽象化されたコントローラを振動させる方法の紹介です。Gamepadクラスに直接アクセスすることなく前述の振動を実現できます。
-
-サンプルスクリプト
+Gamepadクラスにアクセスするのではなく、
 Player Inputから振動可能なコントローラを取得し、振動させるサンプルです。
-
-
-
 
 ```cs:PlayerInputRumbleExample.cs
 using System.Collections;
@@ -209,29 +193,24 @@ public class PlayerInputRumbleExample : MonoBehaviour
     }
 }
 ```
-
-
 PlayerInputRumbleExample.csという名前で保存し、PlayerInputコンポーネントがアタッチされているゲームオブジェクトにアタッチすると機能するようになります。
 
-サンプルではゲーム起動時に選択中スキームのデバイスを取得するため、以下のようにPlayer InputのDefault SchemeをGamepadにしておく必要があります。
+スキームを設定した場合、サンプルスクリプトではゲーム起動時に、選択中スキームのデバイスを取得するため、Player InputのDefault SchemeをGamepadにしておく必要があります。（InputActionAsset側でもSchemeを正しくセットしておく必要があります）
 
-
-<img src="images/16/unity-input-system-rumble-2.png.avif" width="50%" alt="" title="">
+<img src="images/16/unity-input-system-rumble-2.png.avif" width="80%" alt="" title="">
 
 <br>
 
-実行結果
-
-
 ゲームパッドを接続した状態でゲームを実行すると、左右モーターを振動させることができます
 
-
-スクリプトの解説
+## スクリプトについて
 次の部分で振動可能なデバイスを取得しています。
 ```cs
 if (playerInput.devices.FirstOrDefault(x => x is IDualMotorRumble) is not IDualMotorRumble gamepad)
 ```
-SetMotorSpeeds()メソッドは、IDualMotorRumbleインタフェースのメソッドを実装したものなので、デバイスをIDualMotorRumbleにキャストしています。
+<br>
+
+SetMotorSpeeds()メソッドは、IDualMotorRumbleインタフェースのメソッドを実装したもの。デバイスをIDualMotorRumbleにキャストしています。
 
 キャストできるデバイスがあれば、振動させる処理に移行します。
 ```cs

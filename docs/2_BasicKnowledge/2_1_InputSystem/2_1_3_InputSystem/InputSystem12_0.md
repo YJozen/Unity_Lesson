@@ -1,12 +1,10 @@
-【Unity】Input Systemで接続中のデバイスを取得する
-2023年6月5日
-
-https://nekojara.city/unity-input-system-current-devices
-
+# 接続中のデバイスの取得
 
 システム全体で接続されているデバイス一覧を取得する他、各々のプレイヤーにペアリングされているデバイスのみを取得することも可能です。
 
 これ以外にも、各プレイヤーがキーボード・マウス操作なのか、ゲームパッド操作なのかといった判断が可能になります。
+
+<br>
 
 # Input System全体で接続されているデバイス一覧を取得する
 InputSystem.devicesプロパティから取得できます。
@@ -15,7 +13,7 @@ public static ReadOnlyArray<InputDevice> devices { get; }
 ```
 現在接続されているデバイス一覧をInputDevice型のコレクションとして返します。
 
-以下、Input Systemで接続されているデバイス一覧をログ出力するサンプルスクリプトです。
+以下、接続されているデバイス一覧をログ出力するサンプルスクリプトです。
 ```cs:GetDevicesExample.cs
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -51,20 +49,19 @@ foreach (var device in InputSystem.devices)
     Debug.Log(device.name);
 }
 ```
-InputSystem.devicesプロパティが返すReadOnlyArray<T>型はIReadOnlyList<T>型を継承したコレクションのため、foreachやforループが使えます。
+InputSystem.devicesプロパティが返すReadOnlyArray<T>型は、IReadOnlyList<T>型を継承したコレクションのため、foreachやforループが使えます。
 
-
-
+<br>
 
 # プレイヤーにペアリングされているデバイス一覧を取得する
-前述の方法はInput Systemのデバイス全体を対象としていました。
+前述の方法は、デバイス全体を対象としていました。
 
-現在操作しているプレイヤーにペアリングされているデバイス一覧に限定して取得するには、PlayerInput.devicesプロパティを使います。
+現在操作しているプレイヤーにペアリングされているデバイスに限定して一覧を取得するには、PlayerInput.devicesプロパティを使います。
 ```cs:
 public ReadOnlyArray<InputDevice> devices { get; }
 ```
 
-指定されたプレイヤーにペアリングされているデバイス一覧を取得する例です。Player Inputコンポーネントをプレイヤーとして取得します。
+指定されたプレイヤーにペアリングされているデバイス一覧を取得する例です。
 ```cs:GetPlayerDevicesExample.cs
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -103,78 +100,60 @@ public class GetPlayerDevicesExample : MonoBehaviour
 
 <br>
 
-
 Player Inputコンポーネントには、予めActions項目にInput Action Assetを指定してください。
-
-
 
 プレイヤー（Player Inputコンポーネントがアタッチされているオブジェクト）をシーンに追加していくと、各プレイヤー毎にペアリングされたデバイス一覧がログ出力されます
 
+<img src="images/12/12_0/unity-input-system-current-devices-m1.mp4.gif" width="80%" alt="" title="">
 
-
-
-
-
-
+<br>
 
 コントローラー不足などでデバイスが割り当てられなかったプレイヤーは、非アクティブなプレイヤーとみなして取得を行いません。
 
 <br>
 
 ## スクリプトについて
-まず、追加されたプレイヤーがアクティブかどうかをチェックし、アクティブなら以降の処理に進むようにしています。
-
-// プレイヤーはアクティブかどうかチェック
+追加されたプレイヤーがアクティブかどうかをチェックし、アクティブなら以降の処理に進むようにしています。
+```cs:
+// プレイヤーがアクティブかどうかチェック
 if (!_playerInput.user.valid)
 {
     Debug.Log("アクティブなプレイヤーではありません");
     return;
 }
-PlayerInput.userプロパティは、そのプレイヤーのユーザー情報をInputUser構造体として取得するプロパティです。そして、InputUser.validプロパティでアクティブかどうかを判断しています。
+```
+
+PlayerInput.userプロパティは、そのプレイヤーのユーザー情報をInputUser構造体として取得するプロパティです。  
+InputUser.validプロパティでアクティブかどうかを判断しています。
 
 非アクティブになる条件は、例えば接続されているコントローラーが足りないなどでペアリングされたデバイスが存在しない場合などです。
 
-
-アクティブであるかどうかを確認出来たら、以下でプレイヤーのインデックスを取得してログ出力しています。
-
+アクティブであるかどうかを確認出来たら、プレイヤーのインデックスを取得してログ出力しています。
+```cs:
 // プレイヤー番号をログ出力
 Debug.Log($"===== プレイヤー#{_playerInput.user.index} =====");
-インデックスは0始まりで、プレイヤーが増えるごと1つずつ増えていきます。
-
+```
+インデックスは0始まりで、プレイヤーが増えるごと1つずつ増えていきます。  
 シングルプレイヤーの場合は常に0が返されることになります。
 
-参考：Struct InputUser| Input System | 1.5.1
-
-
-
-
-
-
-そして、以下処理でPlayerInputインスタンスのdevicesプロパティ経由でペアリングされたデバイス一覧を取得し、ログ出力しています。
-
+そして、以下処理でPlayerInputインスタンスのdevicesプロパティ経由で、ペアリングされたデバイス一覧を取得し、ログ出力しています。
+```cs:
 // デバイス一覧を取得
 foreach (var device in _playerInput.devices)
 {
     // デバイス名をログ出力
     Debug.Log(device.name);
 }
-メモ
-PlayerInput.devicesプロパティは、内部的にはPlayerInput.user.pairedDevicesの結果を返しています。
-
-ただし、非アクティブなプレイヤーだった場合は空の結果を返す挙動になっています。
+```
+PlayerInput.devicesプロパティは、内部的にはPlayerInput.user.pairedDevicesの結果を返します。（ただし、非アクティブなプレイヤーだった場合は空の結果を返す挙動になっています。）
 
 <br>
 
 # プレイヤーのControl Schemeを取得する
 もし接続されたデバイス一覧ではなく、キーボード＆マウス、ゲームパッドなどのControl Schemeを取得したい場合、PlayerInput.currentControlSchemeプロパティを使います。
 
-public string currentControlScheme { get; }
-結果は現在のControl Schemeの名前です。
-
-参考：Class PlayerInput| Input System | 1.5.1
-
 サンプルスクリプト
-GetPlayerSchemeExample.cs
+```cs:GetPlayerSchemeExample.cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -200,29 +179,33 @@ public class GetPlayerSchemeExample : MonoBehaviour
         Debug.Log($"Control Scheme: {_playerInput.currentControlScheme}");
     }
 }
+```
 上記をGetPlayerSchemeExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、インスペクターよりPlayerInputインスタンスを指定します。
 
-実行結果
 プレイヤー毎のControl Scheme名がログ出力されます。
+<img src="images/12/12_0/unity-input-system-current-devices-3.png.avif" width="80%" alt="" title="">
 
+<br>
 
+得られるControl Scheme名は、Input Action Assetで設定されている名前です。
 
-得られるControl Scheme名は、以下のInput Action Assetで設定されている名前です。
+<img src="images/12/12_0/unity-input-system-current-devices-m2.mp4.gif" width="80%" alt="" title="">
 
+<br>
 
+<img src="images/12/12_0/unity-input-system-current-devices-4.png.avif" width="60%" alt="" title="">
 
+<br>
 
-
-
-
-スクリプトの説明
+## スクリプトについて
 現在のControl Schemeをログ出力する部分は以下です。
-
+```
 // 現在のControl Schemeをログ出力
 Debug.Log($"Control Scheme: {_playerInput.currentControlScheme}");
+```
 デバイス一覧とは異なり、Control Schemeはただ一つです。
 
-例えば、Keyboard&Mouseはキーボードとマウスの2つのデバイスを使いますが、Control Schemeはまとめて一つとして扱うことが可能です。 [1]
+例えば、Keyboard&Mouseはキーボードとマウスの2つのデバイスを使いますが、Control Schemeはまとめて一つとして扱うことが可能です。
 
 
 

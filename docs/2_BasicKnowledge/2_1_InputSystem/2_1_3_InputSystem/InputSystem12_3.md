@@ -18,7 +18,7 @@ Cinemachineを使用した環境下でも画面分割は可能です。
 <br>
 
 ただし、制御対象のバーチャルカメラは、カメラのCulling Maskで設定されている対象レイヤーのものに限ります。  
-(Culling Mask：特定のゲームオブジェクトだけをカメラに映す)
+(Culling Mask：特定のゲームオブジェクトだけをカメラに映す階層)
 
 例えば、カメラのCulling MaskにレイヤーP1が設定され、レイヤーP2が設定されていない場合、レイヤーP2のバーチャルカメラは制御の対象外となります。
 
@@ -35,34 +35,31 @@ Cinemachineを使用した環境下でも画面分割は可能です。
 この仕組みを利用して、Cinemachineで複数カメラを独立制御させます。
 
 
-複数カメラの設定手順
-
-
-Cinemachineカメラの設定  
+## Cinemachineカメラの設定
 まず、プレイヤーPrefab配下のカメラに`Cinemachine Brain`コンポーネントを追加します。
 
-
-
-<img src="images/12/12_1/unity-input-system-local-multiplayer-m7.mp4.gif" width="90%" alt="" title="">
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m11.mp4.gif" width="90%" alt="" title="">
 
 <br>
-
-
-
 
 次に、プレイヤー用の`Cinemachineカメラ（バーチャルカメラ）`を配置します。
 
 ヒエラルキー左上の＋アイコン > Cinemachine > Virtual Cameraより配置できます。
 
-
-<img src="images/12/12_1/unity-input-system-local-multiplayer-m7.mp4.gif" width="90%" alt="" title="">
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m12.mp4.gif" width="90%" alt="" title="">
 
 <br>
 
-
 必要に応じて、カメラの追従設定を行います。
 
-例では、FollowとLook At項目にプレイヤーオブジェクトを指定し、BodyにTransposerを指定し、Binding ModeにSimple Follow With World Upを指定して追従させることとします。
+FollowとLook At項目にプレイヤーオブジェクトを指定  
+BodyにTransposerを指定  
+Binding ModeにSimple Follow With World Upを指定  
+して追従させてみます。
+
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m13.mp4.gif" width="90%" alt="" title="">
+
+<br>
 
 <img src="images/12/12_3/unity-input-system-local-multiplayer-17.png.avif" width="90%" alt="" title="">
 
@@ -70,20 +67,20 @@ Cinemachineカメラの設定
 
 
 ## プレイヤー専用レイヤーの定義
-各プレイヤー毎のレイヤーを追加します。
+各プレイヤー毎のレイヤーを追加します。  
+4人対戦ゲームを想定し、P0、P1、P2、P3の4レイヤーを追加します。
 
-例では4人対戦ゲームを想定し、P0、P1、P2、P3の4レイヤーを追加することとします。
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m14.mp4.gif" width="90%" alt="" title="">
+
+<br>
 
 <img src="images/12/12_3/unity-input-system-local-multiplayer-18.png.avif" width="90%" alt="" title="">
 
 <br>
 
+## プレイヤーインデックスに応じたレイヤーを設定する
 
-
-プレイヤーインデックスに応じたレイヤーを設定するスクリプトの実装
-プレイヤー入室時に割り当てられるプレイヤーインデックスに応じたレイヤーを設定するスクリプトを実装します。
-
-スクリプトの実装例は以下のようになります。
+プレイヤー入室時に割り当てられるプレイヤーインデックスに応じたレイヤーを設定するスクリプトの実装例になります。
 
 ```cs: PlayerCameraLayerUpdater.cs
 using System;
@@ -179,48 +176,40 @@ public class PlayerCameraLayerUpdater : MonoBehaviour
 }
 ```
 
-上記をPlayerCameraLayerUpdater.csとしてUnityプロジェクトに保存します。
+上記をPlayerCameraLayerUpdater.csとしてUnityプロジェクトに保存し、プレイヤーPrefabにアタッチ。  
+インスペクターよりPlayer InputとCinemachineカメラを設定します。
 
-スクリプトの適用
-前述のスクリプトをプレイヤーPrefabにアタッチし、インスペクターよりPlayer InputとCinemachineカメラを設定します。
-
-<img src="images/12/12_1/unity-input-system-local-multiplayer-m7.mp4.gif" width="90%" alt="" title="">
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m15.mp4.gif" width="90%" alt="" title="">
 
 <br>
 
 
-そして、各プレイヤーインデックスとレイヤーの対応テーブルを定義します
+各プレイヤーインデックスとレイヤーの対応テーブルを定義します
 
 
-<img src="images/12/12_1/unity-input-system-local-multiplayer-m7.mp4.gif" width="90%" alt="" title="">
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m16.mp4.gif" width="90%" alt="" title="">
 
 <br>
-
 
 <img src="images/12/12_3/unity-input-system-local-multiplayer-19.png.avif" width="90%" alt="" title="">
 
 <br>
 
+例では、レイヤーP0、P1、P2、P3のインデックスがそれぞれレイヤーの7、8、9、10要素目であるため、上記の設定にしています。
 
-例では、レイヤーP0、P1、P2、P3のインデックスがそれぞれ7、8、9、10であるため、上記の設定にしています。
+レイヤー値は数値を直接入力する必要がありますが、構造体やProperty Drawerを自作すると選択式でレイヤー値を指定することも可能です。
+<a href="https://nekojara.city/unity-layer-inspector" target="_blank">(レイヤー名で設定する方法)</a>
 
+## Player Input Manager側のイベント通知設定
+サンプルスクリプトでは、C#イベント経由で退室通知を受け取るため、Player Input ManagerコンポーネントのNotification Behaviour項目には`Invoke C Shard Events`を指定してください。
 
-レイヤー値は数値を直接入力する必要がありますが、構造体やProperty Drawerを自作すると選択式でレイヤー値を指定することも可能です。(https://nekojara.city/unity-layer-inspector)
+実行すると、Cinemachineが適用された状態で、独立してカメラが制御されます。
 
+<img src="images/12/12_3/unity-input-system-local-multiplayer-m17.mp4.gif" width="90%" alt="" title="">
 
-
-Player Input Manager側のイベント通知設定
-上記サンプルスクリプトでは、C#イベント経由で退室通知を受け取るため、Player Input ManagerコンポーネントのNotification Behaviour項目にはInvoke C Shard Eventsを指定してください。
-
-実行結果  
-ここまでの手順を成功させると、動画のようにCinemachineが適用された状態でも独立してカメラが制御されることが確認できます。
-
-
+<br>
 
 この時、プレイヤーのUnityカメラのCulling Maskには、自身のレイヤーが設定され、他プレイヤーのレイヤーが未設定になります。
-
-
-
 
 <img src="images/12/12_3/unity-input-system-local-multiplayer-20.png.avif" width="90%" alt="" title="">
 
@@ -233,12 +222,8 @@ Player Input Manager側のイベント通知設定
 
 <br>
 
-
-スクリプトの解説
+## スクリプトについて
 自身のプレイヤーインデックスが更新される時、次の処理でレイヤー情報とカメラの取得を行います。
-
-
-
 
 ```cs:
 // インデックスに応じたレイヤー情報取得
@@ -250,9 +235,9 @@ var playerCamera = _playerInput.camera;
 if (playerCamera == null) return;
 ```
 
+<br>
 
 次に、自身のカメラのCulling Maskを更新します。この時、他プレイヤーのレイヤーは除外する必要があります。
-
 
 ```cs:
 // カメラのCullingMaskを変更
@@ -268,6 +253,8 @@ for (var i = 0; i < _playerLayers.Length; i++)
 }
 ```
 
+<br>
+
 そして、Cinemachineカメラのレイヤーを自身のものに設定します。
 
 ```cs:
@@ -275,8 +262,9 @@ for (var i = 0; i < _playerLayers.Length; i++)
 _cinemachineCamera.gameObject.layer = _playerLayers[layerIndex].layer;
 ```
 
-ここまでの処理は、自身が入室した時に行うほか、他プレイヤーが退室した時もインデックスがずれる可能性があるため行います。
+<br>
 
+ここまでの処理は、自身が入室した時に行うほか、他プレイヤーが退室した時もインデックスがずれる可能性があるため行います。
 
 ```cs:
 // 初期化
@@ -289,7 +277,7 @@ private void Awake()
 }
 ```
 
-
+<br>
 
 ```cs:
 // プレイヤーが退室した時に呼ばれる

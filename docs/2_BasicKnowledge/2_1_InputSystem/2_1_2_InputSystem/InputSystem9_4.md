@@ -8,7 +8,7 @@
 
 通常、Shift + Tabを同時押しするとTabキーが押された時点で「進む」と「戻る」の両方の操作が実行されるかと思います。 
 
-これらを排他制御(一度に一つのプロセスだけが、データを操作できるように制御)する機能が追加されています。
+これらを<b><u>排他制御(一度に一つのプロセスだけが、データを操作できるように制御)</u></b>する機能が追加されています。
 
 排他制御の有効化設定は、アプリケーション全体に影響を及ぼすため、注意する必要があります。これが許容できない場合はComposite Bindingを自作する必要があります。
 
@@ -29,28 +29,24 @@
 # Input Actionの設定例
 排他制御を検証するための設定例です。
 
-次のようなキー割り当てのActionに対して排他制御を適用することとします。
+次のようなキー割り当てのActionに対して排他制御を適用してみます。
 
 + Next   
   Tabキーで反応。Shift + Tabキーでは反応しないようにする。
 + Prev   
   Shift + Tabキーの同時押しで反応するようにする。
 
-
-
 <img src="images/9/9_4/unity-input-system-exclusive-modifier-3.png.avif" width="90%" alt="" title="">
 
 <br>
 
-確認用スクリプトの実装
-ここでは、「次へ」「前へ」のActionが実行されたときにログ出力するものとします。入力取得はPlayer Inputコンポーネント経由で行うものとします。
+## 入力確認
+
+ここでは、「次へ」「前へ」のActionが実行されたときにログ出力するものとします。  
+入力取得はPlayer Inputコンポーネント経由で行うものとします。
 
 以下、取得例です。
-
-
-
 ```cs:GetInputsExample.cs
-
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -78,23 +74,15 @@ public class GetInputsExample : MonoBehaviour
 }
 ```
 
-
-
 上記をGetInputsExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチしておきます。
 
-
-
-
-
-
-
-# Player Inputの設定
+## Player Inputの設定
 前述の確認用スクリプトから入力を取得できるようにするために、Player Input側の設定を行います。
 
-適当なゲームオブジェクトにPlayer Inputコンポーネントをアタッチし、Actions項目に予め作成したInput Actionアセットを、Behaviour項目にInvoke Unity Eventsを指定します。 
+適当なゲームオブジェクトにPlayer Inputコンポーネントをアタッチし、Actions項目に予め作成したInput Actionアセットを、Behaviour項目に<u>Invoke Unity Events</u>を指定します。 
 
 
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-m3.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-m3.mp4.gif" width="90%" alt="" title="">
 
 <br>
 
@@ -104,10 +92,7 @@ public class GetInputsExample : MonoBehaviour
 
 <br>
 
-実行結果
-排他制御の適用前は、以下のように「前へ」操作をしているにも関わらず「次へ」操作が反応してしまっています。
-
-
+実行すると、排他制御の適用前は、「前へ」操作をしているにも関わらず「次へ」操作が反応してしまっています。
 
 <img src="images/9/9_4/unity-input-system-exclusive-modifier-m5.mp4.gif" width="50%" alt="" title="">
 
@@ -115,19 +100,18 @@ public class GetInputsExample : MonoBehaviour
 
 排他制御を適用すると、「前へ」操作を行なっても「次へ」操作が反応しません。
 
-
 <img src="images/9/9_4/unity-input-system-exclusive-modifier-m6.mp4.gif" width="50%" alt="" title="">
 
 <br>
 
-
+<br>
 
 # カスタムComposite Bindingで排他制御を実装する
-Input System 1.3.0以前を使用している場合や、アプリケーション全体に対して排他制御を実装したくないときは、カスタムComposite Bindingを自作して対処することも可能です。
+アプリケーション全体に対して排他制御を実装したくないときなどは、カスタムComposite Bindingを自作して対処することも可能です。
 
 Composite Bindingを用いると、複数の入力を合成したり、ある入力の型を別の型に変換したりすることができます。
 
-次のようにあるボタンmodifierが押されている間は入力を流さず、離されている間は入力を流す挙動のComposite Bindingを実装すれば良いです。
+あるボタンmodifierが押されている間は入力を流さず、離されている間は入力を流す挙動のComposite Bindingを実装します。
 
 
 <img src="images/9/9_4/unity-input-system-exclusive-modifier-4.png.avif" width="50%" alt="" title="">
@@ -136,20 +120,17 @@ Composite Bindingを用いると、複数の入力を合成したり、ある入
 
 
 
-ボタンの入力値はアナログ値ですが、次のように閾値判定によって押されている／離されているのどちらかを判定できます。 [3]
+ボタンの入力値はアナログ値ですが、次のように閾値判定によって押されている／離されているのどちらかを判定できます。  
+
 ボタンの押下状態判定
 + 押されている – 入力値がPress Point以上
 + 離されている – 入力値がPress Point未満
 
-
 こちらの方法は、一つ目の方法とは異なり、個別のActionに対して排他制御を一つ一つ適用していく必要があります。
 
-実装例
-以下、排他制御を行うComposite Bindingの実装例です。
-
-
+## 実装例  
+排他制御を行うComposite Bindingの実装例です。
 ```cs:DisallowOneModifierComposite.cs
-
 using System.ComponentModel;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
@@ -163,23 +144,21 @@ public class DisallowOneModifierComposite : InputBindingComposite<float>
     // 排他制御対象のボタン
     [InputControl(layout = "Button")] public int button;
 
-    /// <summary>
-    /// 初期化
-    /// </summary>
+
+    /// <summary> 初期化 </summary>
 #if UNITY_EDITOR
     [UnityEditor.InitializeOnLoadMethod]
 #else
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 #endif
+
     private static void Initialize()
     {
         // 初回にCompositeBindingを登録する必要がある
         InputSystem.RegisterBindingComposite(typeof(DisallowOneModifierComposite), "DisallowOneModifierComposite");
     }
     
-    /// <summary>
-    /// 一方のボタンが押されていない時だけ値を返す
-    /// </summary>
+    /// <summary>一方のボタンが押されていない時だけ値を返す</summary>
     public override float ReadValue(ref InputBindingCompositeContext context)
     {
         // modifierのボタンが押されていない時だけbuttonの入力を通す
@@ -201,30 +180,25 @@ public class DisallowOneModifierComposite : InputBindingComposite<float>
 
 
 ```
-
-
 上記スクリプトをUnityプロジェクトに保存するとComposite Bindingが使用可能になります。
 
 このComposite Bindingを排他制御を適用したいAction（例ではNext）に適用します。
 
-
-
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-m7.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-m7.mp4.gif" width="90%" alt="" title="">
 
 <br>
 
+## 実行結果  
 
-実行結果
-こちらも正しく排他制御されるようになりました。「前へ」操作を行なっても「次へ」操作が反応しません。
+(トップメニューのEdit > Project Settings…を選択してProject Settingsウィンドウを開き、Input System Package > Enable Input Consumptionにチェック外しても)  
+正しく排他制御されるようになりました。「前へ」操作を行なっても「次へ」操作が反応しません。
 
-
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-m8.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-m8.mp4.gif" width="70%" alt="" title="">
 
 <br>
 
-スクリプトの説明
-ボタンの定義は以下で行なっています。
-
+## スクリプトの説明
+ボタンの定義。
 ```cs:
 // このキーが押されていなければbuttonのActionを実行する
 [InputControl(layout = "Button")] public int modifier;
@@ -233,7 +207,10 @@ public class DisallowOneModifierComposite : InputBindingComposite<float>
 [InputControl(layout = "Button")] public int button;
 ```
 
+<br>
+
 modifierの入力が無い時に入力を通す処理は以下部分です。
+
 ```cs:
 // modifierのボタンが押されていない時だけbuttonの入力を通す
 if (!context.ReadValueAsButton(modifier))
@@ -243,11 +220,11 @@ return default;
 ```
 context.ReadValueAsButtonメソッドで、指定されたBindingをボタンとみなして押下状態を取得しています。
 
-押されている時にtrueが返されるので、押されている時は入力０を、押されていない時はbuttonのBinding入力をバイパスするとOKです。
+押されている時にtrueが返されるので、押されている時は入力０を、押されていない時はbuttonのBinding入力を経由するとOKです。
 
 
 
-ボタンの押下状態の判定は、入力値の大きさとPress Pointとの閾値判定をするため、大きさを返すメソッドEvaluateMagnitudeをオーバーライドして実装する必要があります。 
+ボタンの押下状態の判定は、「入力値の大きさ」と「Press Pointとの閾値判定」をするため、大きさを返すメソッドEvaluateMagnitudeをオーバーライドして実装する必要があります。 
 
 ```cs:
 public override float EvaluateMagnitude(ref InputBindingCompositeContext context)

@@ -15,15 +15,13 @@ PCなどに複数のゲームパッドを繋いでゲームをプレイするロ
 + プレイヤー毎のカメラを画面分割表示する
 
 # プレイヤー側の準備
-次のようにプレイヤーオブジェクトにPlayer Inputコンポーネントがアタッチされており、Player Inputから入力を取得して操作できるようなPrefabをセットアップしておきます。
+プレイヤーオブジェクトにPlayer Inputコンポーネントがアタッチされており、Player Inputから入力を取得して操作できるようなPrefabをセットアップしておきます。
 
 
-<img src="images/12/12_1/unity-input-system-local-multiplayer-1.png.avif" width="50%" alt="" title="">
+<img src="images/12/12_1/unity-input-system-local-multiplayer-1.png.avif" width="70%" alt="" title="">
 
 <br>
 
-
-本記事ではPlayer Inputおよび操作スクリプトのセットアップ手順は割愛します。
 
 操作可能なプレイヤーPrefabが欲しい場合、以下記事の内容に従ってプレイヤーを実装し、プレイヤーオブジェクトをPrefab化してください。
 

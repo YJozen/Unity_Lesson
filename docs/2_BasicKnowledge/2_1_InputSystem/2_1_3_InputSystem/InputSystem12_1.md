@@ -1,9 +1,6 @@
+<link rel="stylesheet" href="/sample.css">
+
 # 複数プレイヤーへの対応(ローカルマルチを実装する)
-
-2023年6月3日
-2023年6月2日
-
-https://nekojara.city/unity-input-system-local-multiplayer
 
 PCなどに複数のゲームパッドを繋ぎ、ゲームをプレイするローカルマルチプレイヤーに対応していきます。  
 Player InputおよびPlayer Input Managerコンポーネントを用いていきます。
@@ -15,6 +12,8 @@ Player InputおよびPlayer Input Managerコンポーネントを用いていき
 + プレイヤー毎のカメラを画面分割表示する
 
 <br>
+
+<hr>
 
 # プレイヤー側の準備
 プレイヤーオブジェクトにPlayer Inputコンポーネントがアタッチされており、Player Inputから入力を取得して操作できるようなPrefabをセットアップしておきます。

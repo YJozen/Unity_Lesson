@@ -1,36 +1,39 @@
+
+<link rel="stylesheet" href="/sample.css">
+
 # Input Actionをスクリプトから動的に編集する方法
 
 https://nekojara.city/unity-input-system-actions-runtime
 
-これを実践すると、次のようなことが実現できるようになります。
++ [Actionを作成する](#actionを作成する)
 
-## 実現できることの例
-+ キーアサインを変更する
+<hr>
+
+## スクリプトから動的に編集する例
++ キーアサインを変更
 + マウス感度などの調整機能の実装
 + キーコンフィグ機能（リバインド）の実装
 
-Input Systemでキャラクターの移動やジャンプ操作などを扱う時は、これらをActionという単位で管理します。この Actionを動的に作成したり変更したり削除したりできます。
+Input Systemでキャラクターの移動やジャンプ操作などを扱う時は、Actionという単位で管理します。この Actionを動的に作成したり変更したり削除したりもできます。
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-1.png.avif" width="70%" alt="" title="">
 
 <br>
 
-キーコンフィグを実装したい場合は、Actionの上書き機能を使うのが適しています。 これは、下図のように変更とは少し異なる機能です。
+<br>
+
+キーコンフィグを実装したい場合は、Actionの上書き機能を使うのが適しています。 (変更とは少し異なる機能です。)
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-2.png.avif" width="70%" alt="" title="">
 
-<br>
-
 上書き機能を使うことで、上書きしたデータのみをJSONとして保存したり、読み込んで適用したりできるようになります。
 
+<br>
 
-
-# Actionの作成
+# Actionを作成する
 Input SystemのActionはスクリプトからはInputActionクラスとして扱われます。
 
-参考：Class InputAction| Input System | 1.5.1
-
-InputActionクラスは一つのActionを表すクラスで次のような情報を指定してインスタンス生成できます。
+InputActionクラスは、「一つのActionを表すクラス」で、次のような情報を指定してインスタンス生成できます。
 
 指定できる情報
 + Action名
@@ -42,7 +45,8 @@ InputActionクラスは一つのActionを表すクラスで次のような情報
 
 以下はインスタンス生成する最低限のコードの例です。
 
-```
+
+```cs:
 // Input Actionを生成する
 InputAction inputAction = new InputAction(
     "TestAction",           // Action名
@@ -50,15 +54,17 @@ InputAction inputAction = new InputAction(
     "<Keyboard>/A"          // BindingのControl Path
 );
 ```
-
-例では「TestAction」という名前のActionを生成しています。キーボードのAキーが押された瞬間に入力が得られます。
+「TestAction」という名前のActionを生成しています。  
+キーボードのAキーが押された瞬間に入力が得られます。
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-3.png.avif" width="70%" alt="" title="">
 
 <br>
 
+<br>
+
 ProcessorやInteractionも含めると次のようになります。
-```cs
+```cs:
 // Input Actionを生成する
 InputAction inputAction = new InputAction(
     "TestAction",           // Action名
@@ -69,26 +75,20 @@ InputAction inputAction = new InputAction(
     "Button"                // 種類の制限
 );
 ```
-InteractionやProcessorなどは文字列として指定します。「名前(引数1=値1,引数2=値2,引数3=値3)」などという文字列形式で指定します。
-
-
+InteractionやProcessorなどは文字列として指定します。  
+「名前(引数1=値1,引数2=値2,引数3=値3)」などという文字列形式で指定します。
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-4.png.avif" width="70%" alt="" title="">
 
 <br>
 
+その他、文字列指定の形式
++ <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.8/manual/Processors.html" target="_blank">Processor</a>
++ <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.8/manual/Interactions.html" target="_blank">Interaction</a>
 
-Processorの文字列指定の形式は以下ページにまとめられています。
+<br>
 
-参考：Processors | Input System | 1.5.1
-
-Interactionの文字列指定の形式は以下ページから参照できます。
-
-参考：Interactions | Input System | 1.5.1
-
-サンプルスクリプト
-スクリプトから動的にActionを生成して、ボタン入力があったらログ出力するサンプルスクリプトです。
-
+スクリプトから動的にActionを生成し、ボタン入力があったらログを出力するサンプル。
 
 ```cs:
 using UnityEngine;
@@ -133,52 +133,38 @@ public class CreateInputActionExample : MonoBehaviour
 }
 
 ```
-
 上記をCreateInputActionExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチすると機能します。
 
-実行結果
 Aキーを長押しすると、入力値がログ出力されるようになります。
 
+長押しして反応する理由　→　Interactionに”hold”を指定したため  
+得られる入力値は2.5。　→ 入力値に、指定の値を掛けるProcessorのscaleを指定したため  
 
-
-長押しして反応する理由は、Interactionに”hold”が指定されているためです。
-
-また、得られる入力値は2.5になっています。これは、入力値に指定の値を掛けるProcessorのscaleが指定されているためです。
-
-また、上記スクリプトのInput Action項目をダブルクリックすると、指定された内容で初期化されていることが確認できます。
-
+上記スクリプトのInput Action項目をダブルクリックすると、指定された内容で初期化されていることが確認できます。
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-6.png.avif" width="70%" alt="" title="">
 
 <br>
 
-
-
 # Input Action Assetの作成
 Input Actionの定義そのものはInput Action Assetとして保存されます。このアセット自体もスクリプトから作成できます。
 
-Input Action Assetは、下図のように複数のActionをまとめた複数のMapで構成されます。
-
-
+Input Action Assetは、複数のActionをまとめた複数のMapで構成されます。
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-7.png.avif" width="70%" alt="" title="">
 
 <br>
 
-
-
 スクリプトからはInputActionAssetクラスとして扱います。
 
-参考：Class InputActionAsset| Input System | 1.5.1
-
 InputActionAssetクラスはScriptableObject継承クラスなので、スクリプトから作成するときは次のようにScriptableObject.CreateInstanceメソッド経由でインスタンス化します。
-
+```cs:
 // Input Action Assetインスタンスを生成
 InputActionAsset inputActionAsset = ScriptableObject.CreateInstance<InputActionAsset>();
-参考：ScriptableObject-CreateInstance – Unity スクリプトリファレンス
+```
 
-作成したInput Action Assetに対しては、MapやActionを追加したり削除したり編集できます。
-
+作成したInput Action Assetに対して、MapやActionを追加・削除・編集ができます。
+```cs:
 // 「Player」というMapを追加
 InputActionMap playerMap = inputActionAsset.AddActionMap("Player");
 
@@ -188,10 +174,11 @@ InputAction jumpAction = playerMap.AddAction(
     InputActionType.Button,
     "<Keyboard>/A"
 );
-サンプルスクリプト
-Input Action Assetをスクリプトから作成する例です。
+```
+<br>
 
-CreateInputActionAssetExample.cs
+Input Action Assetをスクリプトから作成する例です。
+```cs:CreateInputActionAssetExample.cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -237,6 +224,8 @@ public class CreateInputActionAssetExample : MonoBehaviour
         print("Jump");
     }
 }
+```
+
 新しくInput Action Assetを作成し、「Player」という名前のMapを作成し、その下に「Jump」というActionを追加しています。
 
 
@@ -244,17 +233,15 @@ public class CreateInputActionAssetExample : MonoBehaviour
 
 <br>
 
-スペースキーが押されるたびに「Jump」というログを出力します。
-
 上記スクリプトをCreateInputActionAssetExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチすると機能するようになります。
 
-実行結果
-期待通りの動作になりました。
+スペースキーが押されるたびに「Jump」というログを出力します。
 
+<br>
 
-# スクリプトの説明
+## スクリプトの説明
 初期化の次の部分でInput Action Assetを作成してMapとActionを追加しています。
-
+```cs:
 // Input Action Assetを作成
 _inputActionAsset = ScriptableObject.CreateInstance<InputActionAsset>();
 
@@ -267,24 +254,32 @@ var jumpAction = playerMap.AddAction(
     InputActionType.Button,
     "<Keyboard>/Space"
 );
+```
+
 生成されたInputActionAssetインスタンスに対してEnableメソッドを実行すると、Input Action Assetに登録されているAction全体を有効化できます。
 
+```cs:
 // Input Action Asset全体のActionを有効化する
 _inputActionAsset.Enable();
-参考：Class InputActionAsset| Input System | 1.5.1
-
-注意
+```
 Enableメソッドを実行しないとActionが有効化されず、入力を受け取れなくなるためご注意ください。
+
+<br>
+
+
+
+
+
 
 # ActionにBindingを追加する
 インスタンスとして生成されたInputActionは、後からスクリプトより編集できます。
 
-Actionに後からBindingを追加したり、Composite Binding [3] を追加したりできます。
+Actionに後からBindingを追加したり、Composite Binding を追加したりできます。
 
 # Bindingの追加
 次のようにInputActionインスタンスに対してAddBindingメソッドを呼び出す形で追加できます。
 
-```
+```cs:
 InputAction inputAction;
 
 ・・・（中略）・・・
@@ -299,7 +294,7 @@ inputAction.AddBinding("<Keyboard>/Space");
 
 
 これは、以下のようにいくつかオーバーロードされた拡張メソッドとして定義されています。
-
+```
 public static InputActionSetupExtensions.BindingSyntax AddBinding(
     this InputAction action,
     string path,
@@ -307,28 +302,30 @@ public static InputActionSetupExtensions.BindingSyntax AddBinding(
     string processors = null,
     string groups = null
 );
+```
+
+```
 public static InputActionSetupExtensions.BindingSyntax AddBinding(
     this InputAction action,
     InputBinding binding = default(InputBinding)
 );
+```
+
+```
 public static InputActionSetupExtensions.BindingSyntax AddBinding(
     this InputAction action,
     InputControl control
 );
+```
+
 InteractionやProcessorなども一緒に追加できます。
 
-戻り値として、Bindingを編集するためのシンタックスが返されます。このシンタックスに対して様々な操作を施すことが可能です。 [4]
-参考：Class InputActionSetupExtensions| Input System | 1.5.1
+戻り値として、Bindingを編集するためのシンタックスが返されます。このシンタックスに対して様々な操作を施すことが可能です。
 
-参考：Struct InputActionSetupExtensions.BindingSyntax| Input System | 1.5.1
-
-
-拡張メソッド – C#
-C# の拡張メソッドを使用すると、新規の派生型の作成、再コンパイル、または元の型の変更を行うことなく既存の型にメソッドを追加できます。
-learn.microsoft.com
 Composite Bindingの追加
 ActionにはBindingのほかComposite Bindingも追加できます。次のようにAddCompositeBindingメソッドを呼び出す形で行います。
 
+```
 InputAction inputAction;
 
 ・・・（中略）・・・
@@ -336,37 +333,34 @@ InputAction inputAction;
 inputAction.AddCompositeBinding("Axis")
     .With("Negative", "<Keyboard>/LeftArrow")
     .With("Positive", "<Keyboard>/RightArrow");
-
+```
 
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-11.png.avif" width="70%" alt="" title="">
 
 <br>
 
-
-
 例はAxisというComposite Binding（1軸入力）を追加し、パラメータとして負方向ボタン（Negative）に左矢印キー、正方向ボタン（Positive）に右矢印キーをメソッドチェーンで追加しています。
 
 AddCompositeBindingメソッドは次のような拡張メソッドとして定義されています。
 
+```cs:
 public static InputActionSetupExtensions.CompositeSyntax AddCompositeBinding(
     this InputAction action,
     string composite,
     string interactions = null,
     string processors = null
 );
+```
+
 AddBindingメソッド同様、こちらもInteractionやProcessorも同時に指定できます。
 
 戻り値はComposite Binding編集用のシンタックスで、これに対してComposite Bindingのパラメータを設定できます。
 
-参考：Class InputActionSetupExtensions| Input System | 1.5.1
-
-参考：Struct InputActionSetupExtensions.CompositeSyntax| Input System | 1.5.1
-
 サンプルスクリプト
 WASDキー入力のComposite Bindingをスクリプトから追加するサンプルスクリプトです。
 
-AddCompositeBindingExample.cs
+```cs:AddCompositeBindingExample.cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -413,6 +407,8 @@ public class AddCompositeBindingExample : MonoBehaviour
         Debug.Log($"入力値 : {context.ReadValue<Vector2>()}");
     }
 }
+```
+
 次のような内容のActionをスクリプトから生成します。
 
 <img src="images/11/11_1/unity-input-system-actions-runtime-12.png.avif" width="70%" alt="" title="">
@@ -423,11 +419,7 @@ public class AddCompositeBindingExample : MonoBehaviour
 
 上記スクリプトをAddCompositeBindingExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチすると機能するようになります。
 
-実行結果
-WASDキーで2軸入力を取得出来ていることを確認出来ました。
-
-
-
+実行すると、WASDキーで2軸入力を取得出来ていることを確認出来ました。
 
 インスペクター上では2DVectorとしてComposite Bindingが設定されていることが確認できます。
 
@@ -435,7 +427,7 @@ WASDキーで2軸入力を取得出来ていることを確認出来ました。
 
 <br>
 
-スクリプトの説明
+## スクリプトについて
 Composite Bindingを追加している処理は以下部分です。
 
 // Composite Bindingの追加

@@ -1,7 +1,4 @@
-https://nekojara.city/unity-input-system-local-multiplayer
-
-
-# Cinemachine使用下で画面分割する
+# Cinemachineを使用し、画面分割をする
 
 ここまで、Cinemachineを使わない純粋なUnityカメラを用いて画面分割を行っていました。  
 Cinemachineを使用した環境下でも画面分割は可能です。

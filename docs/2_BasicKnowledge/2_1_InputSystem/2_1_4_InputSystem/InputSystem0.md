@@ -2,7 +2,7 @@
 
 3. Input System  
 
-    13.[](InputSystem12_3.md) 
+    13.[デバッグWindow](InputSystem13.md) 
 
     14.[](InputSystem12_3.md) 
 

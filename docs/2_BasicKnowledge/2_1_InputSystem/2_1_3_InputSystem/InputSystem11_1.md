@@ -6,6 +6,10 @@
 https://nekojara.city/unity-input-system-actions-runtime
 
 + [Actionを作成する](#actionを作成する)
++
+
+
+
 
 <hr>
 
@@ -64,7 +68,7 @@ InputAction inputAction = new InputAction(
 <br>
 
 ProcessorやInteractionも含めると次のようになります。
-```cs:
+```cs
 // Input Actionを生成する
 InputAction inputAction = new InputAction(
     "TestAction",           // Action名

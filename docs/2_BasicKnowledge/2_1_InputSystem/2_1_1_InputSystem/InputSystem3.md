@@ -21,7 +21,8 @@
 
 適当なゲームオブジェクトにアタッチしてください
 
-```cs:InputActionExample.cs
+InputActionExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;

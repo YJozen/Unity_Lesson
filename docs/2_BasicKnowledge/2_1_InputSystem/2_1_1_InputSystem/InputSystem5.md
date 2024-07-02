@@ -161,7 +161,8 @@ Input Actionのソースコードを生成していきます。
 先述のInput Actionクラスから入力を取得し、ボールを操作するスクリプトを実装します。  
 PlayerMover.csなどとスクリプトを作成し、ボールを動かしてみて下さい。
 
-```cs:PlayerMover.cs
+PlayerMover.cs
+```cs
     using System;
     using UnityEngine;
     using UnityEngine.InputSystem;

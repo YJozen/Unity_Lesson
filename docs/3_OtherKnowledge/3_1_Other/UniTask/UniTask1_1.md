@@ -29,10 +29,9 @@ namespace AsyncSample
 # UniTaskを使用してみる
 
 ## ・サンプル1 「UniTask」を使用した例  
-UniTaskというライブラリをとってきて、UniTaskを使用して非同期メソッドを定義します。  
-UniTask.Delayを使用して待機します。
+UniTaskというライブラリをとってきて、UniTaskを使用した非同期メソッド(UniTask.Delayを使用して待機している単純なメソッド)を定義。
 
-```cs:
+```cs
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
@@ -59,7 +58,7 @@ namespace AsyncSample
 
 ## ・サンプル2　あらゆるタスクの完了を待つことも可能
 
-```cs:
+```cs
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
@@ -94,11 +93,8 @@ namespace AsyncSample
 
 ## ・サンプル3　返り値を受け取ることができる
 
-このサンプルコードでは、MyAsyncMethodという非同期メソッドが整数値を返し、await MyAsyncMethod()でその返り値を待ち、取得しています。  
+このサンプルコードでは、`MyAsyncMethod`という非同期メソッドが整数値を返し、`await MyAsyncMethod()`でその返り値を待ち、取得しています。  
 取得した返り値を利用して、非同期メソッドが完了した後に何らかの処理を行うことができます。
-
-このように、UniTaskを使用することで非同期メソッドの返り値を扱うことができます。  
-必要に応じて非同期メソッドが返す型に合わせて、適切な型を指定してください。
 
 ```cs
 using UnityEngine;
@@ -122,3 +118,6 @@ namespace AsyncSample
 }
 
 ```
+
+このように、UniTaskを使用することで非同期メソッドの返り値を扱うことができます。  
+必要に応じて非同期メソッドが返す型に合わせて、適切な型を指定してください。

@@ -7,7 +7,8 @@
 適当なゲームオブジェクトにアタッチして実行確認してください。
 Aキーの押下状態がログ出力されます。
 
-```cs:KeyboardExample.cs
+KeyboardExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -55,7 +56,8 @@ public class KeyboardExample : MonoBehaviour
 適当なゲームオブジェクトにアタッチして実行確認してください。
 左ボタンがクリックされたら、カーソル座標と共にメッセージ出力されます。
 
-```cs:KeyboardExample.cs
+KeyboardExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;

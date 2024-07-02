@@ -70,7 +70,8 @@ UIをPlayer Input経由で操作させたい場合に使用
 
 Moveアクションの通知を受け取って、オブジェクトを移動させるサンプルスクリプト
 
-```cs:SendMessageExample.cs
+SendMessageExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -111,7 +112,8 @@ Player Inputから通知を受け取るためには、「On + Action名」とい
 ---
 ## 4.Invoke Unity Eventsを設定した場合
 
-```cs:UnityEventExample.cs
+UnityEventExample.cs
+```cs
     using UnityEngine;
     using UnityEngine.InputSystem;
 
@@ -148,7 +150,8 @@ Events項目が出現するため、該当するイベントの＋ボタンよ�
 
 Input System全体でトリガーされるすべてのアクションをキャッチするための方法です。すべてのアクションを一つのコールバックで処理したい場合に便利
 
-```cs:CSharpEventExample.cs
+CSharpEventExample.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -207,7 +210,7 @@ Input System全体でトリガーされるすべてのアクションをキャ�
 
 特定のアクションに対して直接コールバックを設定
 
-```cs:
+```cs
     using UnityEngine;
     using UnityEngine.InputSystem;
 

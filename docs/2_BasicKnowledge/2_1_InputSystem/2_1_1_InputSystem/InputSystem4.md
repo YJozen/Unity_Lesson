@@ -4,7 +4,8 @@
 
 適当なゲームオブジェクトにアタッチ
 
-```cs:ActionCallback.cs
+ActionCallback.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 

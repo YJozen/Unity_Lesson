@@ -12,7 +12,7 @@
          * [Mouse_TargetLock]
          * [Mouse_Effect]
      + [Shader_Basic]
-       - [Shader1-CS
+       - [Shader1-CS]
        - [Shader2-HLSL_CG]
        - [Shader3-ShaderGraph]
      + [Shader_Advanced]

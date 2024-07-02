@@ -40,7 +40,8 @@ t秒以内にボタン変化（押された状態と離された状態の変化�
 
 前述のフェーズやボタンフェーズの遷移に基づいて連打判定を行うInteractionを実装する例
 
-```cs:MashInteraction.cs
+MashInteraction.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -192,7 +193,9 @@ UseExample.csという名前でUnityプロジェクトに保存し、適当な�
 
 <img src="images/7/7_3/unity-input-system-button-mashing-3.png.avif" width="50%" alt="" title="">
 
-```cs:UseExample.cs
+
+UseExample.cs
+```cs
     using UnityEngine;
     using UnityEngine.InputSystem;
 
@@ -283,7 +286,7 @@ public int requiredTapCount = 2;
 
 ボタンが押されたとみなす閾値Press Pointやタップの最大許容時間間隔などは、0ならデフォルト値を使うように以下プロパティが管理しています。
 
-```cs:
+```cs
 // 設定値かデフォルト値の値を格納するフィールド
 private float PressPointOrDefault => pressPoint > 0 ? pressPoint : InputSystem.settings.defaultButtonPressPoint;
 private float ReleasePointOrDefault => PressPointOrDefault * InputSystem.settings.buttonReleaseThreshold;
@@ -293,7 +296,7 @@ private float TapDelayOrDefault => tapDelay > 0 ? tapDelay : InputSystem.setting
 <br>
 また、ボタンの状態変化を管理するために、独自のボタンフェーズをenumフィールドで定義しています。
 
-```cs:
+```cs
 // ボタンフェーズ
 private enum ButtonPhase
 {
@@ -307,7 +310,7 @@ private ButtonPhase _currentButtonPhase;
 <br>
 
 ある一定時間以上ボタン変化が無かったら連打終了とする判定は、次の処理で行っています。
-```cs:
+```cs
 // タイムアウトチェック
 if (context.timerHasExpired)
 {
@@ -329,7 +332,7 @@ context.SetTimeout(TapDelayOrDefault);
 
 入力値が閾値以上かどうかの判定は、context.ControlIsActuatedメソッドで行えます。trueなら閾値以上（ただし閾値0なら0より大きい）、falseなら閾値未満（ただし閾値0の場合は入力値0）と判断できます。
 
-```cs:
+```cs
 case ButtonPhase.None:
     // 入力され始めた
     if (context.ControlIsActuated(PressPointOrDefault))
@@ -364,7 +367,7 @@ Noneの時、連打に必要な残りのタップ回数_remainingRequiredTapCoun
 
 ボタンが押された状態から離されたかを判定する処理は以下部分です。
 
-```cs:
+```cs
 case ButtonPhase.WaitingForNextRelease:
     if (!context.ControlIsActuated(ReleasePointOrDefault))
     {
@@ -379,7 +382,7 @@ case ButtonPhase.WaitingForNextRelease:
 
 <br>
 
-```cs:
+```cs
 case ButtonPhase.WaitingForNextPress:
     if (context.ControlIsActuated(PressPointOrDefault))
     {
@@ -424,7 +427,7 @@ case ButtonPhase.WaitingForNextPress:
 
 前述のMash Interactionでは、TapCountプロパティから連打回数を取得できるようになっています。これを次のようにコールバック引数からInteraction経由で取得できます。
 
-```cs:
+```cs
 private void OnPerformed(InputAction.CallbackContext context)
 {
     if (context.interaction is not MashInteraction mashInteraction) return;
@@ -441,7 +444,8 @@ private void OnPerformed(InputAction.CallbackContext context)
 
 連打回数をスクリプトから取得してログ出力する例
 
-```cs:TapCountExample.cs
+TapCountExample.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;

@@ -17,7 +17,7 @@ Gamepad.current?.SetMotorSpeeds(0.5f, 0.0f);
 ゲームパッドの左右モーターをそれぞれ１秒ずつ振動させるサンプルスクリプトです。
 
 
-```
+```cs
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -58,7 +58,7 @@ public class GamepadRumbleExample : MonoBehaviour
 
 ## スクリプトについて
 以下のコードでゲームパッドの左右モーターを振動させています。
-```
+```cs
 gamepad.SetMotorSpeeds(1.0f, 0.0f);
 ```
 第１引数に左モーター（低周波）の回転数  
@@ -73,7 +73,7 @@ SetMotorSpeeds()メソッドでコントローラのモーターを動かすと�
 # コントローラの振動を一括で停止・再開する
 以下メソッドを実行すると、Input Systemで管理しているコントローラの振動を一括で停止・再開できます。
 
-```
+```cs
 // 振動を一時停止
 InputSystem.PauseHaptics();
 
@@ -155,7 +155,8 @@ public class PauseResumeExample : MonoBehaviour
 Gamepadクラスにアクセスするのではなく、
 Player Inputから振動可能なコントローラを取得し、振動させるサンプルです。
 
-```cs:PlayerInputRumbleExample.cs
+PlayerInputRumbleExample.cs
+```cs
 using System.Collections;
 using System.Linq;
 using UnityEngine;

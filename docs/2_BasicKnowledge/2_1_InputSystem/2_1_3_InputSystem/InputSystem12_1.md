@@ -108,7 +108,7 @@ C#標準のデリゲート経由で通知する。
 
 ### サンプルスクリプト
 UnityEvent経由で通知を受け取るスクリプトの例。
-```cs:
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -146,7 +146,7 @@ public class ReceiveNotificationExample : MonoBehaviour
 
 ### スクリプトについて
 各プレイヤーオブジェクトのユーザー情報は、PlayerInput.userプロパティから取得できます。
-```cs:
+```cs
 print($"プレイヤー#{playerInput.user.index}が入室！");
 ```
 これは、InputUser型の構造体で、インデックス以外にもユニークIDやデバイス情報なども格納しています。

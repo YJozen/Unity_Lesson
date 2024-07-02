@@ -94,7 +94,7 @@ InteractionやProcessorなどは文字列として指定します。
 
 スクリプトから動的にActionを生成し、ボタン入力があったらログを出力するサンプル。
 
-```cs:
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -162,13 +162,13 @@ Input Action Assetは、複数のActionをまとめた複数のMapで構成さ�
 スクリプトからはInputActionAssetクラスとして扱います。
 
 InputActionAssetクラスはScriptableObject継承クラスなので、スクリプトから作成するときは次のようにScriptableObject.CreateInstanceメソッド経由でインスタンス化します。
-```cs:
+```cs
 // Input Action Assetインスタンスを生成
 InputActionAsset inputActionAsset = ScriptableObject.CreateInstance<InputActionAsset>();
 ```
 
 作成したInput Action Assetに対して、MapやActionを追加・削除・編集ができます。
-```cs:
+```cs
 // 「Player」というMapを追加
 InputActionMap playerMap = inputActionAsset.AddActionMap("Player");
 
@@ -182,7 +182,9 @@ InputAction jumpAction = playerMap.AddAction(
 <br>
 
 Input Action Assetをスクリプトから作成する例です。
-```cs:CreateInputActionAssetExample.cs
+
+CreateInputActionAssetExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -245,7 +247,7 @@ public class CreateInputActionAssetExample : MonoBehaviour
 
 ## スクリプトの説明
 初期化の次の部分でInput Action Assetを作成してMapとActionを追加しています。
-```cs:
+```cs
 // Input Action Assetを作成
 _inputActionAsset = ScriptableObject.CreateInstance<InputActionAsset>();
 
@@ -262,7 +264,7 @@ var jumpAction = playerMap.AddAction(
 
 生成されたInputActionAssetインスタンスに対してEnableメソッドを実行すると、Input Action Assetに登録されているAction全体を有効化できます。
 
-```cs:
+```cs
 // Input Action Asset全体のActionを有効化する
 _inputActionAsset.Enable();
 ```
@@ -283,7 +285,7 @@ Actionに後からBindingを追加したり、Composite Binding を追加した�
 # Bindingの追加
 次のようにInputActionインスタンスに対してAddBindingメソッドを呼び出す形で追加できます。
 
-```cs:
+```cs
 InputAction inputAction;
 
 ・・・（中略）・・・
@@ -298,7 +300,7 @@ inputAction.AddBinding("<Keyboard>/Space");
 
 
 これは、以下のようにいくつかオーバーロードされた拡張メソッドとして定義されています。
-```
+```cs
 public static InputActionSetupExtensions.BindingSyntax AddBinding(
     this InputAction action,
     string path,
@@ -308,14 +310,14 @@ public static InputActionSetupExtensions.BindingSyntax AddBinding(
 );
 ```
 
-```
+```cs
 public static InputActionSetupExtensions.BindingSyntax AddBinding(
     this InputAction action,
     InputBinding binding = default(InputBinding)
 );
 ```
 
-```
+```cs
 public static InputActionSetupExtensions.BindingSyntax AddBinding(
     this InputAction action,
     InputControl control
@@ -329,7 +331,7 @@ InteractionやProcessorなども一緒に追加できます。
 Composite Bindingの追加
 ActionにはBindingのほかComposite Bindingも追加できます。次のようにAddCompositeBindingメソッドを呼び出す形で行います。
 
-```
+```cs
 InputAction inputAction;
 
 ・・・（中略）・・・
@@ -348,7 +350,7 @@ inputAction.AddCompositeBinding("Axis")
 
 AddCompositeBindingメソッドは次のような拡張メソッドとして定義されています。
 
-```cs:
+```cs
 public static InputActionSetupExtensions.CompositeSyntax AddCompositeBinding(
     this InputAction action,
     string composite,
@@ -364,7 +366,8 @@ AddBindingメソッド同様、こちらもInteractionやProcessorも同時に�
 サンプルスクリプト
 WASDキー入力のComposite Bindingをスクリプトから追加するサンプルスクリプトです。
 
-```cs:AddCompositeBindingExample.cs
+AddCompositeBindingExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 

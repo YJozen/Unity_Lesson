@@ -13,7 +13,8 @@
 ## スクリプトの実装例
 Vector2型の入力値を加工する（ずらす）自作Processorを実装したものです。
 
-```cs:Vector2DValueShiftProcessor.cs
+Vector2DValueShiftProcessor.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -62,14 +63,15 @@ public class Vector2DValueShiftProcessor : InputProcessor<Vector2>
 
 ## スクリプトの解説
 独自のProcessorは、次のコードのように、InputSystem<T>クラスを継承して実装します。
-```cs:
+
+```cs
 public class Vector2DValueShiftProcessor : InputProcessor<Vector2>
 ```
 InputProcessor<T>はProcessorを表す基底クラスです。
 
 
 Processorのプロパティとして編集可能なパラメータは、publicフィールドとして定義する必要があります。
-```cs:
+```cs
 // publicでなければプロパティに表示されない
 // Vector2のような型はエラー、プリミティブ型かEnum型のフィールドである必要がある
 public float shiftX;
@@ -77,7 +79,7 @@ public float shiftY;
 ```
 
 実際に値を加工する処理は、以下の部分となります。
-```cs:
+```cs
 // 独自のProcessorの処理定義
 public override Vector2 Process(Vector2 value, InputControl control)
 {
@@ -86,7 +88,7 @@ public override Vector2 Process(Vector2 value, InputControl control)
 ```
 
 InputSystemへのProcessorの登録は、次の処理で行っています。
-```cs:
+```cs
 // Processorの登録処理
 [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 static void Initialize()
@@ -102,7 +104,7 @@ static void Initialize()
 ## 自作Processorにエディタ拡張を適用する
 
 次のようなスクリプトをEditorフォルダ配下に置くことで適用できます。
-```cs:
+```cs
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
@@ -146,7 +148,7 @@ Parameter name: type
 ```
 #### ・Processorの重複登録を行うと、メニューに表示されなくなる
 重複チェックを行わず、以下のような形で登録処理を実装すると、UnityEditorから再生したとき等にProcessorの重複登録が発生してしまうことがあります。
-```cs:
+```cs
 [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
 static void Initialize()
 {

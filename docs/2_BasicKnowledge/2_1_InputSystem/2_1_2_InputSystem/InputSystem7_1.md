@@ -67,7 +67,8 @@ Interactionが未指定の場合は、Default Interactionが暗黙的に指定�
 
 指定したActionのコールバックをログ出力する例になります
 
-```cs:InteractionExample.cs
+InteractionExample.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -126,7 +127,7 @@ Hold Interactionが指定された場合、対象ボタンを一定時間押し�
 
 ## 7.ReadValueで入力値を取得する場合
 
-```cs:
+```cs
 
 InputAction action;// 独自のInteractionが設定されたAction
 

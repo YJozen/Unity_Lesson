@@ -49,7 +49,8 @@ Performedコールバックの後に入力がなくなった場合、一定時�
 
 以下、Interactionの実装例です。
 
-```cs:MultiTapAndHoldInteraction.cs
+MultiTapAndHoldInteraction.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -250,7 +251,7 @@ WASDキー入力などをComposite BindingとしてActionに定義している�
 
 この場合、ボタン入力として受け取る場合はfloat型入力値となり、型不一致によるエラーとなります。この状態で入力値を取得しようとすると、次のようなエラーがログ出力されます。
 
-```cs:
+```cs
 InvalidOperationException: Cannot read value of type 'Single' from composite 'UnityEngine.InputSystem.Composites.Vector2Composite' bound to action 'Player/Sprint[/Keyboard/leftShift,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]' (composite is a 'Int32' with value type 'Vector2')
 ```
 
@@ -258,8 +259,8 @@ WASDキー入力の大きさを１軸入力（float）として扱いたい場�
 
 以下、カスタムComposite Bindingの実装例です。
 
-
-```cs:DPadMagnitudeComposite.cs
+DPadMagnitudeComposite.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;

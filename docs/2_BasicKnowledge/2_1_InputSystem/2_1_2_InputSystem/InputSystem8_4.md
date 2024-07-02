@@ -49,7 +49,8 @@ Performedコールバックの後に入力がなくなった場合、一定時�
 
 以下、Interactionの実装例です。
 
-```cs:MultiTapAndHoldInteraction.cs
+MultiTapAndHoldInteraction.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;

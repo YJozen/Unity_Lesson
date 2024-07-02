@@ -46,7 +46,9 @@
 入力取得はPlayer Inputコンポーネント経由で行うものとします。
 
 以下、取得例です。
-```cs:GetInputsExample.cs
+
+GetInputsExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -130,7 +132,9 @@ Composite Bindingを用いると、複数の入力を合成したり、ある入
 
 ## 実装例  
 排他制御を行うComposite Bindingの実装例です。
-```cs:DisallowOneModifierComposite.cs
+
+DisallowOneModifierComposite.cs
+```cs
 using System.ComponentModel;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
@@ -199,7 +203,7 @@ public class DisallowOneModifierComposite : InputBindingComposite<float>
 
 ## スクリプトの説明
 ボタンの定義。
-```cs:
+```cs
 // このキーが押されていなければbuttonのActionを実行する
 [InputControl(layout = "Button")] public int modifier;
 
@@ -211,7 +215,7 @@ public class DisallowOneModifierComposite : InputBindingComposite<float>
 
 modifierの入力が無い時に入力を通す処理は以下部分です。
 
-```cs:
+```cs
 // modifierのボタンが押されていない時だけbuttonの入力を通す
 if (!context.ReadValueAsButton(modifier))
     return context.ReadValue<float>(button);
@@ -226,7 +230,7 @@ context.ReadValueAsButtonメソッドで、指定されたBindingをボタンと
 
 ボタンの押下状態の判定は、「入力値の大きさ」と「Press Pointとの閾値判定」をするため、大きさを返すメソッドEvaluateMagnitudeをオーバーライドして実装する必要があります。 
 
-```cs:
+```cs
 public override float EvaluateMagnitude(ref InputBindingCompositeContext context)
 {
     return ReadValue(ref context);

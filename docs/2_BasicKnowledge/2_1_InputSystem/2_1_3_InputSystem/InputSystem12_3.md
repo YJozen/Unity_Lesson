@@ -79,7 +79,8 @@ Binding ModeにSimple Follow With World Upを指定
 
 プレイヤー入室時に割り当てられるプレイヤーインデックスに応じたレイヤーを設定するスクリプトの実装例になります。
 
-```cs: PlayerCameraLayerUpdater.cs
+PlayerCameraLayerUpdater.cs
+```cs
 using System;
 using Cinemachine;
 using UnityEngine;
@@ -222,7 +223,7 @@ public class PlayerCameraLayerUpdater : MonoBehaviour
 ## スクリプトについて
 自身のプレイヤーインデックスが更新される時、次の処理でレイヤー情報とカメラの取得を行います。
 
-```cs:
+```cs
 // インデックスに応じたレイヤー情報取得
 var layerIndex = Array.FindIndex(_playerLayers, x => x.index == index);
 if (layerIndex < 0) return;
@@ -236,7 +237,7 @@ if (playerCamera == null) return;
 
 次に、自身のカメラのCulling Maskを更新します。この時、他プレイヤーのレイヤーは除外する必要があります。
 
-```cs:
+```cs
 // カメラのCullingMaskを変更
 // 自身のレイヤーは表示、他プレイヤーのレイヤーは非表示にする
 for (var i = 0; i < _playerLayers.Length; i++)
@@ -254,7 +255,7 @@ for (var i = 0; i < _playerLayers.Length; i++)
 
 そして、Cinemachineカメラのレイヤーを自身のものに設定します。
 
-```cs:
+```cs
 // Cinemachineカメラのレイヤー変更
 _cinemachineCamera.gameObject.layer = _playerLayers[layerIndex].layer;
 ```
@@ -263,7 +264,7 @@ _cinemachineCamera.gameObject.layer = _playerLayers[layerIndex].layer;
 
 ここまでの処理は、自身が入室した時に行うほか、他プレイヤーが退室した時もインデックスがずれる可能性があるため行います。
 
-```cs:
+```cs
 // 初期化
 private void Awake()
 {
@@ -276,7 +277,7 @@ private void Awake()
 
 <br>
 
-```cs:
+```cs
 // プレイヤーが退室した時に呼ばれる
 private void OnPlayerLeft(PlayerInput playerInput)
 {

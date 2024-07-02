@@ -20,7 +20,8 @@
 
 以下、Interactionの実装例です。
 
-```cs:QuickPressInteraction.cs
+QuickPressInteraction.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -156,7 +157,8 @@ internal class QuickPressInteraction : IInputInteraction
 
 スティック入力はVector2型の入力ですが、これをfloat型に変換するComposite Bindingを実装します。
 
-```cs:MagnitudeComposite.cs
+MagnitudeComposite.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;

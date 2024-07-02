@@ -27,7 +27,8 @@ Performedに遷移するための２つの条件
 ## Interactionの実装例
 以下、連打防止Interactionの実装例
 
-```cs:PreventMashInteraction.cs
+PreventMashInteraction.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -133,7 +134,8 @@ Actionに対して連打防止を適用させます。
 
 以下、Player Input経由でボタン入力を受け取る例です
 
-```cs:CheckSubmitExample.cs
+CheckSubmitExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -167,7 +169,7 @@ public class CheckSubmitExample : MonoBehaviour
 ## スクリプトの解説
 Interactionの実装は、IInputInteractionインタフェースを実装することで行います。IInputInteractionはUnityEngine.InputSystem名前空間に属するため、次のようにusingしてインタフェースを実装しています。
 
-```cs:
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -176,7 +178,7 @@ public class PreventMashInteraction : IInputInteraction
 
 Interactionの設定項目はpublicフィールドとして定義します。
 
-```cs:
+```cs
 // 最小の入力間隔[s]（押された後、入力を受け付けない時間[s]）
 public float minInputDuration;
 
@@ -186,14 +188,14 @@ public float pressPoint;
 
 受け取った入力の処理はProcessメソッド内で行います。この中でInteractionのPhaseの状態遷移を記述していきます。
 
-```cs:
+```cs
 public void Process(ref InputInteractionContext context)
 ```
 
 Processメソッドはコントローラーなどの入力値が変更されるたびに呼ばれます。
 
 Waiting状態のときに０以外が入力されたときにStartedに遷移する処理を行っています。
-```cs:
+```cs
 if (context.isWaiting)// Waiting状態
 {
     // 入力が０以外かどうか
@@ -208,7 +210,7 @@ context.isWaitingプロパティでInteractionがWaiting状態かを判定して
 
 次の書き方でも同様の判定ができます。
 
-```cs:
+```cs
 if (context.phase == InputActionPhase.Waiting)
 ```
 
@@ -217,7 +219,7 @@ context.ControlIsActuatedメソッドで入力値の大きさが0より大きい
 Phaseの遷移が発生すると、コールバックが呼び出されます。例えばPhaseがWaitingからStartedに遷移すると、startedコールバックが呼び出されます。
 
 Startedからの状態遷移は以下で行っています。
-```cs:
+```cs
 if (context.isStarted)
 {
     // Started状態
@@ -249,7 +251,7 @@ context.ControlIsActuatedメソッドは引数に閾値を渡せるため、ボ�
 入力が０に戻ったら、処理を中断するためにcontext.Canceledメソッド呼び出しでCanceled状態に遷移させます。
 
 Performed状態では、ボタンが離された時にCanceled状態に遷移させるようにしています。
-```cs:
+```cs
 if (context.phase == InputActionPhase.Performed)// Performed状態
 {
     // 入力がRelease以下かどうか

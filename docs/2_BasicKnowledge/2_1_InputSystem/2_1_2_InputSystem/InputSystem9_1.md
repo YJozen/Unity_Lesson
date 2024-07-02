@@ -15,7 +15,8 @@
 ## サンプルスクリプト
 カスタムComposite Bindingの実装例をみてみましょう。2つのボタン入力を判定し、どちらか片方のボタンのみが押されている間だけそのボタンの入力値を返します。
 
-```cs:XorComposite.cs
+XorComposite.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Layouts;
@@ -96,7 +97,8 @@ public class XorComposite : InputBindingComposite<float>
 ## 検証用スクリプト
 カスタムComposite Bindingの入力値を受け取る検証用スクリプト。
 
-```cs:CustomExample.cs
+CustomExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -148,13 +150,13 @@ public class CustomExample : MonoBehaviour
 
 カスタムComposite Bindingの基本形として、次のようにInputBindingComposite<T>継承クラスを実装します。
 
-```cs:
+```cs
 public class MyCustomComposite : InputBindingComposite<float>
 ```
 
 このクラスでは、次のようにReadValueメソッドの実装が必須です。
 
-```cs:
+```cs
 public override float ReadValue(ref InputBindingCompositeContext context)
 {
     // TODO : Bindingの値を合成して返す
@@ -166,7 +168,7 @@ public override float ReadValue(ref InputBindingCompositeContext context)
 
 これらを動作させるためには、EvaluateMagnitudeメソッドの実装も必要です。
 
-```cs:
+```cs
 public override float EvaluateMagnitude(ref InputBindingCompositeContext context)
 {
     // 入力値の大きさを返す
@@ -176,7 +178,7 @@ public override float EvaluateMagnitude(ref InputBindingCompositeContext context
 
 合成元となるBindingは、InputControl属性を指定したpublicなint型フィールドとして定義。
 
-```cs:
+```cs
 // ボタン1
 [InputControl(layout = "Button")] public int button1 = 0;
 
@@ -186,7 +188,7 @@ public override float EvaluateMagnitude(ref InputBindingCompositeContext context
 
 これだけではInput System側にカスタムComposite Bindingが登録されないため、次の処理で登録する必要があります。
 
-```cs:
+```cs
     /// <summary>
     /// 初期化
     /// </summary>
@@ -222,7 +224,7 @@ Composite Bindingのクラスの型と名前をそれぞれ指定して登録し
 カスタムComposite Bindingの値を合成する処理では、どちらか一方のボタンが押されている間のみ入力値を流すようにするため、2つのボタンの押下状態の排他的論理和を取っています。
 
 
-```cs:
+```cs
 /// <summary>
 /// どちらか一方のボタンが押されている場合のみ、押されているボタンの入力値を返す
 /// </summary>
@@ -260,7 +262,7 @@ Composite Bindingを使用した際にあり得るケースとして、例えば
 Input Actionからコールバックで受け取る時にどのボタンの入力なのかの判定も可能ですが、次のようなコードにしてしまうと正しく処理できません。
 
 悪い例
-```cs:
+```cs
 private void OnMove(InputAction.CallbackContext context)
 {
     if (context.control.name == "w")

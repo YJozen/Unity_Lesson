@@ -70,7 +70,8 @@ Actionを新規追加した場合は、空のBindingが追加されるため、�
 ## Composite Bindingの入力を受け取るスクリプト
 上記で設定した2軸のAction入力値を受け取ってログ出力する例です
 
-```cs:GetMoveExample.cs
+GetMoveExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -136,7 +137,7 @@ public class GetMoveExample : MonoBehaviour
 ## スクリプトの説明  
 Composite Bindingより得られた入力値を取得するために、次のようにperformed、canceledコールバックに登録しています。
 
-```cs:
+```cs
 private void Awake()
 {
     // 値が変化した瞬間をコールバックで取得する
@@ -149,7 +150,7 @@ private void Awake()
 
 OnMoveメソッドでは、次のように引数contextに対してReadValue<Vector2>メソッドを呼び出すことで2軸入力値を取得してログ出力しています。
 
-```cs:
+```cs
 private void OnMove(InputAction.CallbackContext context)
 {
     // 受け取った入力値をログ出力

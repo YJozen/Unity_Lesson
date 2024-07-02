@@ -14,8 +14,8 @@
 <br>
 
 
-
-```cs:MyButtonInteraction.cs
+MyButtonInteraction.cs
+```cs
     using UnityEngine.InputSystem;
 
     public class MyButtonInteraction : IInputInteraction

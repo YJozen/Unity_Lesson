@@ -59,8 +59,8 @@ Button with one modifierを用いて、下記の具体的な実装例を見て�
 Actionの入力値をログ出力するサンプルスクリプトです。コード生成されたInput Actionクラスを参照することを前提としたものになります。
 `PressTwoButtons`というクラス名は、各々作成したコード由来のクラス名に変更し、使用して下さい
 
-
-```cs:PressTwoButtonsExample.cs
+PressTwoButtonsExample.cs
+```cs
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -124,7 +124,8 @@ Button with one modifierを使い、ActionとModifier、Bindingを次の設定�
 ドラッグActionの入力値をログ出力。
 先ほどと同様、変数_inputActionsのクラス名は、自分で生成したInputActionAssetのコードのクラス名に変更して下さい。
 
-```cs:MouseDragExample.cs
+MouseDragExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 

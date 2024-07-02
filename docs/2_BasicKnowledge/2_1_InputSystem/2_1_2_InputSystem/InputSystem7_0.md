@@ -57,7 +57,8 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 GetHoldExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチ
 
-```cs:GetHoldExample.cs
+GetHoldExample.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -126,7 +127,9 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 
 
 ボタンを離すと進捗率は0%になり、ボタンを押し続けると進捗が上がり、長押し判定になった後はボタンを離すまで100%になります。
-```cs:HoldProgressExample.cs
+
+HoldProgressExample.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;
@@ -168,8 +171,8 @@ GetHoldExample.csという名前でUnityプロジェクトに保存し、適当�
 ---
 ## 4.ゲージUIに反映する
 
-
-```cs:HoldGauge.cs
+HoldGauge.cs
+```cs
 
     using UnityEngine;
     using UnityEngine.InputSystem;

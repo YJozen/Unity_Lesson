@@ -8,13 +8,15 @@
 
 # Input System全体で接続されているデバイス一覧を取得する
 InputSystem.devicesプロパティから取得できます。
-```
+```cs
 public static ReadOnlyArray<InputDevice> devices { get; }
 ```
 現在接続されているデバイス一覧をInputDevice型のコレクションとして返します。
 
 以下、接続されているデバイス一覧をログ出力するサンプルスクリプトです。
-```cs:GetDevicesExample.cs
+
+GetDevicesExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -41,7 +43,7 @@ public class GetDevicesExample : MonoBehaviour
 
 ## スクリプトについて
 次のコードでデバイス一覧を列挙し、デバイス名をログ出力しています。
-```cs:
+```cs
 // デバイス一覧を取得
 foreach (var device in InputSystem.devices)
 {
@@ -114,7 +116,7 @@ Player Inputコンポーネントには、予めActions項目にInput Action Ass
 
 ## スクリプトについて
 追加されたプレイヤーがアクティブかどうかをチェックし、アクティブなら以降の処理に進むようにしています。
-```cs:
+```cs
 // プレイヤーがアクティブかどうかチェック
 if (!_playerInput.user.valid)
 {
@@ -129,7 +131,7 @@ InputUser.validプロパティでアクティブかどうかを判断してい�
 非アクティブになる条件は、例えば接続されているコントローラーが足りないなどでペアリングされたデバイスが存在しない場合などです。
 
 アクティブであるかどうかを確認出来たら、プレイヤーのインデックスを取得してログ出力しています。
-```cs:
+```cs
 // プレイヤー番号をログ出力
 Debug.Log($"===== プレイヤー#{_playerInput.user.index} =====");
 ```
@@ -137,7 +139,7 @@ Debug.Log($"===== プレイヤー#{_playerInput.user.index} =====");
 シングルプレイヤーの場合は常に0が返されることになります。
 
 そして、以下処理でPlayerInputインスタンスのdevicesプロパティ経由で、ペアリングされたデバイス一覧を取得し、ログ出力しています。
-```cs:
+```cs
 // デバイス一覧を取得
 foreach (var device in _playerInput.devices)
 {
@@ -153,7 +155,9 @@ PlayerInput.devicesプロパティは、内部的にはPlayerInput.user.pairedDe
 もし接続されたデバイス一覧ではなく、キーボード＆マウス、ゲームパッドなどのControl Schemeを取得したい場合、PlayerInput.currentControlSchemeプロパティを使います。
 
 サンプルスクリプト
-```cs:GetPlayerSchemeExample.cs
+
+GetPlayerSchemeExample.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 

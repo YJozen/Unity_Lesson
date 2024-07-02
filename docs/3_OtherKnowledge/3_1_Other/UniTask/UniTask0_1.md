@@ -1,19 +1,19 @@
 # UniTask導入
 
-1. Window > Package Manager からPackage Managerウィンドウを開きます。
+1.Window > Package Manager からPackage Managerウィンドウを開きます。
 
 <img src="images/0_1.png" width="70%" alt="" title="">
 
 <br>
 
 
-2. Package Managerウィンドウの左上の「+」ボタンをクリックして、 Add package from git URL を選択します。
+2.Package Managerウィンドウの左上の「+」ボタンをクリックして、 Add package from git URL を選択します。
 
 <img src="images/0_2.png" width="70%" alt="" title="">
 
 <br>
 
-3. 入力フォームが表示されるので、次のURLを入力します。
+3.入力フォームが表示されるので、次のURLを入力します。
 
 ```
 https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask
@@ -23,7 +23,7 @@ https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask
 
 <br>
 
-4. 入力が終わったら 「Add」ボタンをクリック。するとUniTaskはインストールされます。
+4.入力が終わったら 「Add」ボタンをクリック。するとUniTaskはインストールされます。
 
 <img src="images/0_4.png" width="70%" alt="" title="">
 

@@ -1,9 +1,10 @@
-# Unity Documentation
+# Unity Document
+
 
 ## **目次**
 
-1. [Unity前提知識](1_ElementaryKnowledge/1.md)
-2. [Unity基本](2_BasicKnowledge/2.md)
+1. [前提知識](1_ElementaryKnowledge/1.md)
+2. [基本](2_BasicKnowledge/2.md)
 3. [UnityPickUp](3_PickUp/3.md)
 4. [小ネタ]
 5. [ミニゲーム](5_MiniGame/5.md)

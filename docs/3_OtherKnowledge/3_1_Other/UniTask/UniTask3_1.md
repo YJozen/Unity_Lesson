@@ -1,35 +1,41 @@
 # C#機能 Task
 
-ここからが本題。async/awaitにキャンセル処理をつける場合はどうしたらいいのか?   
-async / awaitの「キャンセル方法」を C#の機能である 「Task」を使って見ていく。
+ここからが本題。　　
 
-### async/awaitにキャンセル処理をつける場合はどうしたらいいのか?
+async/awaitにキャンセル処理をつける場合はどうしたらいいのか?   
+
+async/awaitの「キャンセル方法」を、C#の機能である「Task」を使って見ていく。
+
+<br>
+
+### async/awaitに「キャンセル処理」をつける場合はどうすればいいのか?
 
 結論からいうと、async/awaitにおけるキャンセル処理では、次の一連の流れをすべて実装する必要があります。
+
 ```
-①CancellationTokenを適切なタイミングで生成し、キャンセルしたいタイミングでキャンセル状態にする   
+① CancellationTokenを適切なタイミングで生成し、キャンセルしたいタイミングでキャンセル状態にする  
  
-②asyncメソッドを定義するときはCancellationTokenを引数にとる  
+② asyncメソッドを定義するときはCancellationTokenを引数にとる  
 
-③awaitするときは、await対象にCancellationTokenが渡せるなら渡す  
+③ awaitするときは、await対象にCancellationTokenが渡せるなら渡す  
 
-④await対象にCancellationTokenが渡せないのであれば、CancellationToken.ThrowIfCancellationRequested()を適宜呼び出す  
+④ await対象にCancellationTokenが渡せないのであれば、CancellationToken.ThrowIfCancellationRequested()を適宜呼び出す  
 
-⑤async/awaitとtry-catchを併用する場合はOperationCancelledExceptionの扱いを考える
+⑤　async/awaitとtry-catchを併用する場合はOperationCancelledExceptionの扱いを考える
 ```
 
 <br>
 
 # ①CancellationTokenを適切なタイミングで生成し、キャンセルしたいタイミングでキャンセル状態にする 
 
-CancellationTokenとは、async/awaitにおいて「処理のキャンセルを伝えるためのオブジェクト」 
+`CancellationToken`とは、async/awaitにおいて「処理のキャンセルを伝えるためのオブジェクト」 
 
 このCancellationTokenを適切なタイミングで生成し、
 処理を中止したいタイミングで「キャンセル状態」に変更することでasync/awaitをキャンセルさせることができます
 
 
 具体的には、CancellationTokenSourceを使ってCancellationTokenを生成します。  
-この親となったCancellationTokenSourceのCancel()を呼び出すことで、
+この親クラス`CancellationTokenSource`のCancel()を呼び出すことで、
 ここから発行されたCancellationTokenがキャンセル状態になります。
 
 
@@ -46,7 +52,7 @@ namespace CancelSamples
         [SerializeField] KeyCode _destroyObjectKey = KeyCode.D;       
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();// CancellationTokenSourceを用意
 
-        //// ※　// CancellationToken を CancellationTokenSourceから生成。getできるように
+        // CancellationToken(キャンセル状態を把握できるクラス)  を CancellationTokenSourceから生成。getできるように
         //public CancellationToken Token => _cancellationTokenSource.Token;
 
         private void Update() {
@@ -74,7 +80,7 @@ namespace CancelSamples
 CancellationTokenが用意できているなら、これをasyncメソッドに渡す必要があります。
 そのためにもasyncメソッドはCancellationTokenを引数にとるようにしましょう。
 
-```cs:
+```cs
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -88,7 +94,7 @@ namespace CancelSamples
         [SerializeField] KeyCode _destroyObjectKey = KeyCode.D;       
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();// CancellationTokenSourceを用意
 
-        //// ※　// CancellationToken を CancellationTokenSourceから生成。getできるように
+        // CancellationToken(キャンセル状態を把握できるクラス) を CancellationTokenSourceから生成。getできるように
         //public CancellationToken Token => _cancellationTokenSource.Token;
 
         private void Update() {
@@ -100,12 +106,12 @@ namespace CancelSamples
 
         void OnDestroy() {
             _cancellationTokenSource.Cancel();// クラスを破棄するタイミング・処理をキャンセルしたいタイミングでキャンセル実行            
-            _cancellationTokenSource.Dispose();// 破棄
+            _cancellationTokenSource.Dispose();// トークンソースを破棄
             Debug.Log("キャンセル処理");
         }
 
         /// <summary>
-        /// asyncメソッドを定義した場合はCancellationTokenを引数に取る
+        /// asyncメソッドを定義した場合は「CancellationToken」を引数に取る
         /// 作法としては引数の一番最後をCancellationTokenにすることがほとんど
         /// あとメソッド名も ~Async にしておく
         /// </summary>
@@ -124,7 +130,7 @@ namespace CancelSamples
 ## ③awaitするときは、await対象にCancellationTokenが渡せるなら渡す 
 
 
-```cs:
+```cs
 
 using System;
 using System.Threading;
@@ -137,7 +143,7 @@ namespace CancelSamples
     {
         [SerializeField] KeyCode _destroyObjectKey = KeyCode.D;       
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();// CancellationTokenSourceを用意        
-        public CancellationToken Token => _cancellationTokenSource.Token; //※// CancellationToken を CancellationTokenSourceから生成。getできるように
+        public CancellationToken Token => _cancellationTokenSource.Token;  // CancellationToken(キャンセル状態を把握できるクラス)  を CancellationTokenSourceから生成。getできるように
 
         private void Start()
         {
@@ -182,20 +188,18 @@ namespace CancelSamples
 
 ---
 
-## ④await対象にCancellationTokenが渡せないのであれば、CancellationToken.ThrowIfCancellationRequested()を適宜呼び出す
-CancellationToken.ThrowIfCancellationRequested()メソッドは、
-「CancellationTokenがキャンセル状態になっていたときに、
-  OperationCanceledExceptionを発行する」 というメソッドです。
+## ④await対象に`CancellationToken`が渡せないのであれば、`CancellationToken.ThrowIfCancellationRequested()`を適宜呼び出す
+`CancellationToken.ThrowIfCancellationRequested()`メソッドは、
+「`CancellationToken`がキャンセル状態になっていたときに、`OperationCanceledException`を発行する」 というメソッドです。
 
 あとで後述しますが、async/awaitでは（正確にいうとTaskたちは）
-OperationCanceledExceptionを特殊な例外として扱っています。
+`OperationCanceledException`を特殊な例外として扱っています。
 
-もしawait実行時にCancellationTokenが相手に渡せない場合は、
-キャンセル時にこのOperationCanceledExceptionを発行してあげる必要があります。  
-これらを自動でやってくれるのがCancellationToken.ThrowIfCancellationRequested()です。
+もしawait実行時に`CancellationToken`が相手に渡せない場合は、キャンセル時にこの`OperationCanceledException`を発行してあげる必要があります。  
+これらを自動でやってくれるのが`CancellationToken.ThrowIfCancellationRequested()`です。
 
 
-```cs:
+```cs
 
 using System;
 using System.Threading;
@@ -208,7 +212,7 @@ namespace CancelSamples
     {
         [SerializeField] KeyCode _destroyObjectKey = KeyCode.D;       
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();// CancellationTokenSourceを用意        
-        public CancellationToken Token => _cancellationTokenSource.Token; //※// CancellationToken を CancellationTokenSourceから生成。getできるように
+        public CancellationToken Token => _cancellationTokenSource.Token;//キャンセル状態を把握
 
         private void Start()
         {
@@ -244,15 +248,16 @@ namespace CancelSamples
         // 何か別のライブラリの非同期メソッドを実行したいが、そのライブラリのお行儀が悪く
         // CancellationTokenを渡すことができない場合など
         //private async ValueTask UseOtherFrameworkAsync(CancellationToken token) {
-        //    // NankanoAsync()自体は走り出したらキャンセルできないので諦めるとして、
-        //    //await なんかのライブラリ.NankanoAsync();
 
-        //    // キャンセル状態になっていたらこの時点で処理を止める
-        //    // （例外が発行されてここで中断される）
-        //    token.ThrowIfCancellationRequested();
+            // NankanoAsync()自体は走り出したらキャンセルできないので諦めるとして、
+            //await なんかのライブラリ.NankanoAsync();
 
-        //    // SugoiAsync()も走り出したら後から止めることはできない（諦める）
-        //    //await なんかのライブラリ.SugoiAsync();
+            // キャンセル状態になっていたらこの時点で処理を止める
+            // （例外が発行されてここで中断される）
+            //token.ThrowIfCancellationRequested();
+
+            // SugoiAsync()も走り出したら後から止めることはできない（諦める）
+            //await なんかのライブラリ.SugoiAsync();
         //}
     }
 }
@@ -264,10 +269,10 @@ namespace CancelSamples
 
 ## ⑤async/awaitとtry-catchを併用する場合はOperationCancelledExceptionの扱いを考える
 
-OperationCancelledExceptionはC#において特殊な例外として設定されています。
+`OperationCancelledException`はC#において特殊な例外として設定されています。
 この例外は「asyncメソッド内から外に向かって発行された場合、そのメソッドに紐づいたTask（ValueTask/UniTask）はキャンセル扱いになる」という性質があります。
 
-```cs:
+```cs
 
 using System;
 using System.Threading;
@@ -329,6 +334,7 @@ namespace CancelSamples
         //        Console.WriteLine(ex);
         //    }
         //}
+
 
         //// 何か別のライブラリの非同期メソッドを実行したいが、そのライブラリのお行儀が悪く
         //// CancellationTokenを渡すことができない場合など

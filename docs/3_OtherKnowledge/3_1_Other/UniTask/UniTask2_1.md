@@ -1,10 +1,14 @@
-**UniTask**
 
-# キャンセル
+
+# UniTaskでもキャンセル処理
 C#におけるasync/awaitを使う上で、絶対に意識しないといけないものは「キャンセル処理」です。  
 正しく処理をキャンセルしないとメモリリークを起こしたり、デッドロックやデータ不整合を引き起こす可能性があります。
 
 ## キャンセル1
+
+CancellationTokenを使用して非同期タスクを監視し、必要な場合にキャンセルします。
+OnDestroyメソッド内でキャンセルを行い、メモリリークを防ぎます。
+ゲームを開始した5秒以内にDボタンを押して、オブジェクトをDestroyしてキャンセル処理を呼び出して見てください
 
 ```cs
 using UnityEngine;
@@ -14,8 +18,6 @@ using System.Threading;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting.Antlr3.Runtime;
 
-//CancellationTokenを使用して非同期タスクを監視し、必要な場合にキャンセルします。
-//OnDestroyメソッド内でキャンセルを行い、メモリリークを防ぎます。
 namespace AsyncSample
 {
     public class CancelExample1 : MonoBehaviour
@@ -53,7 +55,8 @@ namespace AsyncSample
 
         private async UniTask DoSomethingCancelableAsync(CancellationToken cancellationToken) {
             Debug.Log("非同期メソッド開始");
-            await UniTask.Delay(5000); // 5秒待つ (この時間に処理を止めてみる。オブジェクトを削除してみてください）
+            await UniTask.Delay(5000); // 5秒待つ 
+                                       //(この時間にここの処理を止めてみてください。オブジェクトを削除してみてください）
                                        // キャンセルトークンを監視し続けて、タスクをキャンセルしてみる
             cancellationToken.ThrowIfCancellationRequested();// タスク内部でキャンセル状態を確認
             Debug.Log("UniTask operation completed");
@@ -67,11 +70,14 @@ namespace AsyncSample
     }
 }
 
-
 ```
 
 
 ## キャンセル2
+
+UniTaskはシーンの切り替えや、オブジェクトの破棄では止まりません。
+コルーチンは、StartCoroutineしたGameObjectに紐づきますが、UniTaskはそういった紐づけはありません。  
+UniTaskの関数を呼ぶ時に引数で`this.GetCancellationTokenOnDestroy()`を渡して止める必要があります
 
 ```cs
 using System;
@@ -92,10 +98,7 @@ namespace Timeouts
 
         private async UniTaskVoid MoveStart() {
             transform.position = Vector3.zero;
-            //UniTaskはシーンの切り替えや、オブジェクトの破棄では止まらない
-            //コルーチンは、StartCoroutineしたGameObjectに紐づくんですが、
-            //UniTaskはそういった紐づけはありません。
-            //UniTaskの関数を呼ぶ時に引数でthis.GetCancellationTokenOnDestroy()を渡して止める必要がある
+  
             var token = this.GetCancellationTokenOnDestroy();//トークン
 
             Debug.Log("移動開始！");
@@ -107,7 +110,7 @@ namespace Timeouts
         private async UniTask MoveAsync(Vector3 targetPosition, CancellationToken cancellationToken) {
             while (true) {               
                 var deltaPosition = (targetPosition - transform.position);// 目的の座標　と　自分の座標との差分                
-                if (deltaPosition.magnitude < 0.1f) return;               // 0.1m以内に近づいていたら終了
+                if (deltaPosition.magnitude < 0.1f) return;// 0.1m以内に近づいていたら終了
                
                 var moveSpeed = 1.0f;                    // 移動速度                
                 var direction = deltaPosition.normalized;// 移動方向                
@@ -150,7 +153,7 @@ namespace Timeouts
                 // このGameObjectが破棄されたらキャンセルされるCancellationTokenを生成
                 var destroyToken = this.GetCancellationTokenOnDestroy();
 
-                // タイムアウトとDestroyのどちらもでキャンセルするようにTokenを生成
+                // タイムアウトとDestroyのどちらもでキャンセル処理をするようにTokenを生成
                 var linkedToken = CancellationTokenSource.CreateLinkedTokenSource(timeoutToken, destroyToken).Token;
 
                 // 1秒でタイムアウトさせてみる
@@ -186,17 +189,19 @@ namespace Timeouts
 
 ```
 
-
-
-
 ## キャンセル4
 
 簡単なボタンUIを用意
 
-<img src="images/2_4.png" width="50%" alt="" title="">
+<img src="images/2_1.png" width="70%" alt="" title="">
+
 <br>
 
+該当スクリプトのインスペクターにボタンUIを割り当てる
 
+<img src="images/2_2.png" width="70%" alt="" title="">
+
+<br>
 
 ```cs
 using UnityEngine;
@@ -286,33 +291,35 @@ public class CancelExample3_UIButton : MonoBehaviour
 
 
 ### 「結論」
-asyncメソッドはCancellationTokenを引数に取るべき
-await対象が引数にCancellationTokenを要求する場合は省略せずに渡すべき
-OperationCanceledExceptionの取り扱いを意識するべき
+asyncメソッドは`CancellationToken`を引数に取るべき。  
+await対象が引数に`CancellationToken`を要求する場合は省略せずに渡すべき。  
+`OperationCanceledException`の取り扱いを意識するべき。  
 
 
 ### 「解説」
 「async / awaitにおけるキャンセル」とは2つの意味があります。
-・awaitをキャンセルする
-・await対象の実行中の処理をキャンセルする
++ awaitをキャンセルする
++ await対象の実行中の処理をキャンセルする
+
 「キャンセル処理」といえばこの2つをまとめて指すことが多いのですが、文脈によっては片方しか意味していないこともあります。
 
-①「awaitをキャンセルする」
-awaitをキャンセルするとは、「今裏で実行している処理そのものは止めず、待つのをやめる」という意味です。
-「処理が終わるのを待つのを諦める」に近いです。
+#### ①「awaitをキャンセルする」
+awaitをキャンセルするとは、「今、裏で実行している処理そのものは止めず、待つのをやめる」という意味です。  
+「処理が終わるのを待つのを諦める」に近いです。  
 たとえば「レストランで注文して料理を作ってもらっているが、時間がかかりすぎているので諦めて店員に何も伝えずに店を出てきた（待つのを止めた）」みたいな。
 
-②「await対象の実行中の処理をキャンセルする」
-こちらは「裏で走っている処理を止める」という、おそらく「キャンセル処理」という名称からイメージする内容だと思います。
+<br>
+
+#### ②「await対象の実行中の処理をキャンセルする」
+こちらは「裏で走っている処理を止める」という、おそらく「キャンセル処理」という名称からイメージする一般的な内容だと思います。  
 先程のレストランの例でいうと、「レストランで注文して料理を作ってもらっているが、気が変わったので店員に伝えて作るのを止めてもらった」みたいな。
 
                                                                                                                                                                                                           
-### クイズ
+### async / awaitのキャンセル処理では、このどちらを意識すればいいのか?
+答 : 両方意識してください。  
 
-async / awaitのキャンセル処理では、このどちらを意識すればいいのか
-→答:両方意識してください。  
 「awaitはキャンセルしたが、処理自体はスレッドプールで走ったままだった」みたいな事故はよく起きます。（とくにTask.Runを使っているとき）  
 そのため「このキャンセル処理は何を止めればいいのか」をちゃんと把握した上でキャンセルを実装する必要があります。  
-ひとまず、これから紹介する内容を守れば「awaitのキャンセル」「await対象の実行処理のキャンセル」の2つは実現できます。
+ひとまず、今までの内容を守れば「awaitのキャンセル」「await対象の実行処理のキャンセル」の2つは実現できます。
 
 <br>

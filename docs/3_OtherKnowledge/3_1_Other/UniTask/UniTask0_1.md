@@ -14,6 +14,10 @@ UniTask導入
 <br>
 
 
+
+https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask
+
+
 <img src="images/0_3.png" width="70%" alt="" title="">
 
 <br>

@@ -1,30 +1,21 @@
-**UniTask**
-
-# UniTaskを使用してみる(キャンセル処理なし)
-
-## サンプル1
-
-C#に実装されている非同期クラス「Task」を使用した例
+# C#に実装されている非同期クラス「Task」を使用した例
 
 ```cs
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-
-//async修飾子を使用して非同期メソッドを定義します。
-//awaitキーワードを使用して非同期操作を待ちます。
 namespace AsyncSample
 {
     public class AsyncSample1 : MonoBehaviour
-    {
-        private async void Start() {
+    {       
+        private async void Start() {//async修飾子を使用して非同期メソッドを定義します。
             Debug.Log("処理開始①");            
-            await DoSomethingAsync();// 非同期メソッドの処理を待つ
+            await DoSomethingAsync();//awaitキーワードを使用して非同期メソッドの処理を待ちます
             Debug.Log("本筋処理終了④");
         }
 
-        private async Task DoSomethingAsync() {
+        private async Task DoSomethingAsync() {//async修飾子を使用して非同期メソッドを定義します。
             Debug.Log("非同期に動かす(asynchronousの略。)②");
             await Task.Delay(1000); // 1秒待つ。1000m秒
             Debug.Log("非同期で動かす処理の終了③");
@@ -33,24 +24,18 @@ namespace AsyncSample
 }
 ```
 
+<br>
 
+# UniTaskを使用してみる
 
-
-
-
-
-## サンプル2
-
-「UniTask」を使用した例
+## ・サンプル1 「UniTask」を使用した例  
+UniTaskというライブラリをとってきて、UniTaskを使用して非同期メソッドを定義します。  
+UniTask.Delayを使用して待機します。
 
 ```cs:
-
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
-
-//UniTaskというライブラリをとってきて、UniTaskを使用して非同期メソッドを定義します。
-//UniTask.Delayを使用して待機します。
 namespace AsyncSample
 {
     public class AsyncSample2 : MonoBehaviour
@@ -70,11 +55,9 @@ namespace AsyncSample
 }
 ```
 
+<br>
 
-## サンプル3
-
-あらゆるタスクの完了を待つ
-
+## ・サンプル2　あらゆるタスクの完了を待つことも可能
 
 ```cs:
 using UnityEngine;
@@ -107,11 +90,15 @@ namespace AsyncSample
 
 ```
 
+<br>
 
+## ・サンプル3　返り値を受け取ることができる
 
-## サンプル4
+このサンプルコードでは、MyAsyncMethodという非同期メソッドが整数値を返し、await MyAsyncMethod()でその返り値を待ち、取得しています。  
+取得した返り値を利用して、非同期メソッドが完了した後に何らかの処理を行うことができます。
 
-返り値を受け取ることができる
+このように、UniTaskを使用することで非同期メソッドの返り値を扱うことができます。  
+必要に応じて非同期メソッドが返す型に合わせて、適切な型を指定してください。
 
 ```cs
 using UnityEngine;
@@ -131,12 +118,7 @@ namespace AsyncSample
             return 42; // 非同期メソッドが整数値を返す場合、その値を返す
         }
     }
-    //このサンプルコードでは、MyAsyncMethodという非同期メソッドが整数値を返し、
-    //await MyAsyncMethod()でその返り値を待ち、取得しています。
-    //取得した返り値を利用して、非同期メソッドが完了した後に何らかの処理を行うことができます。
 
-    //このように、UniTaskを使用することで非同期メソッドの返り値を扱うことができます。
-    //必要に応じて非同期メソッドが返す型に合わせて、適切な型を指定してください。
 }
 
 ```

@@ -357,14 +357,12 @@ namespace CancelSamples
 
 # まとめ
 
-<b>
-① CancellationTokenを適切なタイミングで生成し、キャンセルしたいタイミングでキャンセル状態にする  
+**① CancellationTokenを適切なタイミングで生成し、キャンセルしたいタイミングでキャンセル状態にする**  
  
-② asyncメソッドを定義するときはCancellationTokenを引数にとる  
+**② asyncメソッドを定義するときはCancellationTokenを引数にとる** 
 
-③ awaitするときは、await対象にCancellationTokenが渡せるなら渡す  
+**③ awaitするときは、await対象にCancellationTokenが渡せるなら渡す**  
 
-④ await対象にCancellationTokenが渡せないのであれば、CancellationToken.ThrowIfCancellationRequested()を適宜呼び出す  
+**④ await対象にCancellationTokenが渡せないのであれば、CancellationToken.ThrowIfCancellationRequested()を適宜呼び出す**  
 
-⑤　async/awaitとtry-catchを併用する場合はOperationCancelledExceptionの扱いを考える
-</b>
+**⑤ async/awaitとtry-catchを併用する場合はOperationCancelledExceptionの扱いを考える**

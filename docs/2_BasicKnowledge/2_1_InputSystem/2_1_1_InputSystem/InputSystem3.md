@@ -4,13 +4,13 @@
 
 キャラクターの『移動』や『ジャンプ』などといった操作を「Action」として扱います
  
-<img src="images/3/unity-input-system-intro-v2-1.png.avif" width="50%" alt="" title="">
+<img src="images/3/unity-input-system-intro-v2-1.png.avif" width="70%" alt="" title="">
 
 <br>  
 <br>     
 例えば、PCであればスペースキー、GamePadであればButton South(XBoxコントローラーのAボタン)を押せば、『ジャンプ』という「Action」を行うことができます
 
-<img src="images/3/unity-input-system-intro-v2-2.png.avif" width="50%" alt="" title="">
+<img src="images/3/unity-input-system-intro-v2-2.png.avif" width="70%" alt="" title="">
 
 <br>  
 <br>    
@@ -81,22 +81,22 @@ public class InputActionExample : MonoBehaviour
 
 インスペクタからActionを編集していきます。
 
-<img src="images/3/unity-input-system-intro-v2-3.png.avif" width="50%" alt="" title="">
+<img src="images/3/unity-input-system-intro-v2-3.png.avif" width="70%" alt="" title="">
 
 Action右の「＋」アイコンをクリックし、Add Bindingを選択
 
-<img src="images/3/unity-input-system-intro-v2-4.png.avif" width="50%" alt="" title="">
+<img src="images/3/unity-input-system-intro-v2-4.png.avif" width="70%" alt="" title="">
 
 Path右のドロップダウンをクリック
 
-<img src="images/3/unity-input-system-intro-v2-5.png.avif" width="50%" alt="" title="">
+<img src="images/3/unity-input-system-intro-v2-5.png.avif" width="70%" alt="" title="">
 
 
 Listenボタンから実際に入力されたキーで割り当てる  
 もしくは、その下の一覧から手動で選択  
 スペースキーを割り当てて下さい
 
-<img src="images/3/unity-input-system-intro-v2-6.png.avif" width="50%" alt="" title="">
+<img src="images/3/unity-input-system-intro-v2-6.png.avif" width="70%" alt="" title="">
 
 
 

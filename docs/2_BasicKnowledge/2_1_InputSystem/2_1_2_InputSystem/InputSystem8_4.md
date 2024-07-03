@@ -259,8 +259,8 @@ WASDキー入力の大きさを１軸入力（float）として扱いたい場�
 
 以下、カスタムComposite Bindingの実装例です。
 
-
-```cs:DPadMagnitudeComposite.cs
+DPadMagnitudeComposite.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;

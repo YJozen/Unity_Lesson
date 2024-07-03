@@ -2,14 +2,14 @@
 
 1.Window > Package Manager からPackage Managerウィンドウを開きます。
 
-<img src="images/0_1.png" width="70%" alt="" title="">
+<img src="images/0_1.png" width="50%" alt="" title="">
 
 <br>
 
 
 2.Package Managerウィンドウの左上の「+」ボタンをクリックして、 Add package from git URL を選択します。
 
-<img src="images/0_2.png" width="70%" alt="" title="">
+<img src="images/0_2.png" width="60%" alt="" title="">
 
 <br>
 
@@ -19,12 +19,12 @@
 https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask
 ```
 
-<img src="images/0_3.png" width="70%" alt="" title="">
+<img src="images/0_3.png" width="80%" alt="" title="">
 
 <br>
 
 4.入力が終わったら 「Add」ボタンをクリック。するとUniTaskはインストールされます。
 
-<img src="images/0_4.png" width="70%" alt="" title="">
+<img src="images/0_4.png" width="80%" alt="" title="">
 
 <br>

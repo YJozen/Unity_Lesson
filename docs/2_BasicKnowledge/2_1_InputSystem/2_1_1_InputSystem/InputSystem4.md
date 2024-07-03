@@ -47,12 +47,12 @@ public class ActionCallbackExample : MonoBehaviour
 
 Actionをインスペクターから設定した後、Action右の歯車アイコンをクリック
 
-<img src="images/4/unity-input-system-intro-v2-1.png.avif" width="50%" alt="" title="">
+<img src="images/4/unity-input-system-intro-v2-1.png.avif" width="60%" alt="" title="">
 
 
 Action TypeをValueに設定
 
-<img src="images/4/unity-input-system-intro-v2-2.png.avif" width="50%" alt="" title="">
+<img src="images/4/unity-input-system-intro-v2-2.png.avif" width="60%" alt="" title="">
 
 
 ---
@@ -64,7 +64,7 @@ Action TypeをValueに設定
     - canceled – 入力が0以外から0に変化したとき
 
 
-<img src="images/4/unity-input-system-action-callback-1.png.avif" width="50%" alt="" title="">
+<img src="images/4/unity-input-system-action-callback-1.png.avif" width="60%" alt="" title="">
 
 <br>
 <br>
@@ -76,12 +76,12 @@ Action TypeをValueに設定
 
         *閾値の設定は、トップメニューのEdit > Project Settings > Input System Packageの以下項目から変更できます
         
-        <img src="images/4/unity-input-system-action-callback.png.avif" width="50%" alt="" title="">
+        <img src="images/4/unity-input-system-action-callback.png.avif" width="60%" alt="" title="">
 
         閾値Pressの値はDefault Press Button Point、
         閾値Releaseの値は「Press × Button Release Threshold」となり、Pressと掛け算した値
 
-<img src="images/4/unity-input-system-action-callback-2.png.avif" width="50%" alt="" title="">
+<img src="images/4/unity-input-system-action-callback-2.png.avif" width="60%" alt="" title="">
 
 <br>
 <br>
@@ -90,7 +90,7 @@ Action TypeをValueに設定
     - performed - 入力があったとき
     - canceled - 例えば、デバイスが切り替わった場合、切り替わり前のデバイスが無効（Disabled）となり、canceledコールバックが呼び出されます。
 
-<img src="images/4/unity-input-system-action-callback-3.png.avif" width="50%" alt="" title="">
+<img src="images/4/unity-input-system-action-callback-3.png.avif" width="60%" alt="" title="">
 
 <br>
 <br>

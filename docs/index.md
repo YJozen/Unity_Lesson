@@ -19,6 +19,6 @@
 
 
 
-[テスト](_TestFolder/Untitled-1.md)
+[テスト](_TestFolder/Untitled-1.html)
 
 

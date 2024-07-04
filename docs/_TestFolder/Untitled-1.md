@@ -1,16 +1,29 @@
-## コードの例
+## C#のコード例
 
-以下のボタンをクリックすると、コードをコピーできます。
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+```
+
+
+
 
 
 <div class="code-container">
-  <button class="copy-button" onclick="copyCode(this)">コピー</button>
+  <button class="copy-button" onclick="copyCode()">コピー</button>
   <pre><code class="language-csharp">
 using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         Console.WriteLine("Hello, World!");
     }
@@ -51,12 +64,15 @@ code {
 .token.class-name { color: #2b91af; }
 </style>
 
+
+
 <script>
-function copyCode(button) {
-  var codeBlock = button.nextElementSibling.querySelector('code');
+function copyCode() {
+  var codeBlock = document.querySelector("code.language-csharp");
   var code = codeBlock.innerText.trim();
 
   navigator.clipboard.writeText(code).then(function() {
+    var button = document.querySelector(".copy-button");
     button.innerText = "コピーしました";
     setTimeout(function() {
       button.innerText = "コピー";

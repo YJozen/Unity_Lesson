@@ -81,4 +81,6 @@ GoogleFormへのリンクになります。
 
 <a href="https://drive.google.com/drive/folders/1XSwbHOfi-3G_wLiWQvWJvX4cPac3VFnM" target="_blank">アイデアシートpdf配布ドライブ</a>
 
+ファイル名は「出席番号_名前」がわかる形で提出してください
+
 

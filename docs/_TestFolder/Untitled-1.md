@@ -14,71 +14,56 @@ class Program
 
 
 
-
-
-<div class="code-container">
-  <button class="copy-button" onclick="copyCode()">コピー</button>
-  <pre><code class="language-csharp">
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine("Hello, World!");
-    }
-}
-  </code></pre>
-</div>
-
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    var button = document.createElement('button');
+    button.innerText = 'コピー';
+    button.addEventListener('click', function() {
+      navigator.clipboard.writeText(block.innerText).then(function() {
+        button.innerText = 'コピーしました！';
+        setTimeout(function() {
+          button.innerText = 'コピー';
+        }, 2000);
+      });
+    });
+    block.parentNode.insertBefore(button, block);
+  });
+});
+</script>
 
 
 <style>
-.code-container {
+pre {
   position: relative;
-  background-color: #f4f4f4;
-  border-radius: 4px;
-  padding: 1em;
 }
-
-.copy-button {
+pre button {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
   padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: #f7f7f7;
   border: none;
-  border-radius: 4px;
+  border-radius: 0 0 0 5px;
   cursor: pointer;
 }
-
-code {
-  font-family: 'Courier New', Courier, monospace;
-}
-
-/* C# syntax highlighting */
-.token.keyword { color: #0000ff; }
-.token.string { color: #a31515; }
-.token.comment { color: #008000; }
-.token.class-name { color: #2b91af; }
 </style>
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 <script>
-function copyCode() {
-  var codeBlock = document.querySelector("code.language-csharp");
-  var code = codeBlock.innerText.trim();
-
-  navigator.clipboard.writeText(code).then(function() {
-    var button = document.querySelector(".copy-button");
-    button.innerText = "コピーしました";
-    setTimeout(function() {
-      button.innerText = "コピー";
-    }, 2000);
-  }).catch(function(err) {
-    console.error('コピーに失敗しました: ', err);
-  });
-}
+document.addEventListener('DOMContentLoaded', (event) => {
+  new ClipboardJS('.copy-button');
+});
 </script>
+
+
+<button class="copy-button" data-clipboard-target="#code-block-id">
+  コピー
+</button>
+<pre><code id="code-block-id">
+// ここにコードを記述
+</code></pre>
+
+

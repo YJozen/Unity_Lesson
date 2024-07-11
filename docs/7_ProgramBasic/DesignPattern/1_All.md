@@ -162,10 +162,10 @@ https://gameprogrammingpatterns.com/
 
 分類としては、
 
-・シーケンスのパターン
-・ビヘイビアのパターン
-・分離のパターン
-・最適化のパターン
++ シーケンスのパターン
++ ビヘイビアのパターン
++ 分離のパターン
++ 最適化のパターン
 
 の４種類に分けられています。
 
@@ -208,9 +208,9 @@ Unityプログラミングパターン12種を公式デモ
 https://github.com/Unity-Technologies/game-programming-patterns-demo
 
 
+<br>
 
-
-それと調べている過程で見つけたんだけど、GitHubでUnityでパターンを適用したサンプルをあげてくれている方がいて、これを見てみるのもすごく勉強になりそうだと思ったよ！
+Unityでパターンを適用したサンプルをあげてくれている方のGitHub
 
 https://github.com/QianMo/Unity-Design-Pattern
 

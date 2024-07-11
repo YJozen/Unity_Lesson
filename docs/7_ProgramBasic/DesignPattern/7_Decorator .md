@@ -1,47 +1,44 @@
 デコレーターパターン
 
+## 定義: 
+デコレーターパターンは、オブジェクトに動的に新しい振る舞いを追加するためのデザインパターンです。これは、サブクラス化を使わずに、既存のクラスに機能を追加する方法を提供します。
+
+## 目的:
+基本機能を変更せずにオブジェクトの振る舞いを拡張する。
 
 
-
-
-
-デコレーターパターンの講義
-講義目標
-デコレーターパターンの概念を理解する
-デコレーターパターンの適用シナリオを学ぶ
-デコレーターパターンのC#での実装方法を学ぶ
-デコレーターパターンの利点と欠点を理解する
-1. イントロダクション
-デコレーターパターンの概要
-定義: デコレーターパターンは、オブジェクトに動的に新しい振る舞いを追加するためのデザインパターンです。これは、サブクラス化を使わずに、既存のクラスに機能を追加する方法を提供します。
-目的: 基本機能を変更せずにオブジェクトの振る舞いを拡張する。
 2. デコレーターパターンの適用シナリオ
 使用例
 GUIフレームワーク: コンポーネントにスクロールバーやボーダーを動的に追加。
 ストリーム処理: 入力ストリームにバッファリングや圧縮機能を追加。
 ゲーム開発: キャラクターに異なる装備やパワーアップを追加。
+
+
 3. デコレーターパターンの実装方法
 C#でのデコレーターパターン実装
 コンポーネントのインターフェース:
 
-csharp
-Copy code
+```cs
 public interface IComponent {
     void Operation();
 }
+```
+
+
 具体的なコンポーネントクラス:
 
-csharp
-Copy code
+```cs
 public class ConcreteComponent : IComponent {
     public void Operation() {
         Console.WriteLine("ConcreteComponent Operation");
     }
 }
+```
+
+
 デコレータの基底クラス:
 
-csharp
-Copy code
+```cs
 public class Decorator : IComponent {
     protected IComponent _component;
 
@@ -53,10 +50,11 @@ public class Decorator : IComponent {
         _component.Operation();
     }
 }
+```
+
 具体的なデコレータクラス:
 
-csharp
-Copy code
+```cs
 public class ConcreteDecoratorA : Decorator {
     public ConcreteDecoratorA(IComponent component) : base(component) { }
 
@@ -69,10 +67,11 @@ public class ConcreteDecoratorA : Decorator {
         Console.WriteLine("ConcreteDecoratorA Added Behavior");
     }
 }
+```
+
 使用例:
 
-csharp
-Copy code
+```cs
 using System;
 
 public class Program {
@@ -83,6 +82,9 @@ public class Program {
         decoratedComponent.Operation();
     }
 }
+```
+
+
 4. デコレーターパターンの利点と欠点
 利点
 柔軟性: オブジェクトの振る舞いを動的に変更できる。

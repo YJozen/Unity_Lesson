@@ -11,7 +11,6 @@
 
 
 
-
 ## Unityでの実際の使用例
 + Prefab Factory: プレハブを使用してオブジェクトを生成するファクトリー。
 + Asset Factory: アセットを使用してリソースを生成するファクトリー。
@@ -96,3 +95,12 @@ public class GameManager : MonoBehaviour {
     }
 }
 ```
+
+
+配布しているStatePatternの例ではFactoryファイルでインスタンスを生成して
+Dictionary型でインスタンスを保持している
+
+[例]
+Dictionary<enumでの型名, StateBaseを継承した型名>
+Key  ：状態(PlayerStatus.Walkなど)　　　enumでの型名
+Value：インスタンス　　　　　　　　　　　　　StateBaseを継承した型名

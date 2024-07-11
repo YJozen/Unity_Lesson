@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 <img src="images/c1.png" width="60%" alt="" title="">
 
 <br>

@@ -1,6 +1,8 @@
 オブザーバーパターン
 
-Unityで使用する際は、デリゲートやイベントシステムやUnityEventSystemなどを使えばいいと思うが、紹介しておこうと思う。
+Unityで使用する際は、デリゲートやイベントシステムやUnityEventSystemなどを使えば良いと思うが、紹介しておこうと思う。
+()
+
 
 
 ## 定義: 
@@ -20,6 +22,8 @@ Unityで使用する際は、デリゲートやイベントシステムやUnityE
 
 ## オブザーバーパターンの実装例
 C#でのオブザーバーパターン実装
+
+<br>
 サブジェクトのインターフェース:
 
 ```cs
@@ -29,6 +33,8 @@ public interface ISubject {
     void Notify();
 }
 ```
+
+<br>
 オブザーバーのインターフェース:
 
 ```cs
@@ -36,6 +42,8 @@ public interface IObserver {
     void Update(ISubject subject);
 }
 ```
+
+<br>
 具体的なサブジェクトクラス:
 
 ```cs
@@ -69,10 +77,10 @@ public class ConcreteSubject : ISubject {
     }
 }
 ```
+
+<br>
 具体的なオブザーバークラス:
 
-csharp
-Copy code
 ```cs
 using System;
 
@@ -90,7 +98,9 @@ public class ConcreteObserver : IObserver {
     }
 }
 ```
+<br>
 使用例:
+
 ```cs
 csharp
 Copy code
@@ -124,8 +134,8 @@ public class Program {
 Unityでのオブザーバーパターンの使用例
 サブジェクトのクラス:
 
-csharp
-Copy code
+<br>
+
 ```cs
 using System;
 using System.Collections.Generic;

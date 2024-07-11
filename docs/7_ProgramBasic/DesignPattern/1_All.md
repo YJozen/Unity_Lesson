@@ -5,7 +5,7 @@
 
 初版が1994年
 
-<img src="images/1.jpg" width="60%" alt="" title="">
+<img src="images/1/1.jpg" width="60%" alt="" title="">
 
 <br>
 
@@ -150,7 +150,7 @@ GoFは全部で23パターンあって、
 
 これに加えてゲームプログラミングでよく使用するパターンとしてまとめられている「Game Programming Patterns」も有名な書籍になります。
 
-<img src="images/2.jpg" width="60%" alt="" title="">
+<img src="images/1/2.jpg" width="60%" alt="" title="">
 
 <br>
 

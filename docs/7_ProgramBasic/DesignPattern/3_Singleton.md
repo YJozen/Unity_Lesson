@@ -63,8 +63,11 @@ public class SettingsManager {
         get {
             if (instance == null) {
                 instance = new SettingsManager();
+                //DontDestroyOnLoad(gameObject);
+            }else{
+                return instance;
             }
-            return instance;
+            
         }
     }
 

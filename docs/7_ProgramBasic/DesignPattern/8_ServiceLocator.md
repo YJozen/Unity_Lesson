@@ -17,6 +17,7 @@
 
 例えば、いろんなクラスから呼び出されるクラスがあったとして、
 これを直接呼び出した場合には下記のように複雑な依存関係になってしまいます。(Opsを直接呼び出している例)
+
 <img src="images/8/1.png" width="60%" alt="" title="">
 
 <br>
@@ -29,6 +30,7 @@
 
 <br>
 各サービスクラスのインタフェースを登録して、呼び出し元からはインタフェースを指定するようにすれば、サービスクラスの差し替えも簡単に行えるようになります
+
 <img src="images/8/3.png" width="60%" alt="" title="">
 
 <br>
@@ -300,4 +302,4 @@ Start メソッド内で、AudioService のインスタンスを ServiceLocator 
 登録後、ServiceLocator.GetService<IAudioService>() を使用して IAudioService のインスタンスを取得し、PlaySound メソッドを呼び出してサウンドを再生します
 
 
-
+<br>

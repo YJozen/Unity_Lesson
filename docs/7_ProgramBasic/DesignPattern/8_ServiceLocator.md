@@ -18,12 +18,12 @@
 例えば、いろんなクラスから呼び出されるクラスがあったとして、
 これを直接呼び出した場合には下記のように複雑な依存関係になってしまいます。(Opsを直接呼び出している例)
 
-<img src="images/8/1.png" width="60%" alt="" title="">
+<img src="images/8/1.png" width="50%" alt="" title="">
 
 <br>
 そこで、ServiceLocatorクラスに各サービスクラスを登録。間を挟むことで、依存関係をまとめる
 
-<img src="images/8/2.png" width="60%" alt="" title="">
+<img src="images/8/2.png" width="50%" alt="" title="">
 
 <br>
 
@@ -31,7 +31,7 @@
 <br>
 各サービスクラスのインタフェースを登録して、呼び出し元からはインタフェースを指定するようにすれば、サービスクラスの差し替えも簡単に行えるようになります
 
-<img src="images/8/3.png" width="60%" alt="" title="">
+<img src="images/8/3.png" width="50%" alt="" title="">
 
 <br>
 
@@ -41,7 +41,7 @@ Dummyクラスに差し替えることでテストができるようになった
 開発時にだけログ出力するクラスに差し替える
 といったことができるようになります。
 
-<img src="images/8/4.png" width="60%" alt="" title="">
+<img src="images/8/4.png" width="50%" alt="" title="">
 
 <br>
 
@@ -217,7 +217,37 @@ namespace Scenes.Common
 
 ```
 
+↓だけ適当なGameObjectにアタッチしてみて（他はフォルダにあれさえすればいい）
+```cs
+
+using Scenes.Common;
+using UnityEngine;
+
+public class ExampleUsage : MonoBehaviour
+{
+    void Start()
+    {
+        // スコアの設定
+        SamplePlayerPrefs.Score = 42;
+
+        // スコアの取得
+        int score = SamplePlayerPrefs.Score;
+        Debug.Log($"Current Score: {score}");
+    }
+}
+
+```
+
+
+
+
 <br>
+
+
+
+
+
+
 
 <hr>
 
@@ -281,7 +311,8 @@ services は Type をキーとし、サービスのインスタンスを値と�
 `GetService<T>` メソッドは、登録されたサービスインスタンスを取得します。サービスが見つからない場合は例外をスローします。   
 
 <br>
-サービスロケーターの使用例（MonoBehaviour を継承し、Unity のゲームオブジェクトとして機能します。）
+サービスロケーターの使用例（MonoBehaviour を継承し、Unity のゲームオブジェクトとして機能します。)  
+下のスクリプトだけ適当なGameObjectにアタッチしてください。
 
 ```cs
 using UnityEngine;

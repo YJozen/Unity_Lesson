@@ -14,7 +14,7 @@ C++  : 1980年代
 Java : 1995年  
 C#   : 2000年
 
-<a href="../../9_OtherThanGames/3.md" target="_blank">言語について</a>
+<!-- <a href="../../9_OtherThanGames/3.md" target="_blank">言語について</a> -->
 
 昔?最近?に発表されたパターンが現在でもしばしば使われているほど、
 汎用性の高い設計パターンになります。  
@@ -204,15 +204,16 @@ https://gameprogrammingpatterns.com/
 
 
 
-Unityプログラミングパターン12種を公式デモ
-https://github.com/Unity-Technologies/game-programming-patterns-demo
+Unityプログラミングパターン12種を公式デモ  
+<a href="https://github.com/Unity-Technologies/game-programming-patterns-demo" target="_blank">https://github.com/Unity-Technologies/game-programming-patterns-demo</a>
+
 
 
 <br>
 
-Unityでパターンを適用したサンプルをあげてくれている方のGitHub
+Unityでパターンを適用したサンプルをあげてくれている方のGitHub  
+<a href="https://github.com/QianMo/Unity-Design-Pattern" target="_blank">https://github.com/QianMo/Unity-Design-Pattern</a>
 
-https://github.com/QianMo/Unity-Design-Pattern
 
 
 

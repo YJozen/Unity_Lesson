@@ -1,3 +1,8 @@
+参考0
+公式Youtube  
+シェーダを書けるプログラマになろう #1  
+https://www.youtube.com/watch?v=wUx_Y9BgC7k
+
 参考1
 
 そろそろShaderをやる  

@@ -1,10 +1,9 @@
 # Unity Document
 
-
 ## **目次**
 
 ・後期課題  
-後期Unityで制作する人は、[Input System]を利用して制作してください  
+後期Unityで制作する人は、「Input System」を利用して制作してください  
 
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。「Unity基本」→「入力」から 
 

@@ -20,13 +20,13 @@ Input Systemの入力を「仲介」する「コンポーネント」で、「Ac
 動かす対象のオブジェクトにPlayer Inputコンポーネントをアタッチ  
 アタッチすると、次のようなPlayer Inputプロパティがインスペクターに表示されます
 
-<img src="images/6/unity-input-system-player-input-3.png" width="50%" alt="" title="">
+<img src="images/6/unity-input-system-player-input-3.png" width="70%" alt="" title="">
 
 <br>
 
 Actions項目にInput Actionアセットを指定。
 (Input ActionはCreate Actions…ボタンから新規作成することも可能)  
-上の写真の中で特に重要な設定は「Actions」と「Behavior」です。
+上の写真の中で特に重要な設定は「Actions」と「Behavior」になります。
 
 「Behavior」の設定によって参照元のスクリプトのコードが異なります。
 後ほど、それぞれの設定における使い方について、例を示しながら解説していきます。
@@ -35,11 +35,12 @@ Actions項目にInput Actionアセットを指定。
 Input Actionアセットを指定
 
 + Default Scheme  
-デフォルトで使用するスキームを指定します。(どういったデバイスを使うか)  
-`<Any>`が指定された場合は、使用するスキームが自動的に決定  
-設定しておく必要がある。（種類の追加設定は左上のAll Control SchemesからAddして下さい）  
+デフォルトで使用するスキームを指定します。(Binding時、どういったデバイスを使うかなどのタグづけのようなものを自分で設定した後に指定する)  
+`<Any>`が指定された場合は、使用するスキームが自動的に決定されます。  
+例えば、キーボードとマウスが接続されている環境なら、スキームはKeyboardMouseなどとします。  
+※設定しておく必要があります。（種類の追加設定は左上のAll Control SchemesからAddして下さい）  
 
-<img src="images/6/unity-input-system-player-input-4.jpg.avif" width="50%" alt="" title="">
+<img src="images/6/unity-input-system-player-input-4.jpg.avif" width="70%" alt="" title="">
 
 <br>
 

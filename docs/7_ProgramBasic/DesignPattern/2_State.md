@@ -1,10 +1,20 @@
 
+
+
+# [StatePattern 記事作成中](StatePattern/２_1.md)
+
+
+
+
+
+## ↓は上記以前の資料
+
 * [デザインパターン_State_NonGeneric]
 
-Stateパターンの基本  
+Stateパターンの基本 （途中まででいい） 
 https://drive.google.com/file/d/1A07QQfFATMAaSxk3xPn3q6GTnDVuuhEH/view
 
-途中まででいい
+
 
 <br>
 
@@ -30,3 +40,6 @@ unityの場合
 
 サンプルプログラムとしては  
 配布プロジェクトの「Animator」内で提供しているので参考にしてみて欲しい
+
+
+

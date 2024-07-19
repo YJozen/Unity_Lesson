@@ -3,19 +3,36 @@
 
 ## **目次**
 
+・後期課題  
+ほとんど執筆中だが後期Unityで制作する人は  
+「Unity基本」→「入力」から  
+[Input System]を利用して制作してください
+
+
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)
 2. [Unity基本](2_UnityBasicKnowledge/2.md)
-3. [UnityPickUp](3_PickUp/3.md)
-4. [制作する上での小ネタや機能紹介]
-5. [ミニゲーム](5_MiniGame/5.md)
-6. [Unityで制作する上で知らなくても作成できる雑学]
 7. [プログラムしていく上での基本](7_ProgramBasic/7.md)
-8. [UnrealEngine]ハンズオン
-10. [ゲームアイデアについての例](10_GameIdea/GameIdea.md)
+5. [ミニゲーム](5_MiniGame/5.md)
+3. [UnityPickUpTips](3_UnityPickUpTips/3.md)
+
+---
+### 授業で使用予定　なし
+6. [Unityとは関係ない制作する上での小ネタ・アルゴリズムなど]
+6. [Unityで制作する上で知らなくても作成できる雑学]
 11. [Unityに関するテスト](11_UnityTest/UnityTest.md)
-12. [ゲーム開発](12_DevelopmentSystem)
+---
+
+### 前期課題
+9. [ゲームアイデアについての例](10_GameIdea/GameIdea.md)
+
+---
+### その他
+10. [ゲーム開発スケジュール例](12_DevelopmentSystem/12_.md)
 13. [4年生](https://drive.google.com/drive/folders/1TpJ4X9BsxgRowhkXeRwHW9v035wBncIT)
-9. [ゲーム以外](9_OtherThanGames/9.md)
+---
+12. [UnrealEngine(ハンズオン執筆中)](8_UnrealEngine/8_0.md)
+---
+13. [ゲーム以外(GitHubの使い方・Python・javascript・その他フレームワークなど)](9_OtherThanGames/9_0.md)
 
 
 <br>

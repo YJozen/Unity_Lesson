@@ -1,3 +1,14 @@
+参考1
+
+そろそろShaderをやる
+https://zenn.dev/kento_o
+
+Unity ShaderGraph CookBook
+https://zenn.dev/r_ngtm/books/shadergraph-cookbook  
+https://zenn.dev/r_ngtm
+
+参考2
+
 第1章 Unityではじめるプロシージャルモデリング   
 第2章 ComputeShader入門  
 第3章 群のシミュレーションのGPU実装   

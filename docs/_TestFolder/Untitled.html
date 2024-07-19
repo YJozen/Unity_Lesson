@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sophisticated Code Display</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-container {
+      position: relative;
+      margin-bottom: 1em;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-button:hover {
+      background-color: #0056b3;
+    }
+
+    pre {
+      background-color: #282c34;
+      color: #abb2bf;
+      padding: 16px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    code[class*="language-"], pre[class*="language-"] {
+      color: #abb2bf;
+    }
+
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+      color: slategray;
+    }
+
+    .token.punctuation {
+      color: #abb2bf;
+    }
+
+    .token.namespace {
+      opacity: .7;
+    }
+
+    .token.property,
+    .token.tag,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+      color: #e06c75;
+    }
+
+    .token.boolean,
+    .token.number {
+      color: #d19a66;
+    }
+
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted {
+      color: #98c379;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+      color: #56b6c2;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword {
+      color: #c678dd;
+    }
+
+    .token.function {
+      color: #61afef;
+    }
+
+    .token.regex,
+    .token.important,
+    .token.variable {
+      color: #c678dd;
+    }
+
+    .token.bold {
+      font-weight: bold;
+    }
+
+    .token.italic {
+      font-style: italic;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
+
+    .token.inserted {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="code-container">
+    <button class="copy-button" onclick="copyCode()">Copy</button>
+    <pre><code id="code-block" class="language-csharp">
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+    </code></pre>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script>
+function copyCode() {
+  var code = document.getElementById("code-block").innerText.trim();
+  navigator.clipboard.writeText(code).then(function() {
+    var button = document.querySelector(".copy-button");
+    button.innerText = "Copied!";
+    setTimeout(function() {
+      button.innerText = "Copy";
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy: ', err);
+  });
+}
+</script>
+
+</body>
+</html>

@@ -4,14 +4,14 @@
 ## **目次**
 
 ・後期課題  
-ほとんど執筆中だが後期Unityで制作する人は  
-「Unity基本」→「入力」から  
-[Input System]を利用して制作してください
+後期Unityで制作する人は、[Input System]を利用して制作してください  
+
+`Input.GetAxis("Horizontal")`のようにしているならInputManagerです。「Unity基本」→「入力」から 
 
 
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)
 2. [Unity基本](2_UnityBasicKnowledge/2.md)
-7. [プログラムしていく上での基本](7_ProgramBasic/7.md)
+7. [プログラミングしていく上での基本？](7_ProgramBasic/7.md)
 5. [ミニゲーム](5_MiniGame/5.md)
 3. [UnityPickUpTips](3_UnityPickUpTips/3.md)
 

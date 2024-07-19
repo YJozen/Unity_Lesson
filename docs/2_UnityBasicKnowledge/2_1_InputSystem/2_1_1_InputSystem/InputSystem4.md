@@ -1,6 +1,6 @@
 **InputSystem 1**
 
-## 1.ボタンが「押された瞬間」「押され続けた時」などの入力を、コールバックを利用し受け取る
+## ボタンが「押された瞬間」「押され続けた時」などの入力を、コールバックを利用し受け取る
 
 適当なゲームオブジェクトにアタッチ
 
@@ -50,13 +50,49 @@ Actionをインスペクターから設定した後、Action右の歯車アイ�
 <img src="images/4/unity-input-system-intro-v2-1.png.avif" width="60%" alt="" title="">
 
 
-Action TypeをValueに設定
+Action TypeをButtonに設定
 
-<img src="images/4/unity-input-system-intro-v2-2.png.avif" width="60%" alt="" title="">
+* Value – スティックなど値が入力したときにコールバックを受け取る設定
+* Button – ボタンが押された瞬間のコールバックを受け取る設定
 
+<img src="images/4/unity-input-system-intro-v2-m4.mp4.gif" width="60%" alt="" title="">
+
+実行確認するとキーが押されるたびにログ出力されるようになります
 
 ---
+
+###　スクリプト解説
+
+メソッドを用意。
+戻り値や引数は必ずこの形式にする必要があります。  
+入力値の受取りは、引数contextに対してReadValueメソッドを呼び出すことで行います。
+```cs 
+// コールバックを受け取ったときの処理
+private void OnPerformed(InputAction.CallbackContext context)
+{
+    // Actionの入力値を読み込む
+    var value = context.ReadValue<float>();
+
+    // 入力値をログ出力
+    Debug.Log($"Actionの入力値 : {value}");
+}
+
+```
+以下処理でコールバックを登録しています。   
+<a href="https://wa3.i-3-i.info/word110176.html" target="_blank">コールバックとは</a>   
+<a href="https://wa3.i-3-i.info/word12295.html" target="_blank">コールバック関数とは</a> 
+
+
+```cs
+// Actionのコールバックを登録
+_action.performed += OnPerformed;
+```
+Actionにはstarted、performed、canceledの3種類のコールバックがあります。 
+例では、performedコールバックに登録してログ出力しています。
+
 ## 2.呼び出されるタイミング３種(started・performed・canceled)
+
+ValueとButtonそれぞれによって若干呼び出しタイミングの意味合いが違います。
 
 + Value – スティックなど値が入力されたときにコールバックを受け取る設定
     - started – 入力が0から0以外に変化したとき
@@ -64,7 +100,7 @@ Action TypeをValueに設定
     - canceled – 入力が0以外から0に変化したとき
 
 
-<img src="images/4/unity-input-system-action-callback-1.png.avif" width="60%" alt="" title="">
+<img src="images/4/unity-input-system-action-callback-1.png.avif" width="70%" alt="" title="">
 
 <br>
 <br>
@@ -76,12 +112,12 @@ Action TypeをValueに設定
 
         *閾値の設定は、トップメニューのEdit > Project Settings > Input System Packageの以下項目から変更できます
         
-        <img src="images/4/unity-input-system-action-callback.png.avif" width="60%" alt="" title="">
+        <img src="images/4/unity-input-system-action-callback.png.avif" width="80%" alt="" title="">
 
-        閾値Pressの値はDefault Press Button Point、
-        閾値Releaseの値は「Press × Button Release Threshold」となり、Pressと掛け算した値
+        閾値Pressの値は「Default Press Button Point」  
+        閾値Releaseの値は「Press × Button Release Threshold」となり、Pressと掛け算した値になります。
 
-<img src="images/4/unity-input-system-action-callback-2.png.avif" width="60%" alt="" title="">
+<img src="images/4/unity-input-system-action-callback-2.png.avif" width="70%" alt="" title="">
 
 <br>
 <br>
@@ -90,7 +126,7 @@ Action TypeをValueに設定
     - performed - 入力があったとき
     - canceled - 例えば、デバイスが切り替わった場合、切り替わり前のデバイスが無効（Disabled）となり、canceledコールバックが呼び出されます。
 
-<img src="images/4/unity-input-system-action-callback-3.png.avif" width="60%" alt="" title="">
+<img src="images/4/unity-input-system-action-callback-3.png.avif" width="70%" alt="" title="">
 
 <br>
 <br>

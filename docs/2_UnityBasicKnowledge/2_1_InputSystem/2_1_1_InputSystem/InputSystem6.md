@@ -1,12 +1,10 @@
-**InputSystem 1**
-
 # 「PlayerInput」コンポーネントで「Action」のアセットを管理してスクリプトから操作しやすくする
 ## 1.Player Inputコンポーネント
 
-Player Inputは、  
-Input Systemの入力を「仲介」するコンポーネントで、「Action」の入力をスクリプト側に通知します
+`Player Input`は、  
+Input Systemの入力を「仲介」する「コンポーネント」で、「Action」の入力をスクリプト側に通知します
 
-<img src="images/6/unity-input-system-player-input-1.png.avif" width="50%" alt="" title="">
+<img src="images/6/unity-input-system-player-input-1.png.avif" width="70%" alt="" title="">
 
 <br>
 

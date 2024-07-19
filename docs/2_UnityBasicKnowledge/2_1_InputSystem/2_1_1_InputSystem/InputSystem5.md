@@ -1,14 +1,14 @@
-**InputSystem 1**
+
 
 ##  1.「Action」をMapというアセットとして管理する
 
-「Action」たちを管理しやすいようにMapという形をとる
+「Action」たちを管理しやすいようにMapという形をとります。
 
 <img src="images/5/unity-input-system-actions-1.png.avif" width="70%" alt="" title="">
 
 <br>
 
-PlayerMap(Player階層)のMoveというActionを使って!などとスクリプトに指示する
+「PlayerMap(Player階層)のMoveというActionを使って!」などとスクリプトに指示を出す形です。
 
 <img src="images/5/unity-input-system-actions-2.png.avif" width="70%" alt="" title="">
 
@@ -19,22 +19,23 @@ Actionの中には、どの入力デバイスを参照するかといったキ�
 
 <img src="images/5/unity-input-system-actions-3.png.avif" width="70%" alt="" title="">
 
+<br>
+
 ---
 ## 2.Input Actionsアセットを作成し、使ってみよう
-メニューのAssets > Create > Input Actionsの順に選択
+メニューからAssets > Create > Input Actionsの順に選択
 
 <img src="images/5/unity-input-system-actions-4.png.avif" width="70%" alt="" title="">
 
 <br>
 
-GameInputsなど適当な名前をつけてInput Actionsアセットを作成
-
+`GameInputs`など、適当な名前をつけてInput Actionsアセットを作成します
 
 <img src="images/5/unity-input-system-actions-5.jpg.avif" width="70%" alt="" title="">
 
 <br>
 
-作成したInput Actionsアセットをダブルクリックし、Input Actionsの編集ウィンドウを開く
+作成したInput Actionsアセットをダブルクリックし、Input Actionsの編集ウィンドウを開きます
 
 <img src="images/5/unity-input-system-actions-6.jpg.avif" width="70%" alt="" title="">
 
@@ -46,7 +47,7 @@ GameInputsなど適当な名前をつけてInput Actionsアセットを作成
 
 <br>
 
-例として、移動の「Action」として「Move」と、ジャンプの「Action」として「Jump」を設定していきます
+例として、移動の「Action」として「Move」と、ジャンプの「Action」として「Jump」を設定してみます。
 
 <img src="images/5/unity-input-system-actions-8.jpg.avif" width="70%" alt="" title="">
 
@@ -58,26 +59,35 @@ GameInputsなど適当な名前をつけてInput Actionsアセットを作成
 
 <br>
 
-次は、作成したそれぞれの「Action」の挙動を設定です
-例えば、移動操作なら「2軸の入力値」、ジャンプ操作なら「ボタンの押下状態」を知る必要があります
+次は、作成したそれぞれの「Action」の挙動の設定です  
+例えば、
++ 「移動操作」なら「2軸の入力値」
++ 「ジャンプ操作」なら「ボタンの押下状態」  
+を知る必要があります
 
 <img src="images/5/unity-input-system-actions-10_1.jpg.avif" width="70%" alt="" title="">
 
 <br>
-+ Action - Actionの基本的な振る舞いを設定します。入力値の種類やスクリプトから扱う型などの設定があります。
-+ Interactions - 長押しやダブルクリックなどの通知を設定します。
-+ Processors - デッドゾーンや値の正規化、反転などの演算処理を設定します。
 
-・移動操作の設定例  
-Action > Action Type項目をValueに設定
-Action > Control Type項目をVector2
++ Action 
+  - Actionの基本的な振る舞いを設定します。入力値の種類やスクリプトから扱う型などの設定があります。
++ Interactions 
+  - 長押しやダブルクリックなどの通知を設定します。
++ Processors 
+  - デッドゾーンや値の正規化、反転などの演算処理を設定します。
+
+<br>
+
+・移動操作「Move」の設定例  
+Action > Action Type項目を「Value」  
+Action > Control Type項目を「Vector2」に設定  
 
 <img src="images/5/unity-input-system-actions-10_2.png" width="70%" alt="" title="">
 
 <br>
 
-・ジャンプ操作の設定例  
-Action > Action Type項目はButton
+・ジャンプ操作「Jump」の設定例  
+Action > Action Type項目は「Button」
 
 <img src="images/5/unity-input-system-actions-11.jpg.avif" width="70%" alt="" title="">
 
@@ -95,11 +105,11 @@ BindingはActionの右にある＋アイコンから複数追加できます
 
 <br>
 
-・移動操作の設定例
+・移動操作の設定例  
 例として、ゲームパッドの左スティック入力は、  
-Binding Properties > Binding > Path項目にGamepad > LeftStickで設定  
+Binding Properties > Binding > Path項目に、Gamepad > LeftStickで設定  
 もしくは、  
-Path選択リストの左のListenボタンをクリックしてから実際にコントローラー入力をすると、該当するパスが即座に一覧出てくるので、それを選択
+Path選択リストの左のListenボタンをクリックしてから、実際にコントローラーを触って入力すると、該当するパスが即座に一覧出てくるので、それを選択してください
 
 <img src="images/5/unity-input-system-actions-14_2.png" width="70%" alt="" title="">
 
@@ -118,7 +128,7 @@ Action右の＋アイコンからAdd Up\Down\Left\Right Compositeを選択
 
 <br>
 
-・ジャンプ操作の設定例
+・ジャンプ操作の設定例  
 ジャンプに関しても同じ要領です
 
 <img src="images/5/unity-input-system-actions-14_5.png" width="70%" alt="" title="">
@@ -134,6 +144,7 @@ Action右の＋アイコンからAdd Up\Down\Left\Right Compositeを選択
 ---
 ## 3.Input Actionsアセットの使用
 
+それでは実際に使用してみましょう。  
 試しに、シーン上に配置されたボールを操作できるようにしていきます
 
 <img src="images/5/unity-input-system-actions-16.jpg.avif" width="70%" alt="" title="">
@@ -225,4 +236,47 @@ PlayerMover.cs
 ```
 
 
+### スクリプトについて
+Input Actionの機能を参照するために、次の名前空間をusingします
 
+```cs
+using UnityEngine.InputSystem;
+
+```
+
+そして、Input Actionの初期化を行います。  
+インスタンスを生成してから、各種Actionにイベントを登録しています。設定が終わったら、Enable()メソッドでInput Actionを動作させる必要があります。(Enable()メソッド呼び出しを忘れると、Input Actionが機能せず入力値が取得できなくなるため注意。)
+
+```cs
+// Input Actionインスタンス生成
+_gameInputs = new GameInputs();
+
+// Actionイベント登録
+_gameInputs.Player.Move.started += OnMove;
+_gameInputs.Player.Move.performed += OnMove;
+_gameInputs.Player.Move.canceled += OnMove;
+_gameInputs.Player.Jump.performed += OnJump;
+
+// Input Actionを機能させるためには、
+// 有効化する必要がある
+_gameInputs.Enable();
+```
+
+
+各種Actionのコールバックは次のような形式になります。  
+引数contextのReadValue()メソッドから入力情報を取得できます。２つ目のジャンプイベントのほうは、ボタンが押された瞬間のみ呼び出されるため、力を与える処理のみ記述しています。    
+Input Systemは設定次第でUpdateやFixedUpdate、その他任意のタイミングで呼び出される可能性があります。そのため、OnMoveコールバック内では入力値の保存のみ行い、別途FixedUpdateイベントで参照する形をとっています。
+
+```cs
+private void OnMove(InputAction.CallbackContext context)
+{
+    // Moveアクションの入力取得
+    _moveInputValue = context.ReadValue<Vector2>();
+}
+
+private void OnJump(InputAction.CallbackContext context)
+{
+    // ジャンプする力を与える
+    _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+}
+```

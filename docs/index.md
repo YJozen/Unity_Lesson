@@ -5,7 +5,10 @@
 ・後期課題  
 後期Unityで制作する人は、「Input System」を利用して制作してください  
 
-`Input.GetAxis("Horizontal")`のようにしているならInputManagerです。「Unity基本」→「入力」から 
+`Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
+導入方法やできることの例は「Unity基本」→「入力」から参照してください。
+<a href="2_UnityBasicKnowledge/2_1_InputSystem/2_1.md"  target="_blank">(InputSystemについて)</a>
+
 
 
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)

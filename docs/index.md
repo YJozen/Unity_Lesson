@@ -7,8 +7,7 @@
 
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
 導入方法やできることの例は「Unity基本」→「入力」から参照してください。
-<a href="2_UnityBasicKnowledge/2_1_InputSystem/2_1.md"  target="_blank">(InputSystemについて)</a>
-
+[InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
 
 
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)

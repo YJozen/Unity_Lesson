@@ -38,7 +38,7 @@ WASDキーのダブルタップ操作などを検知したときに「ダッシ�
 次のような挙動をするカスタムInteractionを実装するものとします。
 
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-2.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-2.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -236,7 +236,7 @@ internal class MultiTapAndHoldInteraction : IInputInteraction
 上記をMultiTapAndHoldInteraction.csという名前でUnityプロジェクトに保存すると、以下のようにInteractionが使用可能になります。
 
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-3.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-3.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -314,7 +314,7 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 上記スクリプトをDPadMagnitudeComposite.csという名前でUnityプロジェクトに保存すると、以下のようにカスタムComposite Bindingが選択可能になります。
 
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-4.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-4.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -324,7 +324,7 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 
 まず、該当Action(ここではSprint)の下に、先ほど実装したComposite Bindingを追加します。
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m2.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m2.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -332,7 +332,7 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 
 そして、方向キーを設定します。例ではWASDキーを上下左右の入力として設定することにします。
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m3.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m3.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -340,7 +340,7 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 
 追加したComposite Bindingに先のカスタムInteractionを適用して設定します。
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m4.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m4.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -348,7 +348,7 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 
 もし、大本のAction TypeがValueになっていなかったらValueに設定しておきます。
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m5.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m5.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -356,7 +356,7 @@ internal class DPadMagnitudeComposite : InputBindingComposite<float>
 
 最後にSave AssetボタンをクリックしてInput Actionのアセット内容を保存します。
 
-<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m6.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_4/unity-input-system-custom-interaction-sprint-m6.mp4.gif" width="80%" alt="" title="">
 
 <br>
 

@@ -34,7 +34,7 @@ Composite Bindingの合成元となるBindingは、必ずデジタル入力(WASD
 ## 1.  1D axis
 正と負の2つのボタンから1軸の入力に合成するComposite Binding
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-2.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-2.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -70,13 +70,13 @@ Negativeが1の時、出力値はMinValue
 
 Negativeの入力値を横軸、出力値を縦軸に取ると次のようなグラフになります。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-3.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-3.png.avif" width="80%" alt="" title="">
 
 <br>
 
 実際の入力と出力結果
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m1.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m1.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -91,13 +91,13 @@ PositiveとNegative両方の入力があったとき、Positiveの入力側が�
 ```
 Positiveの入力値を横軸、出力値を縦軸に取ると次のようなグラフになります。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-4.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-4.png.avif" width="80%" alt="" title="">
 
 <br>
 
 実際の入力と出力結果
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m2.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m2.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -111,7 +111,7 @@ Max Valueが1、Min Valueが-1の時、出力値（ニュートラル値）は
 
 両方の入力がある間はニュートラル値になっていることが確認できます。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m3.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m3.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -120,7 +120,7 @@ Max Valueが1、Min Valueが-1の時、出力値（ニュートラル値）は
 ## 2.   2D vector
 4つの入力を2軸入力値に合成するComposite Bindingです。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-5.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-5.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -142,13 +142,13 @@ x軸およびy軸方向の正負方向の入力値をそのまま加減算する
 ```
 値をそのまま加減算するため、ボタンの入力値が0〜1の範囲とすると次の領域となります。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-6.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-6.png.avif" width="80%" alt="" title="">
 
 <br>
 
 出力値が連続的に変化します。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m4.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m4.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -159,13 +159,13 @@ x軸およびy軸方向の正負方向の入力値をそのまま加減算する
 
 斜め方向の補正は行わないため、領域はmodeがAnalogの時と一緒です。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-6.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-6.png.avif" width="80%" alt="" title="">
 
 <br>
 
 Analogの時とは異なり、出力値が離散的になっています。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m5.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m5.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -176,11 +176,11 @@ xy軸どちらも0の場合は(0, 0)を出力します。
 
 出力値はダイヤモンド形の範囲になります。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-7.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-7.png.avif" width="80%" alt="" title="">
 
 <br>
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m6.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m6.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -189,7 +189,7 @@ xy軸どちらも0の場合は(0, 0)を出力します。
 ## 3.  3D vector
 6入力から3軸入力値に合成して出力するComposite Bindingです。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-8.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-8.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -212,13 +212,13 @@ xy軸どちらも0の場合は(0, 0)を出力します。
 ```
 各軸方向の入力値をそのまま加減算するため、得られる出力値の範囲が立方体の領域になります。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-9.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-9.png.avif" width="80%" alt="" title="">
 
 <br>
 
 2D vectorのmodeがAnalogの時と同様、連続的に値が変化します。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m7.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m7.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -229,7 +229,7 @@ xy軸どちらも0の場合は(0, 0)を出力します。
 
 出力値が離散的になっています。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m8.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m8.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -243,11 +243,11 @@ modeがDigitalの時の計算結果に対し、出力値（Vector3）を長さ1�
 
 出力される領域は次のような球の内側となります。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-10.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-10.png.avif" width="80%" alt="" title="">
 
 <br>
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m9.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m9.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -260,7 +260,7 @@ modeがDigitalの時の計算結果に対し、出力値（Vector3）を長さ1�
 
 これはStick DeadzoneというProcessorを追加すれば解決できます。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-11.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-11.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -268,11 +268,11 @@ Stick Deadzoneはデッドゾーンを設定するProcessorですが、最大値
 
 出力される領域は以下円形です。
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-12.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-12.png.avif" width="80%" alt="" title="">
 
 <br>
 
-<img src="images/9/9_2/unity-input-system-axis-vector-composite-m10.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_2/unity-input-system-axis-vector-composite-m10.mp4.gif" width="80%" alt="" title="">
 
 <br>
 

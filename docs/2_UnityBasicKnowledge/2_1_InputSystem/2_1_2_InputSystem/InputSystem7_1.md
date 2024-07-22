@@ -12,7 +12,7 @@ InteractionはInput Action内で使用され、Actionまたはその中のBindin
 特定の入力パターンを表現するものです。  
 例えば、HoldというInteractionは「一定時間ボタンが押され続けた」という入力パターンを表します。
 
-<img src="images/7/7_1//unity-input-system-interaction-1.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1//unity-input-system-interaction-1.png.avif" width="80%" alt="" title="">
 
 
 
@@ -22,7 +22,7 @@ InteractionはInput Action内で使用され、Actionまたはその中のBindin
 内部的には、次のステートマシンとして管理されます。
 
 
-<img src="images/7/7_1//unity-input-system-interaction-2.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1//unity-input-system-interaction-2.png.avif" width="80%" alt="" title="">
 
 Interactionでは、この状態はフェーズと呼ばれています。次の5つのフェーズがあります。
 
@@ -52,11 +52,11 @@ PerformedフェーズからPerformedフェーズへの遷移でもperformedコ�
 ## 5.Interactionの適用
 Interactionは、各BindingまたはAction単位で1つ以上指定できます。
 
-<img src="images/7/7_1//unity-input-system-interaction-3.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1//unity-input-system-interaction-3.png.avif" width="80%" alt="" title="">
 
 
 
-<img src="images/7/7_1//unity-input-system-interaction-4.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1//unity-input-system-interaction-4.png.avif" width="80%" alt="" title="">
 
 
 Actionに直接Interactionを指定した場合は、その下のBindingすべてにInteractionが指定されたのと同じことになります。
@@ -116,7 +116,7 @@ InteractionExample.cs
 ```
 上記をInteractionExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、インスペクターよりInteractionが適用されたActionを指定してください。
 
-<img src="images/7/7_1//unity-input-system-interaction-8.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1//unity-input-system-interaction-8.png.avif" width="80%" alt="" title="">
 
 
 
@@ -155,7 +155,7 @@ Default Interactionの挙動は、Action PropertiesのAction項目から設定
 
 基本的な挙動はAction Typeの設定によって決まります。
 
-<img src="images/7/7_1/unity-input-system-interaction-9.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-9.png.avif" width="80%" alt="" title="">
 
 + Value  
 入力値が変化したときにフェーズ遷移。  
@@ -177,7 +177,7 @@ PerformedフェーズでRelease Point未満に値が変化するとCanceledに�
 ボタンの押した瞬間、離した瞬間、またはその両方を検知（performedコールバックを通知）するInteraction
 
 
-<img src="images/7/7_1/unity-input-system-interaction-10.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-10.png.avif" width="80%" alt="" title="">
 
 
 どの瞬間を検知するかは、Trigger Behaviour項目から設定できます。設定内容は次の通りです。
@@ -193,7 +193,7 @@ PerformedフェーズでRelease Point未満に値が変化するとCanceledに�
 
 一定時間ボタンが押されたことを検知するInteractionです。
 
-<img src="images/7/7_1/unity-input-system-interaction-11.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-11.png.avif" width="80%" alt="" title="">
 
 
 
@@ -209,7 +209,7 @@ Hold Time秒経過すると、その瞬間にPerformedフェーズに遷移。
 
 一定時間以内にボタンを押して離したことを検知するInteraction。
 
-<img src="images/7/7_1/unity-input-system-interaction-12.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-12.png.avif" width="80%" alt="" title="">
 
 
 
@@ -226,7 +226,7 @@ Max Tap Durationに指定した時間（秒）以内にボタンを押して離�
 ボタンが押されてから一定時間以上経過して離されたことを検知するInteractionです。ゆっくりとタップされたかどうかを判定するのに使います。
 
 
-<img src="images/7/7_1/unity-input-system-interaction-13.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-13.png.avif" width="80%" alt="" title="">
 
 
 
@@ -243,7 +243,7 @@ Min Tap Duration秒以上ボタンが押され続けるとPerformedフェーズ�
 ダブルクリックやダブルタップなどを判定する場合に使います。
 
 
-<img src="images/7/7_1/unity-input-system-interaction-14.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-14.png.avif" width="80%" alt="" title="">
 
 
 

@@ -12,7 +12,7 @@
 
 Input Systemでもこのようなデッドゾーン機能がサポートされています。
 
-<img src="images/8/8_3/unity-input-system-deadzone-1.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-1.png.avif" width="80%" alt="" title="">
 
 
 ## スティックのデッドゾーンを設定する
@@ -42,31 +42,31 @@ Input Systemにおけるデッドゾーン指定は、Input ActionのProcessor�
 
 例では、キャラクター移動操作に使う左スティックに適用するものとします。
 
-<img src="images/8/8_3/unity-input-system-deadzone-2.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-2.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
 ※Stick Deadzoneを適用するためには、該当するBindingが属するActionのAction TypeがValue、Control TypeがVector2かStickになっている必要があります。
 
-<img src="images/8/8_3/unity-input-system-deadzone-3.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-3.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
 Bindingを選択した状態で右側に表示されるBinding Properties > Processors右の＋アイコンをクリックし、Stick Deadzoneを選択します。
 
-<img src="images/8/8_3/unity-input-system-deadzone-4.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-4.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
 すると、Processors項目にデッドゾーンが適用された状態になります。
 
-<img src="images/8/8_3/unity-input-system-deadzone-5.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-5.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
 この状態でSave Assetボタンをクリックすれば設定がInput Actionファイルに保存されます。
 
-<img src="images/8/8_3/unity-input-system-deadzone-6.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-6.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -82,7 +82,7 @@ Stick Deadzoneには、次の２つの設定パラメータがあります。
 
 Defaultのチェックを外すことで、デフォルト設定以外の値を個別指定できます。
 
-<img src="images/8/8_3/unity-input-system-deadzone-7.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-7.jpg.avif" width="80%" alt="" title="">
 
 項目に0を入力すると、自動的にDefaultにチェックが入る仕様になっています。
 
@@ -90,7 +90,7 @@ Defaultのチェックを外すことで、デフォルト設定以外の値を�
 入力値と出力値のベクトルの長さは、次のグラフのような関係になります
 
 
-<img src="images/8/8_3/unity-input-system-deadzone-8.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-8.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -102,14 +102,14 @@ minからmaxまでの入力を0から1に正規化する処理を行っていま
 デッドゾーンのminとmaxのデフォルト設定は、以下Open Input Settingsボタンから変更できます。
 
 
-<img src="images/8/8_3/unity-input-system-deadzone-9.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-9.jpg.avif" width="80%" alt="" title="">
 
 
 <br>
 
 ボタンをクリックすると、Project Settingsウィンドウが開かれます。Default Deadzone MinとDefault Deadzone Max項目でデフォルト値を変更できます。
 
-<img src="images/8/8_3/unity-input-system-deadzone-10.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-10.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -123,7 +123,7 @@ minからmaxまでの入力を0から1に正規化する処理を行っていま
 
 この場合、Axis DeadzoneをProcessorに追加します。Axis Deadzoneを追加するためには、該当するActionのControl TypeがAxisなど１軸の入力値になっている必要があります。
 
-<img src="images/8/8_3/unity-input-system-deadzone-11.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-11.jpg.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -137,7 +137,7 @@ Axis Deadzoneの入力値補正処理も、基本的にStick Deadzoneと一緒�
 次のように複数のProcessorを追加する場合、追加する順序に注意する必要があります。
 
 
-<img src="images/8/8_3/unity-input-system-deadzone-12.jpg.avif" width="50%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-12.jpg.avif" width="80%" alt="" title="">
 
 <br>
 

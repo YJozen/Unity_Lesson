@@ -78,7 +78,7 @@ public class XorComposite : InputBindingComposite<float>
 適当なAction右の＋アイコンをクリックすると、メニューに追加されていることが確認できます。
 
 
-<img src="images/9/9_1/unity-input-system-composite-binding-24.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_1/unity-input-system-composite-binding-24.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -88,7 +88,7 @@ public class XorComposite : InputBindingComposite<float>
 
 
 
-<img src="images/9/9_1/unity-input-system-composite-binding-25.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_1/unity-input-system-composite-binding-25.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -135,7 +135,7 @@ public class CustomExample : MonoBehaviour
 上記をCustomExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、インスペクターよりカスタムComposite Bindingを設定したActionを指定。
 
 
-<img src="images/9/9_1/unity-input-system-composite-binding-26.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_1/unity-input-system-composite-binding-26.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -254,7 +254,7 @@ Composite Bindingを使用した際にあり得るケースとして、例えば
 
 この場合は、Composite Bindingとは別にWキー専用のActionを作るのが望ましいです。
 
-<img src="images/9/9_1/unity-input-system-composite-binding-26.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_1/unity-input-system-composite-binding-26.png.avif" width="80%" alt="" title="">
 
 <br>
 

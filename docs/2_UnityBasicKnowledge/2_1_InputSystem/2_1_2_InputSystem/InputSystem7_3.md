@@ -21,13 +21,13 @@ Interactionでは、内部的に次の5つのフェーズ（状態）を持つ�
 ( Interactionが使用するのはDisableを除く4フェーズ )
 
 ### 2.目指すフェーズごとの遷移
-<img src="images/7/7_3/unity-input-system-button-mashing-1.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_3/unity-input-system-button-mashing-1.png.avif" width="80%" alt="" title="">
 
 t秒以内にボタン変化（押された状態と離された状態の変化）が無ければ連打終了とみなします。
 
 上記のボタンが押された判定ですが、これはフェーズとは別にボタンフェーズとして別のステートマシンで実現します。
 
-<img src="images/7/7_3/unity-input-system-button-mashing-2.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_3/unity-input-system-button-mashing-2.png.avif" width="80%" alt="" title="">
 
 入力値の大きさの変化をチェックし、入力無しから有りに変化するたびに連打回数を加算していくようにします。通常は回数を保持する変数をインクリメントすれば良いです。
 
@@ -191,7 +191,7 @@ UseExample.csという名前でUnityプロジェクトに保存し、適当な�
 
 アタッチすると、インスペクターからActionを設定できるようになるため、Bindingを設定してください。
 
-<img src="images/7/7_3/unity-input-system-button-mashing-3.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_3/unity-input-system-button-mashing-3.png.avif" width="80%" alt="" title="">
 
 
 UseExample.cs
@@ -256,7 +256,7 @@ UseExample.cs
 連打判定を行いたいInput ActionのInteractionにMash Interactionを適用します。(該当するActionまたはBindingをダブルクリックし、Action PropertyのInteraction右の＋アイコンをクリックし、Mashを選択します。)    
 すると、次のように連打判定を行うMash Interactionが追加されるので、必要に応じて項目を設定してください
 
-<img src="images/7/7_3/unity-input-system-button-mashing-4.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_3/unity-input-system-button-mashing-4.png.avif" width="80%" alt="" title="">
 
 + Tap Delay – タップの最大許容時間間隔[s]。この時間を超えてタップが無いと連打終了とみなす。0はInput System側のデフォルト値。
 + Press Point – ボタンを押したとみなす入力値の大きさの閾値。0の時はデフォルト値となる。
@@ -491,7 +491,7 @@ TapCountExample.cs
 上記をTapCountExample.csという名前でUnityプロジェクトに保存し、適当なゲームオブジェクトにアタッチし、ActionよりBindingとMash Interactionを設定してください。
 
 
-<img src="images/7/7_3/unity-input-system-button-mashing-5.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_3/unity-input-system-button-mashing-5.png.avif" width="80%" alt="" title="">
 
 Actionに登録したボタンを連打すると、その連打回数がログ出力されます。
 

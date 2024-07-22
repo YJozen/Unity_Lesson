@@ -68,7 +68,7 @@ MyButtonInteraction.cs
 
 上記をMyButtonInteraction.csという名前でUnityプロジェクトに保存すると、Input System側にInteractionとして登録され、使用できるようになります。
 
-<img src="images/7/7_2/unity-input-system-interaction-15.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_2/unity-input-system-interaction-15.png.avif" width="80%" alt="" title="">
 
 
 

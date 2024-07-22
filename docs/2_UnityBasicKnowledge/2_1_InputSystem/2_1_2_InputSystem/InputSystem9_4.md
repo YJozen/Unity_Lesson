@@ -90,19 +90,19 @@ public class GetInputsExample : MonoBehaviour
 
 そして、Events項目の該当するActionにスクリプトのメソッドを登録します。
 
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-m4.png" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-m4.png" width="90%" alt="" title="">
 
 <br>
 
 実行すると、排他制御の適用前は、「前へ」操作をしているにも関わらず「次へ」操作が反応してしまっています。
 
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-m5.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-m5.mp4.gif" width="90%" alt="" title="">
 
 <br>
 
 排他制御を適用すると、「前へ」操作を行なっても「次へ」操作が反応しません。
 
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-m6.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-m6.mp4.gif" width="70%" alt="" title="">
 
 <br>
 
@@ -116,7 +116,7 @@ Composite Bindingを用いると、複数の入力を合成したり、ある入
 あるボタンmodifierが押されている間は入力を流さず、離されている間は入力を流す挙動のComposite Bindingを実装します。
 
 
-<img src="images/9/9_4/unity-input-system-exclusive-modifier-4.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_4/unity-input-system-exclusive-modifier-4.png.avif" width="70%" alt="" title="">
 
 <br>
 

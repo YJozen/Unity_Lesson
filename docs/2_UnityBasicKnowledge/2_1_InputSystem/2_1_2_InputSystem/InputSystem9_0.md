@@ -7,7 +7,7 @@
 Composite Bindingを使うと、ベクトルに変換する処理をInput System側で行えるようになり、複数ボタン入力から移動方向を計算するコードを書かなくてもよくなります。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-2.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-2.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -31,13 +31,13 @@ ActionにComposite Bindingを適用する方法を見ていきます。
 
 Actionの定義方法はいくつかありますが、ここではInput Action Assetを新規作成し、PlayerというMapの下にMoveという名前のActionを作成します。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-3.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-3.png.avif" width="80%" alt="" title="">
 
 <br>
 
 次に、連続した2軸入力として受け取るため、Action TypeをValueにし、Control TypeをVector 2に設定します。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-4.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-4.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -50,7 +50,7 @@ Control Typeに設定するVector 2は、Action自体が受け付ける入力値
 Actionを新規追加した場合は、空のBindingが追加されるため、これを削除しておきます。そして、Actionの右の＋アイコンからAdd Up\Down\Left\Right Compositeを選択します。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-m3.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-m3.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -59,7 +59,7 @@ Actionを新規追加した場合は、空のBindingが追加されるため、�
 
 例では、ListenボタンをクリックしてからWASDなどのキーを入力して選択しています。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-m4.mp4.gif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-m4.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -120,7 +120,7 @@ public class GetMoveExample : MonoBehaviour
 そしてインスペクターにて、Actionを指定すると、入力値をログ出力するようになります。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-6.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-6.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -129,7 +129,7 @@ public class GetMoveExample : MonoBehaviour
 
 複数の方向ボタンが押されたときの挙動は、Composite BindingのMode項目から設定できます。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-7.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-7.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -167,13 +167,13 @@ private void OnMove(InputAction.CallbackContext context)
 
 該当ActionのControl TypeがAxisなどの1軸入力型の場合に使用可能になります。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-8.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-8.png.avif" width="80%" alt="" title="">
 
 <br>
 
 Action右の＋アイコンよりAdd Positive\Negative Bindingを選択すると追加されます。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-9.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-9.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -187,7 +187,7 @@ Action右の＋アイコンよりAdd Positive\Negative Bindingを選択すると
 + Negative – マイナス方向の入力値を返す。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-10.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-10.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -197,14 +197,14 @@ Action右の＋アイコンよりAdd Positive\Negative Bindingを選択すると
 
 Control TypeがVector 2の時に使用可能。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-11.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-11.png.avif" width="80%" alt="" title="">
 
 <br>
 
 
 追加は、Action右の＋アイコンから表示されるAdd Up\Down\Left\Right Bindingから行えます。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-12.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-12.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -215,7 +215,7 @@ Control TypeがVector 2の時に使用可能。
 + Ditigal Normalized – 入力値の大きさを1に正規化（ただし入力値が(0, 0)ならそのまま(0, 0)を返す）
 + Digital – 各軸単位で閾値Press Pointを基準に-1、0、1のどれかにスナップさせる。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-13.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-13.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -226,14 +226,14 @@ Control TypeがVector 2の時に使用可能。
 Control TypeがVector 3の時に使用できます。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-14.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-14.png.avif" width="80%" alt="" title="">
 
 <br>
 
 追加は、該当Action右の＋アイコンからAdd Up\Down\Left\Right\Forward\Backward Compositeを選択することで行います。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-15.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-15.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -245,7 +245,7 @@ Control TypeがVector 3の時に使用できます。
 + Digital – 各軸単位で閾値Press Pointを基準に-1、0、1のどれかにスナップさせる。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-16.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-16.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -256,13 +256,13 @@ Control TypeがVector 3の時に使用できます。
 
 追加は、Add Binding With One Modifierから行います。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-17.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-17.png.avif" width="80%" alt="" title="">
 
 <br>
 
 すると、次のようなBindingが追加されます。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-18.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-18.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -273,7 +273,7 @@ Control TypeがVector 3の時に使用できます。
 + Composite Bindingの設定項目では、Override Modifiers Need To Be Pressed First項目の有効・無効を指定できます。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-19.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-19.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -282,7 +282,7 @@ Control TypeがVector 3の時に使用できます。
 
 この項目のチェックが外れている場合（初期値）、その挙動は次のProject SettingsのInput System PackageのEnabled Input Consumption項目の挙動によって決まります。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-20.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-20.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -304,21 +304,21 @@ Override Modifiers Need To Be Pressed First項目にチェックが付いてい�
 
 追加はAdd Binding With Two Modfiersから行います
 
-<img src="images/9/9_0/unity-input-system-composite-binding-21.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-21.png.avif" width="80%" alt="" title="">
 
 <br>
 
 
 追加すると、3つのBinding（Modifier1、Modifier2、Binding）が指定できます。
 
-<img src="images/9/9_0/unity-input-system-composite-binding-22.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-22.png.avif" width="80%" alt="" title="">
 
 <br>
 
 Composite Bindingの設定項目は、One Modifierと同様Override Modifiers Need To Be Pressed Firstのみ。
 
 
-<img src="images/9/9_0/unity-input-system-composite-binding-23.png.avif" width="50%" alt="" title="">
+<img src="images/9/9_0/unity-input-system-composite-binding-23.png.avif" width="80%" alt="" title="">
 
 <br>
 

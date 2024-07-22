@@ -10,7 +10,7 @@
 
 実装の流れはダブルタップスプリントと一緒ですが、実装するInteractionとComposite Bindingの内容が異なります。
 
-<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-5.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-5.png.avif" width="80%" alt="" title="">
 
 <br>
 
@@ -207,14 +207,14 @@ internal class MagnitudeComposite : InputBindingComposite<float>
 ## Actionへの適用
 先述のComposite BindingをActionに追加します。
 
-<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-m8.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-m8.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
 追加したComposite Bindingにスティック入力などのControl Pathを設定します。
 
 
-<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-m9.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-m9.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -222,7 +222,7 @@ internal class MagnitudeComposite : InputBindingComposite<float>
 そして、Quick Press Interactionを先述のComposite Bindingに適用し、必要に応じてパラメータの設定を行います。
 
 
-<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-m10.mp4.gif" width="50%" alt="" title="">
+<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-m10.mp4.gif" width="80%" alt="" title="">
 
 <br>
 
@@ -243,7 +243,7 @@ Value type actions should not be left in performed state
 一般的に、Unity提供のプリセットでも同様の問題が起こるため、現状ではInteractionを使用する場合はAction TypeをPass Throughにしておくか、ボタン入力のBindingを消す（必要なら別Actionにしてしまう）などの対策が必要になるかもしれません。
 
 
-<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-6.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_5/unity-input-system-custom-interaction-sprint-6.png.avif" width="80%" alt="" title="">
 
 Input Systemのクラス仕様を理解したうえで実装しないといけない点が面倒かもしれませんが、一度実装すると使いまわせる点では良いかもしれません。
 

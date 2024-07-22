@@ -37,7 +37,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 対象となるActionが含まれているInput Action Assetファイルをダブルクリックで開き、対象のActionを選択（今回はLongPressというActionに設定していく）
 
-<img src="images/7/7_0/unity-input-system-hold-1.png" width="50%" alt="" title="">
+<img src="images/7/7_0/unity-input-system-hold-1.png" width="80%" alt="" title="">
 
 
 ウィンドウ右のAction Properties > Interactions右の＋アイコン > Holdを選択
@@ -46,7 +46,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 すると、以下のようにHold Interactionが適用された状態になります。  
 
-<img src="images/7/7_0/unity-input-system-hold-2.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_0/unity-input-system-hold-2.png.avif" width="80%" alt="" title="">
 
 
 + Press Point  
@@ -91,7 +91,7 @@ GetHoldExample.cs
 
 インスペクターの項目に長押しActionを指定すると機能します。
 
-<img src="images/7/7_0/unity-input-system-hold-2_2.png" width="50%" alt="" title="">
+<img src="images/7/7_0/unity-input-system-hold-2_2.png" width="80%" alt="" title="">
 
 
 入力値の大きさが閾値Press Point以上の状態がHold Time秒以上続いたらperformedコールバックを実行します。
@@ -109,7 +109,7 @@ GetHoldExample.cs
 
 内部的には次のような状態遷移を行うステートマシンとして管理されています。
 
-<img src="images/7/7_0/unity-input-system-hold-3.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_0/unity-input-system-hold-3.png.avif" width="80%" alt="" title="">
 
 
 
@@ -216,7 +216,7 @@ HoldGauge.cs
 
 また、ゲージとして使用するImage側のImage TypeをFilledに設定しておく必要があります。
 
-<img src="images/7/7_0/unity-input-system-hold-4.png.avif" width="50%" alt="" title="">
+<img src="images/7/7_0/unity-input-system-hold-4.png.avif" width="80%" alt="" title="">
 
 
 

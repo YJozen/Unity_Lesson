@@ -59,7 +59,7 @@ public class Vector2DValueShiftProcessor : InputProcessor<Vector2>
 ```
 上記スクリプトをVector2DValueShiftProcessor.csなどの名前でUnityプロジェクトに保存すれば、新しいProcessorとして機能するようになります。
 
-<img src="images/8/8_2/unity-input-system-processor-20.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_2/unity-input-system-processor-20.png.avif" width="80%" alt="" title="">
 
 ## スクリプトの解説
 独自のProcessorは、次のコードのように、InputSystem<T>クラスを継承して実装します。
@@ -130,7 +130,7 @@ public class Vector2ValueShiftProcessorEditor : InputParameterEditor<Vector2DVal
 ```
 この例の場合、以下のようなスライダーの見た目に変更されます。
 
-<img src="images/8/8_2/unity-input-system-processor-21.png.avif" width="50%" alt="" title="">
+<img src="images/8/8_2/unity-input-system-processor-21.png.avif" width="80%" alt="" title="">
 
 
 ---

@@ -256,7 +256,7 @@ UseExample.cs
 連打判定を行いたいInput ActionのInteractionにMash Interactionを適用します。(該当するActionまたはBindingをダブルクリックし、Action PropertyのInteraction右の＋アイコンをクリックし、Mashを選択します。)    
 すると、次のように連打判定を行うMash Interactionが追加されるので、必要に応じて項目を設定してください
 
-<img src="images/7/7_3/unity-input-system-button-mashing-4.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_3/unity-input-system-button-mashing-4.png.avif" width="70%" alt="" title="">
 
 + Tap Delay – タップの最大許容時間間隔[s]。この時間を超えてタップが無いと連打終了とみなす。0はInput System側のデフォルト値。
 + Press Point – ボタンを押したとみなす入力値の大きさの閾値。0の時はデフォルト値となる。

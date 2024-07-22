@@ -1,4 +1,3 @@
-**InputSystem 2**
 # Interactionを使用し、少し複雑な入力を実装する
 
 ---
@@ -177,7 +176,7 @@ PerformedフェーズでRelease Point未満に値が変化するとCanceledに�
 ボタンの押した瞬間、離した瞬間、またはその両方を検知（performedコールバックを通知）するInteraction
 
 
-<img src="images/7/7_1/unity-input-system-interaction-10.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-10.png.avif" width="70%" alt="" title="">
 
 
 どの瞬間を検知するかは、Trigger Behaviour項目から設定できます。設定内容は次の通りです。
@@ -193,7 +192,7 @@ PerformedフェーズでRelease Point未満に値が変化するとCanceledに�
 
 一定時間ボタンが押されたことを検知するInteractionです。
 
-<img src="images/7/7_1/unity-input-system-interaction-11.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-11.png.avif" width="70%" alt="" title="">
 
 
 
@@ -209,7 +208,7 @@ Hold Time秒経過すると、その瞬間にPerformedフェーズに遷移。
 
 一定時間以内にボタンを押して離したことを検知するInteraction。
 
-<img src="images/7/7_1/unity-input-system-interaction-12.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-12.png.avif" width="70%" alt="" title="">
 
 
 
@@ -226,7 +225,7 @@ Max Tap Durationに指定した時間（秒）以内にボタンを押して離�
 ボタンが押されてから一定時間以上経過して離されたことを検知するInteractionです。ゆっくりとタップされたかどうかを判定するのに使います。
 
 
-<img src="images/7/7_1/unity-input-system-interaction-13.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-13.png.avif" width="70%" alt="" title="">
 
 
 
@@ -243,7 +242,7 @@ Min Tap Duration秒以上ボタンが押され続けるとPerformedフェーズ�
 ダブルクリックやダブルタップなどを判定する場合に使います。
 
 
-<img src="images/7/7_1/unity-input-system-interaction-14.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_1/unity-input-system-interaction-14.png.avif" width="70%" alt="" title="">
 
 
 

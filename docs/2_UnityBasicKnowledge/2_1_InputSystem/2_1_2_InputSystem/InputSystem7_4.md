@@ -122,7 +122,7 @@ Actionに対して連打防止を適用させます。
 
 以下のように自作のInteractionが追加されますので、必要に応じてパラメータを調整してください。
 
-<img src="images/7/7_4/unity-input-system-prevent-button-mashing-3.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_4/unity-input-system-prevent-button-mashing-3.png.avif" width="60%" alt="" title="">
 
 
 例ではボタンが押されてから入力を受け付けない時間（Min Input Duration）を1秒としました。Press Pointはデフォルト値を示す0としました。

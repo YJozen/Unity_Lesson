@@ -1,5 +1,3 @@
-**InputSystem 2**
-InteractionとProcessor
 # Interactionを使用し、長押しやダブルクリックなどを実装する(ひとまずInteractionを触ってみる)
 
 ## 1.Interactionで元から用意されている挙動
@@ -46,7 +44,7 @@ Hold Interactionは、一定時間以上入力があったら操作を受け付�
 
 すると、以下のようにHold Interactionが適用された状態になります。  
 
-<img src="images/7/7_0/unity-input-system-hold-2.png.avif" width="80%" alt="" title="">
+<img src="images/7/7_0/unity-input-system-hold-2.png.avif" width="70%" alt="" title="">
 
 
 + Press Point  

@@ -1,6 +1,4 @@
-**InputSystem 1**
-
-## ボタンが「押された瞬間」「押され続けた時」などの入力を、コールバックを利用し受け取る
+# ボタンが「押された瞬間」「押され続けた時」などの入力を、コールバックを利用し受け取る
 
 適当なゲームオブジェクトにアタッチ
 
@@ -61,7 +59,7 @@ Action TypeをButtonに設定
 
 ---
 
-###　スクリプト解説
+##　スクリプト解説
 
 メソッドを用意。
 戻り値や引数は必ずこの形式にする必要があります。  
@@ -90,7 +88,7 @@ _action.performed += OnPerformed;
 Actionにはstarted、performed、canceledの3種類のコールバックがあります。 
 例では、performedコールバックに登録してログ出力しています。
 
-## 2.呼び出されるタイミング３種(started・performed・canceled)
+# 2.呼び出されるタイミング３種(started・performed・canceled)
 
 ValueとButtonそれぞれによって若干呼び出しタイミングの意味合いが違います。
 

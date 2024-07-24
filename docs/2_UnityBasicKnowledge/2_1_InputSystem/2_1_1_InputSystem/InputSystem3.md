@@ -1,4 +1,4 @@
-## 1.Input Systemを使用し、「Action」に登録した入力を検知する
+# 1.Input Systemを使用し、「Action」に登録した入力を検知する
 
 キャラクターの『移動』や『ジャンプ』などといった操作を「Action」として扱います
  
@@ -6,18 +6,21 @@
 
 <br>  
 <br>     
-例えば、PCであればスペースキー、GamePadであればButton South(XBoxコントローラーならAボタン)を押せば、『ジャンプ』という「Action」を行うことができます
+例えば、PCであればスペースキー、GamePadであればButton South(XBoxコントローラーならAボタン。SwitchコントローラーならBボタン)を押せば、『ジャンプ』という「Action」を行うことができます
 
 <img src="images/3/unity-input-system-intro-v2-2.png.avif" width="70%" alt="" title="">
 
 <br>  
 <br>    
 ＊　これから色々とややこしく感じるかもしれませんが、   
-「InputActionというクラスを作成し、入力やActionの設定をインスタンス化し、入力情報を操る」という考え方は変わりません。  
+「InputActionというクラスを作成。入力やActionの設定をインスタンス化。そのインスタンから入力情報を操る」という考え方は、Input Systemを使うにあたってずっと変わりません。 
+
 先の文章の意味も今は理解不能でも少しずつ慣れていきましょう。
 
+<br>
+
 ---
-## 2.　インスペクターから入力を設定し、「Action」の入力値をログ出力してみましょう
+# 2.　インスペクターから入力を設定し、「Action」の入力値をログ出力してみましょう
 
 適当なゲームオブジェクトにアタッチしてください
 
@@ -74,7 +77,8 @@ public class InputActionExample : MonoBehaviour
 
 <br>
 
-例として、スペースキーをBindingとして追加してみましょう。  
+**例として、スペースキーをBindingとして追加してみましょう。**  
+
 <br>
 <br>
 
@@ -108,7 +112,7 @@ float型（1軸）の入力値として受け取っているため、0か1の値
 
 ゲームパッドのトリガーボタンやスティックなどアナログ入力を割り当てた場合は0～1の間の値が出力されます。
 
-
+<br>
 
 ## スクリプトについて
 
@@ -137,7 +141,9 @@ private void OnEnable()
 var value = _action.ReadValue<float>();
 ```
 
-InputAction.ReadValue<T>メソッドによって入力値を受け取れますが、テンプレート引数はActionで指定した型と一致する必要があります。(https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/api/UnityEngine.InputSystem.InputAction.html#UnityEngine_InputSystem_InputAction_ReadValue__1)
+InputAction.ReadValue<T>メソッドによって入力値を受け取れますが、テンプレート引数はActionで指定した型と一致する必要があります。
+[公式サイト](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/api/UnityEngine.InputSystem.InputAction.html#UnityEngine_InputSystem_InputAction_ReadValue__1)
 
 例ではスペースキー（1軸入力）なので、float型としています。
 
+<br>

@@ -28,10 +28,12 @@ Yesボタンをクリックし、Unityの再起動
 
 ## 下準備終了
 
-（簡単なテストをする時などに）InputManagerを使いたい人もいるかと思います。
+（簡単なテストをする時などに）InputManagerを使いたい人もいるかと思います。  
 その場合は、    
 Edit > Project Settings…からProject Settingsウィンドウを開く  
 左のリストからPlayerを選択   
 Other Settings > Configuration > Active Input Handling*項目をBothに設定してUnityを再起動
 
 <img src="images/1/unity-input-system-intro-v2-9.png.avif" width="70%" alt="" title="">
+
+<br>

@@ -280,3 +280,5 @@ private void OnJump(InputAction.CallbackContext context)
     _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
 }
 ```
+
+<br>

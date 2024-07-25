@@ -1,10 +1,18 @@
 # MLAgents
+- [導入動画](https://drive.google.com/file/d/1YiVMleM__0kqXRKBs5UO9bq2N7a0mhYO/view?usp=drive_link)
+
 - 授業スライドや資料  
   -  <a href="https://drive.google.com/drive/folders/1Qxd4PeikBb7pztRt8RDlirOxi1tCofYk" target="_blank">MLAgentsをとりあえず動かしてみよう</a>
 
+- ニューラルネットワークについて触れるならこっちから、触れてみてもいいかも  
+  - [Python機械学習](https://drive.google.com/drive/folders/1Pwr0G_I46uJpsPWQFGAk6pymbJDx_hR_)
+ 
+- [ニューラルネットワークと強化学習](3_7_NN_RL.md)
+
 <br>
 
 <br>
+
 
 <br>
 

@@ -4,6 +4,11 @@
 
 使用したい目的や表現のShader記事を検索してヒットすれば、それを模倣すればいいと思いますが、ある程度意味を理解したい場合は勉強してみましょう
 
+
+<br>
+
+[内積について](shader_dot.html)
+
 <br>
 
 # 参考0  
@@ -22,9 +27,26 @@ https://www.youtube.com/watch?v=wUx_Y9BgC7k
 そろそろShaderをやる  
 https://zenn.dev/kento_o
 
+
+
 Unity ShaderGraph CookBook
 https://zenn.dev/r_ngtm/books/shadergraph-cookbook  
 https://zenn.dev/r_ngtm
+
+
+
+【Unity】無料のオススメシェーダまとめ（110個）
+https://baba-s.hatenablog.com/entry/2018/10/29/090000
+
+
+
+7日間でマスターするUnityシェーダ入門
+https://nn-hokuson.hatenablog.com/entry/2018/02/15/140037
+
+
+
+【Unity】シェーダに関するオススメ記事まとめ（120個）
+https://baba-s.hatenablog.com/entry/2018/03/02/090000
 
 <br>
 
@@ -54,7 +76,16 @@ Document
 
 
 # Unityでは基本VertexとFragmentをいじる
-基本的にはUnityのShaderでは、**Vertex Shader**と**Fragment Shader**の2つを主に使用します。この2つは、シェーダープログラムの主要な部分を構成し、それぞれ異なる役割を果たします。
+
+<img src="images/1.png" width="90%" alt="" title="">
+
+<br>
+
+<a href="https://drive.google.com/file/d/15XnlBMEezoJ8sHJBG77x36b8YwI9-4nw/view?usp=drive_link" target="_blank">Unityでの描画計算の順番についてのスライド</a>でもみた通り、
+UnityのShaderでは、**Vertex Shader**と**Fragment Shader**の2つを主に使用します。  
+この2つは、シェーダープログラムの主要な部分を構成し、それぞれ異なる役割を果たします。
+
+
 
 <br>
 
@@ -180,6 +211,8 @@ Shader "Custom/MyShader"
       return texColor;
   }
   ```
+
+<br>
 
 # Pipelineの流れ
 

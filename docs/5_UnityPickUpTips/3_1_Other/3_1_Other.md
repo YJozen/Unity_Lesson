@@ -18,7 +18,7 @@
        - [C#]
        - [HLSL_CG]
        - [ShaderGraph]
-     + [Shader_Advanced]
+     + Shader_Advanced サンプルプロジェクト見てもらう？
        - [Tessellation]
        - [Geometry]
        - [Liquid]

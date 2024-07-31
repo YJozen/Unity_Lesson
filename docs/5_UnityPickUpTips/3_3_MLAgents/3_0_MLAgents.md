@@ -1,5 +1,5 @@
 # MLAgents
-- [導入動画](https://drive.google.com/file/d/1YiVMleM__0kqXRKBs5UO9bq2N7a0mhYO/view?usp=drive_link)
+- [はじめに(神戸電子_宮本先生による導入動画)](https://drive.google.com/file/d/1YiVMleM__0kqXRKBs5UO9bq2N7a0mhYO/view?usp=drive_link)
 
 - 授業スライドや資料  
   -  <a href="https://drive.google.com/drive/folders/1Qxd4PeikBb7pztRt8RDlirOxi1tCofYk" target="_blank">MLAgentsをとりあえず動かしてみよう</a>

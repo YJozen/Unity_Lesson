@@ -1,3 +1,3 @@
 # slide
 
-[marp.md](marp.md)
+[marp.md](src/md/marp.md)

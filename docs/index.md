@@ -33,8 +33,6 @@
 
  <img src="images/Unity.png"  alt="" title="" class="position-center">
 
-<css>
-
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)
 2. [Unity基本](2_UnityBasicKnowledge/2.md)
 3. [プログラミングしていく上での基本？](3_ProgramBasic/3_0.md)

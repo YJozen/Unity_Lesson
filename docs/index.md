@@ -1,12 +1,8 @@
-<!-- <style type="text/css">
-
-.position-center {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+<style>
+.site-footer {
+  display: none;
 }
-
-</style> -->
+</style>
 
 # Jozen Document
 

@@ -1,3 +1,9 @@
+<style>
+.site-footer {
+  display: none;
+}
+</style>
+
 # Input System  
 
 1. [Input Systemのインストール](InputSystem1.md)  
@@ -10,5 +16,5 @@
 
 <br>
 
-marpテスト
-1. [Input Systemの基本](InputSystem1_marp.html)  
+marp使用時の表示テスト
+1. [Input Systemのインストール](InputSystem1_marp.html)  

@@ -29,7 +29,9 @@
 
 ---
 
-### Unityはじめ  <img src="images/Unity.png"  alt="" title="" class="position-center">
+### Unityはじめ 
+
+ <img src="images/Unity.png"  alt="" title="" class="position-center">
 
 <css>
 
@@ -60,7 +62,9 @@
 
 ---
 
-12. [UnrealEngine(ハンズオン執筆中)](12_UnrealEngine/8_0.md)<img src="images/UE.png"  alt="" title="" class="position-center">
+12. [UnrealEngine(ハンズオン執筆中)](12_UnrealEngine/8_0.md)
+
+<img src="images/UE.png"  alt="" title="" class="position-center">
 
 ---
 

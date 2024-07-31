@@ -83,6 +83,8 @@
 
 <a href="https://docs.google.com/spreadsheets/d/1nar1mbPLBWnX5I3DaNg93zN5vKgjLRBzA5sCK2A8ecg/edit#gid=361639574" target="_blank">2024年度_年間スケジュール</a>
 
+---
+
 <br>
 
 <br>
@@ -93,4 +95,4 @@
 
 <br>
 
-[marpテスト](../src/md/marp.md)
+[marpテスト](presentation.html)

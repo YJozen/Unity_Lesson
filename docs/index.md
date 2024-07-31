@@ -85,21 +85,36 @@
 
 ---
 
+---
+
+
+テストしてるから無視
+
 <br>
 
 <br>
 
 [mdやhtmlの動作テスト用](_TestFolder/Untitled.html)
 
+---
+
 <br>
 
 <br>
+
+---
+
 html変換のやつ
+
 [marpテストhtml](presentation.html)
 
+
+---
+
+保留
+
 cssのやつ
-[marpテスト](testmarp.md)
 
 github action使いたかったやつ
-[marpテスト_サンプル](../src/md/marp.md)
+
 

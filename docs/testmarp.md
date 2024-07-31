@@ -3,6 +3,7 @@ marp: true
 title: My Presentation
 theme: default
 paginate: true
+header: '<link rel="stylesheet" href="/path/to/your/repo/_includes/custom.css">'
 ---
 
 # スライド 1

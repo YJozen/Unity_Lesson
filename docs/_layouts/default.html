@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+    {% if site.baseurl %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    {% else %}
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% endif %}
 </head>
 <body>
     <header>
@@ -13,9 +17,9 @@
 
         <nav>
             <ul>
-                <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                <li><a href="{{ '/about' | relative_url }}">About</a></li>
-                <li><a href="{{ '/marp-slide' | relative_url }}">Marp Slide</a></li>
+                <li><a href="{{ site.baseurl }}/">Home</a></li>
+                <li><a href="{{ site.baseurl }}/about">About</a></li>
+                <li><a href="{{ site.baseurl }}/marp-slide">Marp Slide</a></li>
             </ul>
         </nav>
 

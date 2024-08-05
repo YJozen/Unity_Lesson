@@ -1,7 +1,19 @@
-source 'https://rubygems.org'
-gem 'jekyll', '~> 4.2.0'
-gem 'ffi', '~> 1.17'
-gem 'bundler', '~> 2.5'
-gem "minima", "~> 2.5"
-gem 'webrick'
-gem 'github-pages', group: :jekyll_plugins
+source "https://rubygems.org"
+
+# 最新の GitHub Pages バージョンに合わせる
+gem "github-pages", "~> 231"
+
+# GitHub Pages が依存する Jekyll バージョンに合わせる
+gem "jekyll", "~> 3.9.3"
+
+# 必要な Jekyll プラグイン
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+end
+
+# その他の Gems
+gem "webrick"
+gem 'sassc-rails'
+gem 'rubyzip', '~> 2.3.0'
+gem 'jekyll-archives'

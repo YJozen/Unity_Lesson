@@ -1,7 +1,7 @@
 title: Jozen Site
 description: A site to learn Unity and etc...
 theme: minima
-baseurl: "/Unity_Lesson//docs"  # サブディレクトリにデプロイする場合はここにパスを指定
+baseurl: "/Unity_Lesson"  # サブディレクトリにデプロイする場合はここにパスを指定
 url: "https://yjozen.github.io"  # GitHub Pages の URL
 
 # Markdown 設定

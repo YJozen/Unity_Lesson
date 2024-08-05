@@ -1,12 +1,11 @@
 ---
 layout: default
 title: InputSystemについて
-permalink: /2_UnityBasicKnowledge/2_1_InputSystem/
 ---
 
 # Input System  
 
-1. [Input Systemのインストール](InputSystem1.html)  
+1. [Input Systemのインストール](InputSystem1.md)  
 2. [キーボードとマウスの入力を検知する](InputSystem2.md) 
 3. [「Action」に登録した入力を検知する](InputSystem3.md) 
 4. [3種のコールバック](InputSystem4.md) 

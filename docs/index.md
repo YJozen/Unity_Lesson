@@ -76,16 +76,5 @@ title: Home
 
 
 (表記テスト中)
-[mdやhtmlの動作テスト用](_TestFolder/Untitled.html)
 
----
----
-
-html変換のやつ
 [marpテストhtml](presentation.html)
-
----
----
-cssのやつ
-
-github actionのやつ

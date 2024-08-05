@@ -1,27 +1,29 @@
-title: Jozen Site
-description: A site to learn Unity and etc...
-theme: minima
-baseurl: "/Unity_Lesson"  
-# url: "https://yjozen.github.io/Unity_Lesson"  # GitHub Pages の URL
-url: "http://127.0.0.1:4000"
+# title: Jozen Site
+# description: A site to learn Unity and etc...
+# theme: minima
+# baseurl: "/Unity_Lesson"  
+# # url: "https://yjozen.github.io/Unity_Lesson"  # GitHub Pages の URL
+# url: "http://127.0.0.1:4000"
 
-# Markdown 設定
-markdown: kramdown
-highlighter: rouge
+# # Markdown 設定
+# markdown: kramdown
+# highlighter: rouge
 
-collections:
-  pages:
-    output: true
+# collections:
+#   pages:
+#     output: true
 
 # permalink: /:path/
 
 # GitHub Pages のプラグインを有効にします
-plugins: []
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-archives
+
+
+# plugins: []
+#   - jekyll-feed
+#   - jekyll-seo-tag
+#   - jekyll-sitemap
+#   - jekyll-paginate
+#   - jekyll-archives
 
 
 

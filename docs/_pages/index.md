@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+permalink: /
 ---
 
 # Jozen Document
@@ -13,6 +14,7 @@ title: Home
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
 導入方法やできることの例は「Unity基本」→「入力」から参照してください。
 [InputSystemについて]({{ site.baseurl }}/pages/2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
+
 
 <br>
 

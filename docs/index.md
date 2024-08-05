@@ -12,7 +12,7 @@ title: Jozen Document
 
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
 導入方法やできることの例は「Unity基本」→「入力」から参照してください。
-[InputSystemについて](_pages/2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
+[InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
 
 
 <br>
@@ -27,7 +27,7 @@ title: Jozen Document
 
 ### Unityはじめ 
 
-1. [Unityを触る上での前提知識](_pages/1_ElementaryKnowledge/1.md)  
+1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)  
 2. [Unity基本](_pages/2_UnityBasicKnowledge/2.md)
 3. [プログラミングしていく上での基本？](_pages/3_ProgramBasic/3_0.md)
 4. [ミニゲーム](_pages/4_MiniGame/4_0.md)

@@ -1,0 +1,104 @@
+/* 基本設定 */
+body {
+    font-family: 'Arial', sans-serif; /* フォントファミリーの指定 */
+    background-color: #f4f4f4; /* 背景色 */
+    color: #333; /* テキスト色 */
+    line-height: 1.6; /* 行の高さ */
+    margin: 20px; /* 外側の余白 */
+}
+
+/* ヘッダーとフッターのスタイル */
+header, footer {
+    background-color: #2c3e50; /* 背景色 (ダークブルー) */
+    color: white; /* テキスト色 (白) */
+    text-align: center; /* テキストの中央揃え */
+    padding: 1em; /* 内側の余白 */
+}
+
+/* メインコンテンツのスタイル */
+main {
+    padding: 1em; /* 内側の余白 */
+}
+
+/* タイトルのスタイル */
+h1 {
+    color: #3498db; /* タイトルの色 (ダークブルー) */
+}
+
+h2, h3, h4, h5, h6 {
+    color: #2c3e50; /* サブタイトルの色 (ダークブルー) */
+}
+
+/* 段落のスタイル */
+p {
+    margin: 10px 0; /* 上下の余白 */
+}
+
+/* コードのスタイル */
+code {
+    background: #f8f8f8; /* 背景色 */
+    border: 1px solid #ddd; /* 枠線の色 */
+    padding: 2px 4px; /* 内側の余白 */
+    border-radius: 4px; /* 角の丸み */
+}
+
+/* プレーンテキストのコードブロックのスタイル */
+pre {
+    background: #f8f8f8; /* 背景色 */
+    border: 1px solid #ddd; /* 枠線の色 */
+    padding: 10px; /* 内側の余白 */
+    border-radius: 4px; /* 角の丸み */
+}
+
+/* リンクのスタイル */
+a {
+    color: #3498db; /* リンクの基本色 (青) */
+    text-decoration: none; /* 下線を削除 */
+    transition: color 0.3s ease; /* 色が変わる際のスムーズなトランジション */
+}
+
+/* リンクにマウスオーバーしたときのスタイル */
+a:hover {
+    color: #e67e22; /* マウスオーバー時のリンク色 (オレンジ) */
+    text-decoration: underline; /* 下線を追加 */
+}
+
+/* ナビゲーションのリストのスタイル */
+nav ul {
+    list-style: none; /* リストのドットを削除 */
+    padding: 0; /* 内側の余白を削除 */
+}
+
+/* ナビゲーションのリストアイテムのスタイル */
+nav ul li {
+    display: inline; /* 横並びに表示 */
+    margin-right: 10px; /* 右の余白 */
+}
+
+/* ナビゲーションのリンクのスタイル */
+nav ul li a {
+    color: #3498db; /* リンクの基本色 (青) */
+    text-decoration: none; /* 下線を削除 */
+    transition: color 0.3s ease; /* 色が変わる際のスムーズなトランジション */
+}
+
+/* ナビゲーションのリンクにマウスオーバーしたときのスタイル */
+nav ul li a:hover {
+    color: #e67e22; /* マウスオーバー時のリンク色 (オレンジ) */
+    text-decoration: underline; /* 下線を追加 */
+}
+
+/* メディアクエリ: 画面幅が600px以下の場合 */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* フォントサイズの縮小 */
+    }
+
+    header, footer {
+        padding: 0.5em; /* 内側の余白の縮小 */
+    }
+
+    main {
+        padding: 0.5em; /* 内側の余白の縮小 */
+    }
+}

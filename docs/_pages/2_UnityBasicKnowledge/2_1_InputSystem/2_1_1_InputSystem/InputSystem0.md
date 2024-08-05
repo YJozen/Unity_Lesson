@@ -1,8 +1,8 @@
-<style>
-.site-footer {
-  display: none;
-}
-</style>
+---
+layout: default
+title: InputSystemについて
+permalink: /2_UnityBasicKnowledge/2_1_InputSystem/
+---
 
 # Input System  
 
@@ -12,9 +12,3 @@
 4. [3種のコールバック](InputSystem4.md) 
 5. [Input Actionsアセット(Map)](InputSystem5.md) 
 6. [Player Inputコンポーネントの利用](InputSystem6.md) 
-
-
-<br>
-
-marp使用時の表示テスト
-1. [Input Systemのインストール](InputSystem1_marp.html)  

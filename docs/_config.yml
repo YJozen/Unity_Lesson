@@ -1,9 +1,30 @@
 title: Jozen Site
 description: A site to learn Unity and etc...
 theme: minima
-
-
-# Marpの設定
+baseurl: ""  # サブディレクトリにデプロイする場合はここにパスを指定
+url: "https://yjozen.github.io/Unity_Lesson/"  # GitHub Pages の URL
 markdown: kramdown
-kramdown:
-  input: GFM
+
+
+
+collections:
+  pages:
+    output: true
+
+
+
+
+
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+

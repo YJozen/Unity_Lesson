@@ -1,3 +1,9 @@
 title: Jozen Site
 description: A site to learn Unity and etc...
 theme: minima
+
+
+# Marpの設定
+markdown: kramdown
+kramdown:
+  input: GFM

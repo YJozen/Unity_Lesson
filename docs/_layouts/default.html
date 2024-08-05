@@ -10,6 +10,15 @@
     <header>
         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p>
+
+        <nav>
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="{{ '/about' | relative_url }}">About</a></li>
+                <li><a href="{{ '/marp-slide' | relative_url }}">Marp Slide</a></li>
+            </ul>
+        </nav>
+
     </header>
     <main>
         {{ content }}

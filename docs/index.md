@@ -12,7 +12,7 @@ title: Home
 
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
 導入方法やできることの例は「Unity基本」→「入力」から参照してください。
-[InputSystemについて](_pages/2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
+[InputSystemについて]({{ site.baseurl }}/pages/2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
 
 <br>
 
@@ -22,7 +22,7 @@ title: Home
 
 ---
 
- <img src="images/Unity.png"  alt="" title="" >
+ <img src="{{ site.baseurl }}/assets/images/Unity.png"  alt="" title="" >
 
 ### Unityはじめ 
 
@@ -53,28 +53,30 @@ title: Home
 
 ---
 
-<img src="images/UE.png"  alt="" title="" class="position-center">
+### UE
+<img src="{{ site.baseurl }}/assets/images/UE.png"  alt="" title="" class="position-center">
 
 12. [UnrealEngine(ハンズオン執筆中)](_pages/12_UnrealEngine/8_0.md)
 
 
 ---
 
+### ゲーム以外
 13. [ゲーム以外(GitHubの使い方・Python・javascript・その他フレームワークなど)](_pages/13_OtherThanGames/9_0.md)
 
 ---
 ---
 ## 授業全般
 
-<a href="https://drive.google.com/drive/folders/1HB7OoyzdHM3_PNg-6Q7Ln2pf44dN0e1m" target="_blank">資料配布場所</a>
++ <a href="https://drive.google.com/drive/folders/1HB7OoyzdHM3_PNg-6Q7Ln2pf44dN0e1m" target="_blank">資料配布場所</a>
 
-<a href="https://docs.google.com/spreadsheets/d/1nar1mbPLBWnX5I3DaNg93zN5vKgjLRBzA5sCK2A8ecg/edit#gid=361639574" target="_blank">2024年度_年間スケジュール</a>
-
----
++ <a href="https://docs.google.com/spreadsheets/d/1nar1mbPLBWnX5I3DaNg93zN5vKgjLRBzA5sCK2A8ecg/edit#gid=361639574" target="_blank">2024年度_年間スケジュール</a>
 
 ---
 
+---
 
-(表記テスト中)
+
+### (表記テスト中)
 
 [marpテストhtml](presentation.html)

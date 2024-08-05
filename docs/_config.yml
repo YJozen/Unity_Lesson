@@ -2,29 +2,23 @@ title: Jozen Site
 description: A site to learn Unity and etc...
 theme: minima
 baseurl: ""  # サブディレクトリにデプロイする場合はここにパスを指定
-url: "https://yjozen.github.io/Unity_Lesson/"  # GitHub Pages の URL
-markdown: kramdown
-
-
+url: "https://yjozen.github.io"  # GitHub Pages の URL
 
 collections:
   pages:
     output: true
 
-
-
-
-
-
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-
-
+# GitHub Pages のプラグインを有効にします
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+
+
+# Markdown 設定
+markdown: kramdown
+highlighter: rouge
+
 

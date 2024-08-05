@@ -1,19 +1,19 @@
-source "https://rubygems.org"
+# source "https://rubygems.org"
 
-# 最新の GitHub Pages バージョンに合わせる
-gem "github-pages", "~> 231"
+# # 最新の GitHub Pages バージョンに合わせる
+# gem "github-pages", "~> 231"
 
-# GitHub Pages が依存する Jekyll バージョンに合わせる
-gem "jekyll", "~> 3.9.3"
+# # GitHub Pages が依存する Jekyll バージョンに合わせる
+# gem "jekyll", "~> 3.9.3"
 
-# 必要な Jekyll プラグイン
-group :jekyll_plugins do
-  gem "jekyll-feed"
-  gem "jekyll-seo-tag"
-end
+# # 必要な Jekyll プラグイン
+# group :jekyll_plugins do
+#   gem "jekyll-feed"
+#   gem "jekyll-seo-tag"
+# end
 
-# その他の Gems
-gem "webrick"
-gem 'sassc-rails'
-gem 'rubyzip', '~> 2.3.0'
-gem 'jekyll-archives'
+# # その他の Gems
+# gem "webrick"
+# gem 'sassc-rails'
+# gem 'rubyzip', '~> 2.3.0'
+# gem 'jekyll-archives'

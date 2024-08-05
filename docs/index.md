@@ -1,8 +1,7 @@
-<style>
-.site-footer {
-  display: none;
-}
-</style>
+---
+layout: default
+title: Home
+---
 
 # Jozen Document
 
@@ -17,19 +16,15 @@
 
 <br>
 
-
-
 <br>
 
 ## **目次**
 
 ---
 
-### Unityはじめ 
-
  <img src="images/Unity.png"  alt="" title="" >
 
-
+### Unityはじめ 
 
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)  
 2. [Unity基本](2_UnityBasicKnowledge/2.md)
@@ -58,24 +53,20 @@
 
 ---
 
+<img src="images/UE.png"  alt="" title="" class="position-center">
+
 12. [UnrealEngine(ハンズオン執筆中)](12_UnrealEngine/8_0.md)
 
-<img src="images/UE.png"  alt="" title="" class="position-center">
 
 ---
 
 13. [ゲーム以外(GitHubの使い方・Python・javascript・その他フレームワークなど)](13_OtherThanGames/9_0.md)
 
-
-<br>
-
-<br>
+---
+---
+## 授業全般
 
 <a href="https://drive.google.com/drive/folders/1HB7OoyzdHM3_PNg-6Q7Ln2pf44dN0e1m" target="_blank">資料配布場所</a>
-
-<br>
-
-<br>
 
 <a href="https://docs.google.com/spreadsheets/d/1nar1mbPLBWnX5I3DaNg93zN5vKgjLRBzA5sCK2A8ecg/edit#gid=361639574" target="_blank">2024年度_年間スケジュール</a>
 
@@ -84,33 +75,17 @@
 ---
 
 
-テストしてるから無視
-
-<br>
-
-<br>
-
+(表記テスト中)
 [mdやhtmlの動作テスト用](_TestFolder/Untitled.html)
 
 ---
-
-<br>
-
-<br>
-
 ---
 
 html変換のやつ
-
 [marpテストhtml](presentation.html)
 
-
 ---
-
-保留
-
+---
 cssのやつ
 
-github action使いたかったやつ
-
-
+github actionのやつ

@@ -8,6 +8,8 @@
 
 リポジトリから、Settingsに入り、Collaboratosを選択し、Manage access欄にて「Add people」からチームメンバーの追加を行って下さい
 
+<img src="images/2_0_team_settings.png" width="70%" alt="" title="">
+
 <br>
 
 

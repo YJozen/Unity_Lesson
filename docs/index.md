@@ -1,10 +1,15 @@
 # Jozen Document
 
+<br>
+
 ### **・ ゲーム専攻_後期課題**  
+[InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)  
+
 後期Unityで制作する人は、「Input System」を利用し、Gamepadでも遊ぶことを考慮した上で制作してください  
 
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
 導入方法やできることの例は「Unity基本」→「入力」から参照してください。
+
 [InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
 
 <br>
@@ -13,12 +18,15 @@
 
 ### **・ IT専攻_後期必須課題**  
 
+[Githubについて](13_OtherThanGames/Github/Github.md)
+
 ※（注意）欠席者も必ず目を通して下さい。以下作業を行わない者に上善担当の単位は与えません
 
 しばらく私の時間は制作しないでGithubを利用する時間に当ててください 
 
 課題①
 ひとまず「Readme.md」には
+```
 # 自分たちの作品名
 　作品について
 
@@ -31,7 +39,7 @@
 
 # 進捗,予定,メモなど
 　〜内容〜
-
+```
 といったように書いて下さい
 
 Readme.mdはマークダウンというファイル形式になります。
@@ -58,6 +66,8 @@ htmlのタグやcssも使用可能です。
 今後の進捗確認の際には、リポジトリを見せてもらう予定です。
 おそらくDiscordに、GithubのUrlを貼り付けてもらうことになると思います。 
 
+
+[Githubについて](13_OtherThanGames/Github/Github.md)
 
 <br>
 

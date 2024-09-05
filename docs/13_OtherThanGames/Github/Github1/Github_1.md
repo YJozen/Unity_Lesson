@@ -9,7 +9,9 @@ PCに<a href="https://git-fork.com/" target="_blank">Fork</a>をインストー�
 これはGitをGUIで操作するためのPCアプリケーションです。
 
 インストールが終了したらアカウント連携まで行って下さい  
-<a href="https://sunny10side.com/how-to-install-and-use-fork-git-gui-client/" target="_blank">アカウント連携の例</a>
+<a href="https://sunny10side.com/how-to-install-and-use-fork-git-gui-client/" target="_blank">アカウント連携の例<br>
+(このサイトはアカウント連携するところまで利用して下さい。<br>
+　全部読まないで！！！！！！)</a>
 
 
 

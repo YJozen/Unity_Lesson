@@ -5,7 +5,7 @@
 ### **・ (ゲーム専攻)_後期課題**  
 [InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)  
 
-後期Unityで制作する人は、「Input System」を利用し、Gamepadでも遊ぶことを考慮した上で制作してください  
+後期Unityで制作する人は、「Input System」を利用し、「Keyboard&Mouse」と「Gamepad」で遊んでもらうことを考慮した上で制作してください  
 
 `Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
 導入方法やできることの例は「Unity基本」→「入力」から参照してください。

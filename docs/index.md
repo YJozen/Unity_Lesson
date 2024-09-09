@@ -1,76 +1,20 @@
 # Jozen Document
 
-<br>
-
-### **・ (ゲーム専攻)_後期課題**  
-[InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)  
-
-後期Unityで制作する人は、「Input System」を利用し、「Keyboard&Mouse」と「Gamepad」で遊んでもらうことを考慮した上で制作してください  
-
-`Input.GetAxis("Horizontal")`のようにしているならInputManagerです。  
-導入方法やできることの例は「Unity基本」→「入力」から参照してください。
-
-[InputSystemについて](2_UnityBasicKnowledge/2_1_InputSystem/2_1.md)
+[授業について](about_Lesson.md)
 
 <br>
 
 <br>
 
-### **・ (IT専攻)_後期_必須課題**  
+## **[・ (ゲーム専攻)_後期課題①](2ndTermAssignment_Game.md)**  
 
-[Githubについて](13_OtherThanGames/Github/Github.md)
-
-※（注意）欠席者も必ず目を通して下さい。以下作業を行わない者に上善担当の授業単位は与えません
-
-しばらく私の時間は制作作業はせず、Githubを利用する時間に当ててください  
-（授業では、Githubアプリとして「Fork」を利用します。  
-　すでに何かしらのアプリを利用している者は、使い慣れたアプリ等をご使用ください） 
 
 <br>
 
-課題①  
-ひとまず「Readme.md」には
-```md
-# 自分たちの作品名
-　作品について
-
 <br>
 
-# チームメンバー
-　出席番号_チームメンバー
+## **[・ (IT専攻)_後期_必須課題](2ndTermAssignment_IT.md)**  
 
-<br>
-
-# 進捗,予定,メモなど
-　〜内容〜
-```
-といった形式で書いて下さい
-
-Readme.mdはマークダウンというファイル形式になり、「マークダウン」という記法を使用します。
-htmlのタグやcssも使用可能です。
-慣れたら記述の仕方にも気をつけて下さい。
-
-
-
-課題②  
-「個人開発」  
-「共同開発」  
-「ブランチ運用法」  
-「いろいろ取り消し」  
-「無視リスト」  
-上記全てを一通り読み、触り、
-チーム全員がある程度理解した状態になって、その上で代表者が私に報告しに来て下さい。
-（現在報告しに来てくれた班　11 , 24）  
-今後のチーム開発のプログラムはGithubを利用して下さい。
-
-
-
-課題③  
-今後の進捗確認の際には、リポジトリを見せてもらう予定です。  
-時期が来たらDiscordに、GithubのUrlを貼り付けてもらうことになると思います。 
-
-
-[Githubについて](13_OtherThanGames/Github/Github.md)
 
 <br>
 
@@ -134,5 +78,69 @@ htmlのタグやcssも使用可能です。
 ---
 
 ---
+
+# 公式の教科書
+
+ユニティ・テクノロジーズ・ジャパンが、Unityに関わるノウハウや機能を解説した6冊の電子書籍を、無料で公開しています。
+
+これら6冊の書籍はすべて日本語版、かつUnity 2022 LTSに対応しています。ユーザー登録なども不要でWeb上で閲覧、およびPDFのダウンロードが可能です。
+
+<br>
+
+### ① [『Unityでのアニメーション制作の完全ガイド』は、全121ページからなるアニメーター向けの資料です。](https://unity3d.jp/game/game-ebooks/animation-in-unity/)
+
+Maya、BlenderなどからUnityにアニメーションをインポートする方法から、リギングやIK、毛皮や髪の毛の動きのアニメーション設定などを解説しています。
+
+<br>
+
+### ②　[Unity の上級開発者向けData-Oriented Technology Stack (DOTS)](https://unity3d.jp/game/game-ebooks/unity-dots/)
+
+『Unity の上級開発者向けData-Oriented Technology Stack (DOTS)』はその名の通りDOTSについて解説した、全49ページからなる資料です。
+
+自身のUnityプロジェクトにDOTSの機能を導入すべきかどうかを判断するために必要な知識を提供することを目標としており、DOTSの各パッケージと機能の概要や、DOTSの潜在的なパフォーマンス上の利点について掲載されています。
+
+<br>
+
+### ③　[上級 Unity クリエイター向けのユニバーサルレンダーパイプライン(URP)](https://unity3d.jp/game/game-ebooks/intro-to-urp/)
+
+『上級 Unity クリエイター向けのユニバーサルレンダーパイプライン(URP)』は、全140ページの資料です。
+
+Unityの経験豊富な開発者やテクニカルアーティストに向け、Built-in Render PipelineからUniversal Render Pipeline（以下、URP）にプロジェクトを移行する方法を解説しています。加えて、ライティングやシェーダー設定、レンダラー機能の解説、最適化のテクニックなどにも触れています。
+
+
+
+<br>
+
+### ④　[HD レンダーパイプラインにおけるライティングと環境](https://unity3d.jp/game/game-ebooks/hdrp-2022lts/)
+
+
+『HD レンダーパイプラインにおけるライティングと環境』は、全183ページの資料。
+
+UnityのHDRP（High Definition Render Pipeline）において、プロジェクトのセットアップやライティング、地形や水などのリアルなビジュアルやエフェクトを作成する方法を解説しています。
+
+また、[SpeedTree](https://unity.com/ja/products/speedtree)を使ったTerrainの使用方法、HDRP用シェーダーやマテリアルについても掲載されています。
+
+
+
+<br>
+
+### ⑤　[ゲームレベルデザイン入門](https://unity3d.jp/game/game-ebooks/game-level-design/)
+
+『ゲームレベルデザイン入門』は、レベルデザイナー志望者と経験者の両方を対象とした、全115ページの資料です。
+
+ゲーム開発におけるレベルデザインの概要やワークフローのほか、Unityのレベルデザインツールの使い方などを解説しています。
+
+
+<br>
+
+### ⑥ [ユニバーサルレンダーパイプライン（URP）クックブック: シェーダーと視覚　エフェクトのレシピユニバーサルレンダーパイプライン（URP）クックブック: シェーダーと視覚　エフェクトのレシピ](https://unity3d.jp/game/game-ebooks/universal-render-pipeline/)
+
+『ユニバーサルレンダーパイプライン（URP）クックブック:シェーダーと視覚　エフェクトのレシピ』は、全106ページの資料です。
+
+このクックブックでは、12 のレシピから選択して、URP を使用して一般的なエフェクト を作成できます。
+
+このガイドは、上級 Unity ユーザーを対象としています。Unity でのプロジェクト開 発、URP、および HLSL を使用したシェーダーの記述について基本的な知識があるこ とを前提としています。
+
+
 
 

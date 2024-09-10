@@ -6,7 +6,7 @@
 
 <br>
 
-## **[・ (ゲーム専攻)_後期課題①](2ndTermAssignment_Game.md)**  
+## **[・ (ゲーム専攻)_後期課題](2ndTermAssignment_Game.md)**  
 
 
 <br>

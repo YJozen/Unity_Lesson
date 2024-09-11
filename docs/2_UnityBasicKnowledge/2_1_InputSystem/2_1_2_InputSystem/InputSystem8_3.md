@@ -1,5 +1,3 @@
-**InputSystem 2**
-
 # Input Systemでデッドゾーンを設定する
 
 コントローラーの製品の劣化などにより、スティックを離しているのに入力値が０とならない場合があります。（このような現象はドリフトと呼ばれます）
@@ -90,7 +88,7 @@ Defaultのチェックを外すことで、デフォルト設定以外の値を�
 入力値と出力値のベクトルの長さは、次のグラフのような関係になります
 
 
-<img src="images/8/8_3/unity-input-system-deadzone-8.png.avif" width="80%" alt="" title="">
+<img src="images/8/8_3/unity-input-system-deadzone-8.png.avif" width="50%" alt="" title="">
 
 <br>
 
@@ -127,7 +125,7 @@ minからmaxまでの入力を0から1に正規化する処理を行っていま
 
 <br>
 
-Axis Deadzoneの追加もStick Deadzoneと同様、該当すwqqるBindingを選択した状態でProcessor右の＋アイコンから追加してください。
+Axis Deadzoneの追加もStick Deadzoneと同様、該当するBindingを選択した状態でProcessor右の＋アイコンから追加してください。
 
 Axis Deadzoneの入力値補正処理も、基本的にStick Deadzoneと一緒です。絶対値に対してminとmaxの間の入力値を0～1の範囲に正規化する処理を行います。
 

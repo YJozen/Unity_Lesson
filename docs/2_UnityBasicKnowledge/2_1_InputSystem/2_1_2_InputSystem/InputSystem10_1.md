@@ -1,5 +1,3 @@
-**InputSystem 2**
-
 # Input SystemのカスタムInteractionで、特殊な操作を実装する
 
 ・今回カスタムInteractionで実装する操作

@@ -1,5 +1,3 @@
-**InputSystem 2**
-
 # Input SystemのProcessorを自作する
 
 ここまで紹介したProcessorは、Input Systemパッケージ側で用意されているものですが、独自のProcessorを自作して適用することも可能です。

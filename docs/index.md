@@ -8,13 +8,11 @@
 
 ## **[・ (ゲーム専攻)_後期課題](2ndTermAssignment_Game.md)**  
 
-
 <br>
 
 <br>
 
 ## **[・ (IT専攻)_後期_必須課題](2ndTermAssignment_IT.md)**  
-
 
 <br>
 

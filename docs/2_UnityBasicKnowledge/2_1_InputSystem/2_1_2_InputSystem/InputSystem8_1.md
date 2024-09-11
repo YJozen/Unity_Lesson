@@ -1,5 +1,3 @@
-**InputSystem 2**
-
 # Input SystemのProcessorで入力値を加工する
 
 ## Processorの使用方法

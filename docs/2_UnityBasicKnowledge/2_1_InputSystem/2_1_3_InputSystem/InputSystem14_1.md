@@ -1,74 +1,34 @@
-【Unity】Input Systemからマウスカーソルを操作する
+# 【Unity】Input Systemからマウスカーソルを操作する
 2024年4月24日2023年5月26日
 
 
 https://nekojara.city/unity-input-system-virtual-mouse
 
-こじゃら
-ゲームパッドからマウスカーソルを操作したい場合どうすればいいの？
-
-このは
-Input SystemのVirtual Mouseを使えば良いわ。
 
 Input Systemでは、マウスカーソルをゲームパッドなどから操作可能にするVirtual Mouseコンポーネントが提供されています。
 
 これを用いると、次のようにゲームパッドのスティックなどでカーソル移動やクリックができるようになります。
 
+<img src="images/14/14_1/" width="90%" alt="" title="">
+
 このようにカーソルをマウス以外から操作する方法には、次の2通りがあります。
 
-カーソルを動かす方法
-OSのカーソルを直接動かす
-UI要素をカーソルと見立てて動かす
+> カーソルを動かす方法
+> + OSのカーソルを直接動かす
+> + UI要素をカーソルと見立てて動かす
+
 また、このようなカーソル操作は、Action経由で得られた入力値に基づいて行うため、様々なデバイスからの操作に手軽に対応出来るのが魅力です。
 
 本記事では、このようにマウス以外のデバイスからカーソルを動かす方法について解説していきます。また、使用上における注意点についても触れます。
 
- 動作環境
-Unity 2022.2.20f1
-Input System 1.5.1
-スポンサーリンク
 
+# 下準備
 
-目次 非表示
-前提条件
-Virtual Mouseとは
-Virtual Mouseコンポーネントの配置
-カーソルの設定
-モードの設定
-カーソルUIの配置
-ソフトウェアカーソルの設定
-カーソルの速さの設定
-Actionの設定
-実行結果
-ソフトウェアカーソル時の問題
-Constant Pixel以外でも正常に機能させる
-カスタムProcessorの実装
-Canvasサイズに基づいてProcessorを適用するスクリプトの実装
-スクリプトの適用
-実行結果
-スクリプトの説明
-さいごに
-関連記事
-参考サイト
-前提条件
-予めInput Systemパッケージがインストールされ、有効化されているものとします。
-
-ここまでの手順がわからない方は、以下記事を参考の上セットアップを行なってください。
-
-
-【Unity】Input Systemの使い方入門
-Unity公式の新しい入力システムパッケージInput Systemの入門者向け記事です。 本記事では、Input Systemパッケージのインストール方法から、最低限使えるようにするところまでを解説していきます。 また…
-2021年11月29日
-また、マウスカーソルのための操作入力値の取得にはInput Actionを使用します。
-
-Input Actionの基本的な使い方は以下記事をご覧ください。
-
-
-【Unity】Input Actionの基本的な使い方
-Input Systemでは、マウスやキーボード、ゲームパッドなどあらゆる入力デバイスを抽象的に扱えるようにするInput Actionが用意されています。 Input Actionを使うと、次のように入力デバイスに依存…
-2021年12月1日
 本記事では、次のように予め配置されたUIに対してカーソル操作出来るようにすることを目標とします。
 
+<img src="images/14/14_1/" width="90%" alt="" title="">
+
+Unity UI（uGUI）をInput Systemの環境下で扱う際は、EventSystemのUIモジュールをInput System用のものに置き換えます。
 
 Unity UI（uGUI）をInput Systemの環境下で扱う際は、EventSystemのUIモジュールをInput System用のものに置き換えます。
 
@@ -81,7 +41,9 @@ Canvas ScalerのUI Scale ModeにConstant Pixel以外が設定されている場�
 
 基本的にConstant Pixelの設定で運用するのが安全です。
 
-Virtual Mouseとは
+<br>
+
+# Virtual Mouseとは
 仮想的なマウスデバイスを扱えるようにするコンポーネントです。
 
 参考：Class VirtualMouseInput| Input System | 1.5.1
@@ -91,11 +53,14 @@ Unityエディタ上ではVirtual Mouseコンポーネントとして振る舞�
 
 参考：Enum VirtualMouseInput.CursorMode| Input System | 1.5.1
 
-Virtual Mouseコンポーネントの配置
+<br>
+
+# Virtual Mouseコンポーネントの配置
 適当なゲームオブジェクトにVirtual Mouseという名前のコンポーネントを追加します。
 
 すると、次のような項目のVirtual Mouseコンポーネントが追加されます。
 
+<img src="images/14/14_1/" width="90%" alt="" title="">
 
 Cursor下の項目では、カーソルの動作モードや画像などの基本設定を行います。
 
@@ -107,7 +72,9 @@ Stick Action以降の項目では、カーソル操作の入力とするAction�
 
 参考：Class VirtualMouseInput| Input System | 1.5.1
 
-カーソルの設定
+<br>
+
+# カーソルの設定
 Input SystemのVirtual Mouse側からカーソルを動かすためには、Virtual Mouseコンポーネントの設定を行う必要があります。
 
 設定手順を順番に解説していきます。
@@ -115,9 +82,22 @@ Input SystemのVirtual Mouse側からカーソルを動かすためには、Virt
 モードの設定
 動作モードには2種類存在し、次のいずれかをVirtual MouseコンポーネントのCursor > Cursor Modeに指定します。
 
-Hardware Cursor If Available	マウスが使用可能ならOSのカーソルを直接動かす設定です。マウスが使用可ならOSのカーソル（Hardware Cursor）とします。使用不可なら、後述するソフトウェアカーソル（Software Cursor）の設定にフォールバックされます。
-Software Cursor	UI要素をカーソルとして操作します。当モードで動作する場合は、後述するCursor GraphicとCursor Transformの設定が必要です。
+ <table>
+    <tr>
+      <td>Hardware Cursor If Available</td>
+      <td>マウスが使用可能ならOSのカーソルを直接動かす設定です。マウスが使用可ならOSのカーソル（Hardware Cursor）とします。使用不可なら、後述するソフトウェアカーソル（Software Cursor）の設定にフォールバックされます。</td>
+    </tr>
+    <tr>
+      <td>Software Cursor</td>
+      <td>UI要素をカーソルとして操作します。当モードで動作する場合は、後述するCursor GraphicとCursor Transformの設定が必要です。</td>
+    </tr>
+ </table>
+
+<br>
+
 Cursor Modeの設定値
+
+<img src="images/14/14_1/" width="90%" alt="" title="">
 
 カーソルUIの配置
 カーソルの動作モードがSoftware Cursorとなる場合（フォールバック含む）、カーソル用のUIが必要になります。
@@ -230,6 +210,7 @@ Canvasのサイズが変わった時、上記カスタムProcessorをポイン�
 スクリプトは次のようになります。
 
 VirtualMouseScaler.cs
+```cs
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -268,6 +249,7 @@ public class VirtualMouseScaler : InputProcessor<Vector2>
         return value;
     }
 }
+```
 上記をVirtualMouseScaler.csという名前でUnityプロジェクトに保存すると、カスタムProcessorが使用可能になります。
 
 
@@ -280,6 +262,7 @@ Canvasのスケールが変わった時、前述のカスタムProcessorを適�
 以下、その実装例です。
 
 SoftwareCursorPositionAdjuster.cs
+```cs
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -317,6 +300,7 @@ public class SoftwareCursorPositionAdjuster : MonoBehaviour
         _lastScaleFactor = scale;
     }
 }
+```
 上記をSoftwareCursorPositionAdjuster.csという名前でUnityプロジェクトに保存します。
 
 スクリプトの適用

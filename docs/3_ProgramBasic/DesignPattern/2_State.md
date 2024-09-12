@@ -1,13 +1,22 @@
 
 
 
-# [StatePattern 記事作成中](StatePattern/２_1.md)
+# [StatePattern](StatePattern/２_1.md)
 
 
+上記リンク先では、ステートパターンをUnityで使用する方法として以下２つを取り上げています
 
++ ジェネリックを使用する方法
++ Animation ControllerでStateMachineBehaviourを使用する方法
+<br>
+<br>
 
+---
+---
+<br>
+<br>
 
-## ↓は上記以前の資料
+#### ↓別資料
 
 * [デザインパターン_State_NonGeneric]
 

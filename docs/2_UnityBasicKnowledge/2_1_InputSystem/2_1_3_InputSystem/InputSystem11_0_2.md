@@ -1,6 +1,6 @@
 # Input Actionをスクリプトから動的に編集する方法②
 
-
+https://nekojara.city/unity-input-system-actions-runtime#Input%20Action%20Asset%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%96%E3%83%BB%E3%83%AD%E3%83%BC%E3%83%89
 
 ## Input Action Assetのセーブ・ロード
 スクリプトなどで編集したInput Action Assetの内容はJSONにシリアライズしたり、逆にJSONからデシリアライズできます。

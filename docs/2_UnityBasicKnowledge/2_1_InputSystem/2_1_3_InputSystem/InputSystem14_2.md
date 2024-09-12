@@ -3,11 +3,7 @@
 
 https://nekojara.city/unity-input-system-local-multiplayer-ui
 
-こじゃら
-複数プレイヤーの選択画面で、複数コントローラーで同時にUIを操作するにはどうすればいいの？
 
-このは
-PlayerInputとMultiplayerEventSystemを使えば可能だわ。順を追って解説していくね。
 
 複数コントローラーを接続したローカルマルチの環境で、UIを個別のコントローラーで操作する方法の解説記事です。
 
@@ -17,33 +13,8 @@ PlayerInputとMultiplayerEventSystemを使えば可能だわ。順を追って�
 
 本記事では、このような複数プレイヤーによるUI操作をInput Systemで実現する方法を解説していきます。
 
- 動作環境
-Unity 2023.2.16f1
-Input System 1.7.0
-スポンサーリンク
 
 
-目次 非表示
-前提条件
-UI操作の実現方法の概要
-設定手順
-Event Systemの削除
-Multiplayer Event Systemの配置
-Player Inputの設定
-プレイヤー分のMultiplayer Event Systemの配置
-最初の選択要素の設定
-UIの操作対象の指定
-コントローラーの準備
-実行結果
-動的にプレイヤーが追加される場合
-Prefabの作成
-Player Input Managerの配置
-Multiplayer Event Systemを設定するためのスクリプト実装
-実行結果
-スクリプトの説明
-さいごに
-関連記事
-参考サイト
 前提条件
 事前にInput Systemパッケージがインストールされ、有効化されているものとします。
 
@@ -186,6 +157,7 @@ Multiplayer Event Systemを設定するためのスクリプト実装
 以下実装例です。
 
 LocalMultiUISetup.cs
+```cs
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -233,6 +205,7 @@ public class LocalMultiUISetup : MonoBehaviour
         eventSystem.firstSelectedGameObject = playerUiInfo.firstSelected;
     }
 }
+```
 上記をLocalMultiUISetup.csという名前でUnityプロジェクトに保存します。
 
 そして、適当なゲームオブジェクトにアタッチし、インスペクターから以下項目を設定してください。

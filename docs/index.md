@@ -27,7 +27,7 @@
 ### Unityはじめ 
 
 0. [0からのUnity](0_Tutorial/0.md)
-1. [Unityを触る上での前提知識](1_ElementaryKnowledge/1.md)  
+1. [Unityを触る上での前提知識](1_ElementaryKnowledge/index1_0.md)  
 2. [Unityの基本](2_UnityBasicKnowledge/2.md)
 3. [プログラミング全般](3_ProgramBasic/3_0.md)
 4. [ミニゲーム](4_MiniGame/4_0.md)

@@ -95,12 +95,57 @@ public class GameManager : MonoBehaviour {
     }
 }
 ```
+<br>
+
+上記コードは、**Factoryパターン**と**インターフェース**を利用して、異なる種類の敵 (`Orc` や `Troll`) を生成し、その動作（攻撃）を実装しています。この構造を図示してみました。
+
+```mermaid
+classDiagram
+    class IEnemy {
+        <<interface>>
+        +Attack() : void
+    }
+
+    class Orc {
+        +Attack() : void
+    }
+
+    class Troll {
+        +Attack() : void
+    }
+
+    class EnemyFactory {
+        +CreateEnemy(type : string) : IEnemy
+    }
+
+    class GameManager {
+        +Start() : void
+    }
+
+    IEnemy <|.. Orc
+    IEnemy <|.. Troll
+    EnemyFactory --> IEnemy : "Creates"
+    GameManager --> EnemyFactory : "Uses Factory"
+    GameManager --> IEnemy : "Receives"
+```
+
+### 説明
+- `IEnemy` はインターフェースで、`Orc` と `Troll` の具体的なクラスがこれを実装しています。
+- `EnemyFactory` は、与えられた `type` に基づいて `Orc` または `Troll` のインスタンスを生成し、`IEnemy` インターフェース型として返します。
+- `GameManager` は、`EnemyFactory` を利用して敵を生成し、それらの `Attack()` メソッドを呼び出します。
+
+この図は、`Factoryパターン` と `インターフェース` の関係を視覚的に示し、各クラス間の依存関係を明示しています。
+
+<br>
+
+<br>
+
+配布しているプロジェクトのStatePatternの例ではFactoryファイルでインスタンスを生成し、Dictionary型でインスタンスを保持している
+
+[例]  
+Dictionary<enumでの型名, StateBaseを継承した型名>  
+Key  ：状態(PlayerStatus.Walkなど)　　 enumでの型名  
+Value：インスタンス　　　　　　　　　　　　StateBaseを継承した型名
 
 
-配布しているStatePatternの例ではFactoryファイルでインスタンスを生成して
-Dictionary型でインスタンスを保持している
 
-[例]
-Dictionary<enumでの型名, StateBaseを継承した型名>
-Key  ：状態(PlayerStatus.Walkなど)　　　enumでの型名
-Value：インスタンス　　　　　　　　　　　　　StateBaseを継承した型名

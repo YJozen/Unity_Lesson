@@ -19,6 +19,13 @@
 https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask
 ```
 
+
+
+
+<a href="https://www.hanachiru-blog.com/entry/2021/05/24/120000" target="_blank">Gitのエラーが出る場合参照ページ</a>
+
+
+
 <img src="images/0_3.png" width="80%" alt="" title="">
 
 <br>

@@ -4,6 +4,8 @@ Input Systemでシングルタップとマルチタップを判別する
 2024年7月3日2024年7月2日
 
 
+https://nekojara.city/unity-input-system-tap-and-multi-tap
+
 こじゃら
 マウスのシングルクリックとダブルクリックのどちらかを判定する方法を知りたいの。
 

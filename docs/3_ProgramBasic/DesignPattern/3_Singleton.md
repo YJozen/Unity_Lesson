@@ -127,12 +127,35 @@ public class GameManager : MonoBehaviour {
 <br>
 
 
+```mermaid
 
+classDiagram
+    class SettingsManager {
+        -static instance : SettingsManager
+        -soundVolume : int
+        -isFullScreen : bool
+        +Instance : SettingsManager
+        +SoundVolume : int
+        +IsFullScreen : bool
+        +SaveSettings() : void
+        +LoadSettings() : void
+    }
 
+    class GameManager {
+        +Start() : void
+    }
 
+    GameManager --> SettingsManager : "Uses Singleton Instance"
+    SettingsManager <-- SettingsManager : "Singleton Instance"
 
+```
 
+### 説明
++ SettingsManager クラスは Singleton パターンで実装されており、クラス内で一つのインスタンス (instance) しか存在しません。
++ GameManager は SettingsManager.Instance を介して、音量やフルスクリーン状態などの設定を管理・操作しています。
++ 図の中で、SettingsManager クラスはインスタンスの管理、設定の保存・読み込みの機能を持っています。また、GameManager はゲーム内でその設定を利用しています。
 
+このように、SettingsManager クラスはゲーム全体で一度しか作成されないインスタンスを管理し、それを他のクラス（この場合は GameManager）が利用する仕組みになっています。
 
 
 

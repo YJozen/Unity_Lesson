@@ -1,3 +1,9 @@
+<head>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
 
 # MVPパターンの定義
 MVP (Model-View-Presenter) パターンは、ユーザーインターフェース (UI) ロジックとビジネスロジックを分離し、アプリケーションの保守性とテスト性を向上させる設計パターンです。特にUIの要素が頻繁に変化する場合に有効で、視覚部分 (View) とロジック部分 (Presenter) の結びつきを最小限にします。
@@ -83,9 +89,8 @@ public class GameManager : MonoBehaviour {
 }
 ```
 
-### 図示
 
-```mermaid
+<div class="mermaid">
 classDiagram
     class PlayerModel {
         - string Name
@@ -118,13 +123,21 @@ classDiagram
     PlayerPresenter --> PlayerModel
     GameManager --> PlayerPresenter
     PlayerView --> IPlayerView
-```
+</div>
 
-### 解説
-- **Model**: `PlayerModel` はデータを持つクラスで、プレイヤーの名前やスコアなどのビジネスロジックを管理します。
-- **View**: `IPlayerView` インターフェースを実装する `PlayerView` は、UI部分を担当し、プレイヤーの情報を画面に表示します。
-- **Presenter**: `PlayerPresenter` は、ModelとViewを結びつけ、プレイヤーの情報を更新したりUIに反映させます。
-- **GameManager**: `PlayerPresenter` を作成し、アプリケーションの起動時にViewとModelを初期化します。
+<br>
+
+<br>
+
+# 解説
+- **Model**:   
+`PlayerModel` はデータを持つクラスで、プレイヤーの名前やスコアなどのビジネスロジックを管理します。
+- **View**:   
+`IPlayerView` インターフェースを実装する `PlayerView` は、UI部分を担当し、プレイヤーの情報を画面に表示します。
+- **Presenter**:  
+ `PlayerPresenter` は、ModelとViewを結びつけ、プレイヤーの情報を更新したりUIに反映させます。
+- **GameManager**:   
+`PlayerPresenter` を作成し、アプリケーションの起動時にViewとModelを初期化します。
 
 ### 利点
 1. **ロジックの分離**: ビジネスロジックとUIロジックが分離されているため、各コンポーネントが独立して保守できます。

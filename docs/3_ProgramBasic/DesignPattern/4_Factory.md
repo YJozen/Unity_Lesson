@@ -1,3 +1,11 @@
+
+<head>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+
 # ファクトリーパターン
 
 ## 定義 
@@ -99,7 +107,8 @@ public class GameManager : MonoBehaviour {
 
 上記コードは、**Factoryパターン**と**インターフェース**を利用して、異なる種類の敵 (`Orc` や `Troll`) を生成し、その動作（攻撃）を実装しています。この構造を図示してみました。
 
-```mermaid
+
+<div class="mermaid">
 classDiagram
     class IEnemy {
         <<interface>>
@@ -127,7 +136,7 @@ classDiagram
     EnemyFactory --> IEnemy : "Creates"
     GameManager --> EnemyFactory : "Uses Factory"
     GameManager --> IEnemy : "Receives"
-```
+</div>
 
 ### 説明
 - `IEnemy` はインターフェースで、`Orc` と `Troll` の具体的なクラスがこれを実装しています。

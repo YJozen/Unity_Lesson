@@ -1,3 +1,11 @@
+<head>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+
+
 # シングルトンパターン
 
 ## 定義 
@@ -127,7 +135,8 @@ public class GameManager : MonoBehaviour {
 <br>
 
 
-```mermaid
+<div class="mermaid">
+
 
 classDiagram
     class SettingsManager {
@@ -148,7 +157,7 @@ classDiagram
     GameManager --> SettingsManager : "Uses Singleton Instance"
     SettingsManager <-- SettingsManager : "Singleton Instance"
 
-```
+</div>
 
 ### 説明
 + SettingsManager クラスは Singleton パターンで実装されており、クラス内で一つのインスタンス (instance) しか存在しません。

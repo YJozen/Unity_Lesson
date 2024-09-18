@@ -1,13 +1,10 @@
 MVP（Model-View-Presenter）とMVC（Model-View-Controller）は似た設計パターンですが、いくつか重要な違いがあります。どちらもアプリケーションの構造を整理し、保守性や再利用性を高めるための設計パターンですが、**主にViewとPresenter/Controller間のやり取り**に違いがあります。
 
-
-
 <br>
 
 <br>
 
-
-### MVPとMVCの違い
+# MVPとMVCの違い
 
 
 <br>

@@ -176,6 +176,10 @@ public class BoundsExample : MonoBehaviour
 
 カメラの視錐台内にオブジェクトが含まれているかをチェックし、その結果に基づいて描画するかどうかを決定するプログラムの例を見てみます。
 
+<img src="Unity_Frustum1_overview-1.png" width="90%" alt="" title="">
+
+
+
 # プログラム例
 
 ```csharp

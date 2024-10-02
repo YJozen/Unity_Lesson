@@ -13,7 +13,7 @@
 
 <br>
 
-- [基準となるテキストを作成してみる (執筆中)](Textbook/0.md)
+- [ML-Agents 参考解説(サンプル付き)](Textbook/0.md)
 
 
 <br>

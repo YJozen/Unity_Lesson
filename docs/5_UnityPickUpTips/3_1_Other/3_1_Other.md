@@ -1,5 +1,5 @@
 3. Unity機能_その他
-     + [Sound](sound0.md)
+     + [Sound](Sound/Sound0.md)
      
      + [Cinemachine]
 
@@ -41,13 +41,9 @@
 
 <br>
 
-DOTS
-
+[DOTS](DOTS/DOTS.md)
 
 <br>
-
-
-
 
 Occlusion Culling
 Frustum Culling　視錐台  

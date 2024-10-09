@@ -6,17 +6,20 @@
 
 <br>
 
-## **[・ (ゲーム専攻)_後期課題](2ndTermAssignment_Game.md)**  
+## **[・ (ゲーム専攻3年)_後期課題](2ndTermAssignment_Game.md)**  
 
 <br>
 
 <br>
 
-## **[・ (IT専攻)_後期_必須課題](2ndTermAssignment_IT.md)**  
+## **[・ (IT専攻3年)_後期_必須課題](2ndTermAssignment_IT.md)**  
 
 <br>
 
 <br>
+
+## **[・ (ゲーム専攻4年)_後期_課題](2ndTerm4nen.md)**  
+
 
 ## **目次**
 

@@ -2,24 +2,25 @@
 
 [授業について](about_Lesson.md)
 
-<br>
-
-<br>
-
-## **[・ (ゲーム専攻3年)_後期課題](2ndTermAssignment_Game.md)**  
-
-<br>
-
-<br>
-
-## **[・ (IT専攻3年)_後期_必須課題](2ndTermAssignment_IT.md)**  
+サイトについて  
+(執筆途中のものが数多くあります。ご了承ください)
 
 <br>
 
 <br>
 
-## **[・ (ゲーム専攻4年)_後期_課題]**  
+# 課題
 
+### **[・ (ゲーム専攻3年)_後期課題](2ndTermAssignment_Game.md)**  
+
+<br>
+
+### **[・ (IT専攻3年)_後期_必須課題](2ndTermAssignment_IT.md)**  
+
+<br>
+<! -- 
+**[・ (ゲーム専攻4年)_後期_課題]**  
+ -->
 <br>
 
 <br>
@@ -43,7 +44,7 @@
 
 ### （授業で使用予定　なし）
 6. [Unityとは関係ない制作する上での小ネタ・アルゴリズムなど](6_GameTips/6_index.md)
-7. [雑学(Unityで制作する上で知らなくても作成できる)]
+7. [雑学(Unityで制作する上で知らなくても作成できる)](7_UnityTrivia/7.md)
 8. [Unityに関するテスト](8_UnityTest/UnityTest.md)
 
 
@@ -79,9 +80,16 @@
 
 + <a href="https://docs.google.com/spreadsheets/d/1nar1mbPLBWnX5I3DaNg93zN5vKgjLRBzA5sCK2A8ecg/edit#gid=361639574" target="_blank">2024年度_年間スケジュール</a>
 
+<br>
+<br>
+
 ---
 
 ---
+
+<br>
+<br>
+
 
 # 公式の教科書
 

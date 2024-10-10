@@ -1,32 +1,18 @@
 3. Unity機能_その他
      1. [Sound](Sound/Sound0.md)
+         + [AudioSource]
+         + [AudioMixer]
+         + [CRI_Ware]
      
-     2. [Cinemachine]
-
      3. [ScriptableObject](ScriptableObject/0_ScriptableObject.md)
 
      4. [Timeline]
      
-     5. [NavMesh]
+     7. [Shader_Basic](Shader/shader.md)  
+       - [C#]  - [HLSL_CG]  - [ShaderGraph]
 
-     6. [Ray]
-       - [Basic](Ray/Ray.md)
-       - [Jump]
-         * [Ray_Basic]
-         * [Ray_3Combo]
-       - [Mouse]
-         * [Mouse_Ray]
-         * [Mouse_TargetLock]
-         * [Mouse_Effect]
-        
-
-
-     7. [Shader_Basic](Shader/shader.md)
-       - [C#]
-       - [HLSL_CG]
-       - [ShaderGraph]
      8. Shader_Advanced サンプルプロジェクト見てもらう？
-       - [Tessellation]
+       - [Tessellation]   
        - [Geometry]
        - [Liquid]
        - [Ink]

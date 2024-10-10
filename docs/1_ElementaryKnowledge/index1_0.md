@@ -1,15 +1,8 @@
-1. Unity前提知識  
+<a href="https://drive.google.com/drive/folders/1wERc8OBgpYX3IYyQwG1kEKyiMEyuSYhc" target="_blank">参考スライド</a>  
 
-[参考スライド](https://drive.google.com/drive/folders/1wERc8OBgpYX3IYyQwG1kEKyiMEyuSYhc)
-
-
+# Unity前提知識  
    1. スクリプトの作成(スライド番号4,5,6)  
-      [一番初め](https://docs.google.com/presentation/d/1IqIA1zVIiNqAuvInyHzmv8hJiMidcBx5e0E52WCuGtM/edit#slide=id.g1199c5f4c43_1_130)
-      - 名前空間
-      - クラス
-      - 関数
-      - 変数
-      - 継承
+      [一番初め](https://docs.google.com/presentation/d/1IqIA1zVIiNqAuvInyHzmv8hJiMidcBx5e0E52WCuGtM/edit#slide=id.g1199c5f4c43_1_130)(変数・関数・クラス・継承・名前空間について)
         
    2. [参照型・値型](2_Value_and_Reference/index1_2_Value_and_Reference.md)
 
@@ -19,5 +12,5 @@
 
    4. イベントの実行順
    
-   [補足(メソッドの実行順について)](index1_4.md)
+   5. 少しだけ[補足(メソッドの実行順について)](index1_4.md)
 

@@ -1,4 +1,4 @@
-Input System   
+# InputSystem ( 応用2 ローカルマルチ・キーコンフィグ )
 
 11_1.[Input Systemでキーコンフィグを実装する①](InputSystem11_3.md)  
 11_2.[Input Systemでキーコンフィグを実装する②](InputSystem11_4.md)  
@@ -13,8 +13,15 @@ Input System
 12_3.[画面分割](InputSystem12_2.md)   
 12_4.[Cinemachine](InputSystem12_3.md) 
 
+<br>
 
+<br>
 
+<br>
+
+<br>
+
+[Input System　目次](../2_1.md)
     
 
     

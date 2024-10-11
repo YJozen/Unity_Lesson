@@ -1,3 +1,5 @@
+[markdownの表記テスト](_Testfolder/CodeDisplay.md)
+
 # Jozen Document
 
 [授業について](about_Lesson.md)
@@ -18,9 +20,11 @@
 ### **[・ (IT専攻3年)_後期_必須課題](2ndTermAssignment_IT.md)**  
 
 <br>
-<! -- 
+
+<!-- 
 **[・ (ゲーム専攻4年)_後期_課題](2ndTerm4nen.md)**  
  -->
+
 <br>
 
 <br>

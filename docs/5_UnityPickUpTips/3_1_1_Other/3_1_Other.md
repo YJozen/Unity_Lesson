@@ -33,13 +33,13 @@
 
 <br>
 
-11. [DOTS](DOTS/DOTS.md)
+0. [DOTS](DOTS/DOTS.md)
 
 <br>
 
 
 
-4.  [Asset紹介 (Mesh Baker Free)](https://assetstore.unity.com/packages/tools/modeling/mesh-baker-free-31895?srsltid=AfmBOooKmbb6-xkSJhEceaEVIoH0NwNMoQsw9lH6A3rbPKqn6hrScOaq)
+0.  [Asset紹介 (Mesh Baker Free)](https://assetstore.unity.com/packages/tools/modeling/mesh-baker-free-31895?srsltid=AfmBOooKmbb6-xkSJhEceaEVIoH0NwNMoQsw9lH6A3rbPKqn6hrScOaq)
 
 [使い方紹介サイト](https://3dcg-school.pro/unity-asset-mesh-baker/)
 

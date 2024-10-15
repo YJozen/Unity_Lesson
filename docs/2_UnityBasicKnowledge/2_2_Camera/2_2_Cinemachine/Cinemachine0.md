@@ -7,3 +7,22 @@
 + [Input Systemでカメラ操作をしたい場合](Cinemachine1_InputSystem.md)
 
 + [参照　InputSystemでの複数人プレイ](../../2_1_InputSystem/2_1_3_InputSystem/InputSystem0.md)
+
+
+
+
+<br>
+
+---
+---
+
+今後の記事作成メモ
+
+cinemachine 
+collider
+priority
+
+extention
+
+
+add impulse listner

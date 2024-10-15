@@ -1,6 +1,22 @@
-SaveData
+# SaveData
 
-# ・アセット管理
+
+
+
+・<a href="https://qiita.com/k7a/items/df6dd8ea66cbc5a1e21d" target="_blank">今更誰も教えてくれない、Unityにおけるアセット読み込みについての基礎知識(外部サイト)</a>
+
+
+・<a href="https://qiita.com/k7a/items/d27640ac0276214fc850" target="_blank">AssetBundleを完全に理解する(外部サイト)</a>
+
+
+
+
+<br>
+
+<br>
+
+# 1.アセット管理
+
 ## [Addressables]   
 大規模プロジェクトや動的アセット管理が必要な場合。
 
@@ -117,7 +133,7 @@ DLCや動的コンテンツ更新が必要な場合。
 
 <br>
 
-# ・データストレージ
+# 2.データストレージ
 ## PlayFab 
   - マルチプレイヤーやライブサービスのゲーム。
 
@@ -225,10 +241,3 @@ DLCや動的コンテンツ更新が必要な場合。
 
 
 <br>  
-
-今更誰も教えてくれない、Unityにおけるアセット読み込みについての基礎知識
-https://qiita.com/k7a/items/df6dd8ea66cbc5a1e21d
-
-
-AssetBundleを完全に理解する
-https://qiita.com/k7a/items/d27640ac0276214fc850

@@ -432,4 +432,7 @@ private void RestoreBallState(Vector3 position, Quaternion rotation, Vector3 vel
 
 ---
 
-このプログラムは、Unityの物理シミュレーションを用いたボールの動きを制御し、過去と未来の挙動を視覚化する良い例となっています。プレイヤーの入力に応じて、シミュレーションを進めたり、逆再生したり、未来を予測したりすることができ、ゲームにおけるインタラクティブな要素を強化することができます。
+<br>
+
+別の奇跡表示方法例
+・<a href="https://drive.google.com/file/d/1oyKDDpaGLoIxpEffXXgC9fqYk-ILgevx/view?usp=drive_link" target="_blank">MiniGame　like_AngryBird</a>

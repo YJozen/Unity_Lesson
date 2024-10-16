@@ -1,5 +1,7 @@
 # UI
 
+一旦配布サンプルプロジェクト参照
+
   + [UI_Basic]
     - [UI_Basic_Sample1]
     - [UI_Basic_RectTransform]

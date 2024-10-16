@@ -68,6 +68,8 @@ public class SmoothRotation : MonoBehaviour {
 
 <br>
 
+
+
 ---
 
 
@@ -98,6 +100,10 @@ public class LerpRotation : MonoBehaviour {
 - `Lerp`は2つの値の間を**直線的に補間**するため、回転角度が小さい場合には滑らかな動作が期待できます。
 - `Slerp`よりも計算コストが少ないため、処理の軽量化が求められる場面では使用できますが、回転の大きな変化には不向きです。
 
+
+<br>
+
+[補間の計算処理](補間の計算処理.md)
 
 <br>
 

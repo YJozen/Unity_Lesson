@@ -1,16 +1,22 @@
-#　よく使用するスクリプト
+#　よく使用するスクリプト等
 
 
-Cursolをロックし、非表示
+一旦配布サンプルプロジェクト参照
 
-Gameのやめ方
++ Cursolをロックし、非表示
 
-InspectorEditor
++ Gameのやめ方
 
-SceneReset
++ InspectorEditor
 
-InputSysTem　InputManager
++ SceneReset
 
++ InputSysTem　InputManager
 
++ Editor
 
-Editor
+<br>
+
++ 初期Scene例
+
+<img src="images/Scene_Sample.png" width="80%" alt="" title="">

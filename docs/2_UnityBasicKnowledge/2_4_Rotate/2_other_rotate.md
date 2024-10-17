@@ -103,7 +103,7 @@ public class LerpRotation : MonoBehaviour {
 
 <br>
 
-[補間の計算処理](補間の計算処理.md)
+[補間の計算処理について](補間の計算処理.md)
 
 <br>
 

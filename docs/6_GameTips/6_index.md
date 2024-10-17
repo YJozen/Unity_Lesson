@@ -6,11 +6,11 @@
      + [Reflection]
      + [A*]
 
-     + [１_ComputeShader]
+     + [１_ComputeShader](１_ComputeShader.md)
 
 
 
-     + [Boids]
+     + [Boids(下の方にも用意)]
 
      
 [マウスの移動速度](MouseSpeed.md)

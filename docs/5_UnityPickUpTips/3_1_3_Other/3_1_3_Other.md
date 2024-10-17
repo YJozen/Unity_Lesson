@@ -1,3 +1,5 @@
+一旦配布サンプルプロジェクト参照
+
 Enum
 
 02_InspectorEditor

@@ -217,3 +217,129 @@ public class ScoreListener : MonoBehaviour
 ### 発展系の使用例
 
 この発展系を使用すると、イベントが発生した際に複数のデータを一度にリスナーに伝えることができ、より複雑なイベント管理が可能になります。例えば、ゲーム内でプレイヤーが特定のアイテムを取得したときに、そのアイテムの詳細（名前、効果、取得したプレイヤーの名前など）を引数としてイベントリスナーに伝えることができます。
+
+
+
+
+
+
+
+
+
+
+複数のリスナーが同じイベントを受け取れるというのは、1つのイベント（例えば `OnEventTriggered`）が発生したときに、**複数のリスナー（イベントを受け取る側）**がそのイベントを受け取って、それぞれ自分に対応した処理を行うことができるという意味です。
+
+具体的には、1つのイベントに対して**複数のメソッド**を登録しておくと、そのイベントが発生したときに、**登録されたすべてのメソッドが順番に実行される**ということです。
+
+### サンプルコード：複数のリスナーが同じイベントを受け取る例
+
+#### Publisher (イベントを発行する側)
+```csharp
+using System;
+using UnityEngine;
+
+public class Publisher : MonoBehaviour
+{
+    // イベントを定義。引数としてメッセージと数値を渡す
+    public event Action<string, int> OnEventTriggered;
+
+    // イベントを発火するメソッド
+    public void TriggerEvent(string message, int value)
+    {
+        Debug.Log("イベントを発火します");
+        OnEventTriggered?.Invoke(message, value); // 登録されたメソッドがあれば実行
+    }
+
+    void Update()
+    {
+        // スペースキーが押されたらイベントを発火
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TriggerEvent("スペースキーが押されました", 42);
+        }
+    }
+}
+```
+
+#### リスナー1 (イベントを受け取る側)
+```csharp
+using UnityEngine;
+
+public class Listener1 : MonoBehaviour
+{
+    [SerializeField] private Publisher publisher;  // Publisherの参照をインスペクターで設定
+
+    void Start()
+    {
+        // Publisherのイベントにメソッドを登録
+        if (publisher != null)
+        {
+            publisher.OnEventTriggered += HandleEvent;
+        }
+    }
+
+    // イベントが発火された際に呼ばれるメソッド
+    private void HandleEvent(string message, int value)
+    {
+        Debug.Log($"Listener1: イベントを受け取りました - メッセージ: {message}, 値: {value}");
+    }
+
+    void OnDestroy()
+    {
+        // イベントの登録を解除（必要な場合）
+        if (publisher != null)
+        {
+            publisher.OnEventTriggered -= HandleEvent;
+        }
+    }
+}
+```
+
+#### リスナー2 (イベントを受け取る側)
+```csharp
+using UnityEngine;
+
+public class Listener2 : MonoBehaviour
+{
+    [SerializeField] private Publisher publisher;  // Publisherの参照をインスペクターで設定
+
+    void Start()
+    {
+        // Publisherのイベントにメソッドを登録
+        if (publisher != null)
+        {
+            publisher.OnEventTriggered += HandleEvent;
+        }
+    }
+
+    // イベントが発火された際に呼ばれるメソッド
+    private void HandleEvent(string message, int value)
+    {
+        Debug.Log($"Listener2: イベントを受け取りました - メッセージ: {message}, 値: {value}");
+    }
+
+    void OnDestroy()
+    {
+        // イベントの登録を解除（必要な場合）
+        if (publisher != null)
+        {
+            publisher.OnEventTriggered -= HandleEvent;
+        }
+    }
+}
+```
+
+### 仕組みの説明
+1. `Publisher` は `OnEventTriggered` というイベントを持っています。このイベントは `Action<string, int>` 型であり、引数として文字列と数値を受け取ります。
+2. `Listener1` と `Listener2` はそれぞれ、 `Publisher` のイベントに対してリスナーとして登録しています。
+3. `Publisher` の `TriggerEvent` メソッドが呼ばれると、 `OnEventTriggered` イベントが発生し、登録された `Listener1` と `Listener2` の `HandleEvent` メソッドが実行されます。
+4. 両方のリスナーが同じイベントを受け取りますが、それぞれ独自のメッセージを表示しています。
+
+### 実行結果の例：
+```
+イベントを発火します
+Listener1: イベントを受け取りました - メッセージ: スペースキーが押されました, 値: 42
+Listener2: イベントを受け取りました - メッセージ: スペースキーが押されました, 値: 42
+```
+
+このように、1つのイベントが発生すると、複数のリスナー（`Listener1` と `Listener2`）が同時にそのイベントを受け取って、自分に割り当てられた処理を実行します。これにより、1つのイベントで複数のオブジェクトや処理を制御することが可能になります。

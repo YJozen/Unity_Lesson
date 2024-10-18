@@ -3,17 +3,13 @@
 
 一旦配布サンプルプロジェクト参照
 
-+ Cursolをロックし、非表示
++ [Cursolをロックし、非表示](Cursol.md)
 
-+ Gameのやめ方
++ [Gameのやめ方](GameQuit.md)
 
-+ InspectorEditor
++ Editor・InspectorEditor
 
 + SceneReset
-
-+ InputSysTem　InputManager
-
-+ Editor
 
 <br>
 

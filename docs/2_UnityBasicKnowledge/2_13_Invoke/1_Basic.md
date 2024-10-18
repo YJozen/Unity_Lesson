@@ -15,7 +15,11 @@ public class InspectorMethodCaller : MonoBehaviour
         }
     }
 }
+```
 
+<br>
+
+```csharp
 public class MyComponent : MonoBehaviour
 {
     public void MyMethod()

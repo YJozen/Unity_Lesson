@@ -75,11 +75,11 @@ f 4//6 8//6 7//6 3//6
 
 <br>
 
-### 3. コリジョンイベント
+# 3. コリジョンイベント
 
 Unityでは、コリジョンに関連するイベントを受け取るために特定のメソッドを使用します。これらのメソッドは、コリジョンの発生や終了を検出します。
 
-#### 3.1. OnCollisionEnter
+## 3.1. OnCollisionEnter
 
 ```csharp
 void OnCollisionEnter(Collision collision)
@@ -91,7 +91,9 @@ void OnCollisionEnter(Collision collision)
 
 - 引数の`Collision`オブジェクトには、衝突したオブジェクトの情報が含まれます。衝突面の法線や衝突点、接触しているコライダーの情報を取得できます。
 
-#### 3.2. OnCollisionStay
+<br>
+
+## 3.2. OnCollisionStay
 
 ```csharp
 void OnCollisionStay(Collision collision)
@@ -103,7 +105,9 @@ void OnCollisionStay(Collision collision)
 
 - オブジェクトが衝突し続けている場合に呼び出されます。
 
-#### 3.3. OnCollisionExit
+<br>
+
+## 3.3. OnCollisionExit
 
 ```csharp
 void OnCollisionExit(Collision collision)
@@ -115,7 +119,9 @@ void OnCollisionExit(Collision collision)
 
 - コリジョンが終了したときに呼び出されます。
 
-#### 3.4. OnTriggerEnter
+<br>
+
+## 3.4. OnTriggerEnter
 
 ```csharp
 void OnTriggerEnter(Collider other)
@@ -127,9 +133,13 @@ void OnTriggerEnter(Collider other)
 
 - トリガーのコライダーに他のオブジェクトが接触したときに呼び出されます。
 
-#### 3.5. OnTriggerStay / OnTriggerExit
+<br>
+
+## 3.5. OnTriggerStay / OnTriggerExit
 
 これらのメソッドもそれぞれトリガーが継続している間や終了したときに呼び出されます。
+
+<br>
 
 ### 4. コリジョンの最適化
 
@@ -139,6 +149,9 @@ void OnTriggerEnter(Collider other)
 
 - **Use Continuous Collision Detection**: 高速で移動するオブジェクトに対しては、Continuous Collision Detectionを有効にすることで、コリジョンをより正確に検出できます。
 
+
+<br>
+
 ### 5. トラブルシューティング
 
 - **コリジョンが発生しない**: ColliderやRigidbodyが正しく設定されているか確認します。特に、両方のオブジェクトにColliderが必要です。
@@ -146,6 +159,8 @@ void OnTriggerEnter(Collider other)
 - **OnCollisionメソッドが呼ばれない**: Rigidbodyが設定されているか、両方のオブジェクトのColliderが適切に設定されているか確認します。また、Triggerが有効になっている場合、OnCollisionメソッドは呼ばれません。
 
 - **パフォーマンスの問題**: 多くのColliderやRigidbodyが存在する場合、パフォーマンスが低下する可能性があります。最適化のためにColliderの数を減らすことを検討してください。
+
+<br>
 
 ### まとめ
 

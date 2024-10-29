@@ -31,3 +31,11 @@ public class RigidbodyMove : MonoBehaviour
 
 
 物理挙動を考慮した移動で、重力や衝突の影響を受ける。
+
+
+
+<br>
+
+<a href="https://blog.virtualcast.jp/blog/2020/05/collisiondetectionchart/" target="_blank">Collision Detection の設定について</a>
+
+<img src="images/CollisionDetectionTypes.png" width="90%" alt="" title="">

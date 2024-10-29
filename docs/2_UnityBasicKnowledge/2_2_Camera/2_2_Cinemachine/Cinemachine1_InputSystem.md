@@ -1,27 +1,30 @@
 # Input Systemでカメラ操作をしたい場合
 
 # Input Actionsの設定
-本記事では、カメラ制御専用のキーバインドを作成して使うことを前提に解説していきます。すでにキーバインドを設定している場合は、読み飛ばして問題ありません。
+カメラ制御専用のキーバインドを作成して使うことを前提に解説していきます。  
+すでにキーバインドを設定している場合は、読み飛ばして問題ありません。
 
 <br>
 
-### Input Actions定義ファイルの作成
+## Input Actions定義ファイルの作成
 トップメニューよりAssets > Create > Input Actionsの順に選択し、Input Actionsの定義ファイルを作成します。
 
 <img src="images/1/unity-cinemachine-input-system-m2.mp4.gif" width="90%" alt="" title="">
 
 どんな名前でも構いません。
 
-### キーバインドの定義
+<br>
+
+# キーバインドの定義
 カメラ操作に使うキーバインド情報を作成していきます。必要な操作は、カメラ回転に使う２軸操作です。
 
-先ほど作成したInput Actionsファイルをダブルクリックで開き、Action Mapsの右の＋ボタンから新しいマップを作成します。
+先ほど作成したInput Actionsファイルをダブルクリックで開き、Action Mapsの右の`＋`ボタンから新しいマップを作成します。
 
 <img src="images/1/unity-cinemachine-input-system-m3.mp4.gif" width="90%" alt="" title="">
 
 Actionsのアクション名（New actionの部分）を適当なものに変更し、Properties > Action項目を設定します。
 
-２軸操作となるため、Action TypeにはValue、Control TypeにはVector 2を指定すればOKです。
+２軸操作となるため、Action Typeには `Value`、Control Typeには`Vector 2`を指定すればOKです。
 
 <img src="images/1/unity-cinemachine-input-system-m4.mp4.gif" width="90%" alt="" title="">
 
@@ -54,11 +57,11 @@ Input Systemでカメラ操作させたいバーチャルカメラオブジェ�
 
 無事に追加出来たら、次の項目を設定します。
 
-+ Player Index   
++ **`Player Index`**   
   - プレイヤーのインデックス。シングルプレイヤーなら-1を設定します。
-+ XY Axis  
++ **`XY Axis `** 
   - XY方向のカメラ操作に割り当てるInput Actionを指定します。使用しない場合はnullを設定できます。
-+ Z Axis  
++ **`Z Axis`**   
   - Z方向のカメラ操作に割り当てるInput Actionを指定します。使用しない場合はnullを設定できます。  
   Cinemachine Free Look Cameraなどのバーチャルカメラでは、基本的にXY Axisしか使わないため、Z Axisはnullでも問題ありません。
 
@@ -70,7 +73,7 @@ Input Systemでカメラ操作させたいバーチャルカメラオブジェ�
 
 <br>
 
- # 感度調整について
+# 感度調整について
 Cinemachine FreeLook Cameraなどをマウスやスティックで動かしたい場合は、Axis Controlの速度や感度調整が必要になる場合があります。
 
 また、マウスとスティック入力を同時に扱う場合、両者の入力値の大きさが全く異なり、入力値の大きさが同じになるような調整が必要になる場合があります。

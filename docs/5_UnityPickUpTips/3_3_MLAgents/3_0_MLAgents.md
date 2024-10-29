@@ -3,7 +3,7 @@
   - [はじめに(神戸電子_宮本先生による導入動画)](https://drive.google.com/file/d/1YiVMleM__0kqXRKBs5UO9bq2N7a0mhYO/view?usp=drive_link)
 
 - 概要
-  - [Python機械学習(教師ありデータを中心に)](https://drive.google.com/drive/folders/1Pwr0G_I46uJpsPWQFGAk6pymbJDx_hR_)
+  - <a href="https://drive.google.com/drive/folders/1Pwr0G_I46uJpsPWQFGAk6pymbJDx_hR_" target="_blank">Python機械学習(教師ありデータを中心に)</a>
   - [ニューラルネットワークと強化学習(概要)](3_7_NN_RL.md)
 
 - 授業スライドや資料  

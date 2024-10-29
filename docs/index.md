@@ -5,7 +5,8 @@
 [授業について](about_Lesson.md)
 
 サイトについて  
-(執筆途中のものが数多くあります。ご了承ください)
+(執筆途中のものが数多くあります。ご了承ください)  
+
 
 <br>
 
@@ -37,6 +38,12 @@
 
 ### Unityはじめ 
 
+- <a href="https://github.com/YJozen/Unity_LessonProject?tab=readme-ov-file
+c" target="_blank">初歩的なUnityのサンプルファイル</a>
+
+
+
+
 0. [0からのUnity](0_Tutorial/0.md)
 1. [Unityを触る上での前提知識](1_ElementaryKnowledge/index1_0.md)  
 2. [Unityの基本](2_UnityBasicKnowledge/2.md)
@@ -54,9 +61,10 @@
 
 ---
 <br>
-<!-- 
+
+<!--
 ### (ゲーム専攻)_前期課題予定
- -->
+-->
 
 9. [ゲームアイデアについての例](9_GameIdea/GameIdea.md)
 

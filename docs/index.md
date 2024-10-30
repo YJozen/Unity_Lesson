@@ -1,4 +1,4 @@
-[markdownの表記テスト](_Testfolder/CodeDisplay2.md)
+[markdownの表記テスト](_TestFolder/CodeDisplay2.md)
 
 # Jozen Document
 
@@ -22,9 +22,9 @@
 
 <br>
 
-<!-- 
-**[・ (ゲーム専攻4年)_後期_課題](2ndTerm4nen.md)**  
- -->
+
+### **[・ (ゲーム専攻4年)_後期_課題](2ndTerm4nen.md)**  
+
 
 <br>
 

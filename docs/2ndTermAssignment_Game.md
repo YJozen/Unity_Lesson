@@ -55,6 +55,13 @@ yamlファイルも共有してください。
 
 [MLAgentsについて](5_UnityPickUpTips/3_3_MLAgents/3_0_MLAgents.md)
 
+<br>
+
+例：
+<a href="https://www.youtube.com/playlist?list=PLDb67L4FP3ujtgI8c8aLNVXUPt-t0kPI-" target="_blank">Youtube_人工知能作ってみた</a>
+
+
+
 
 <br>
 

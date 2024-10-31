@@ -101,9 +101,24 @@ index.mdに下記のように記述してもらい、報告してもらいます
 本日全員が出席していない関係もあり、GithubPagesの作成までの一時的な報告場所として下記スプレッドシートを使用してください。
 
 
+<br>
+
+---
+
+
+<br>
+
 ---
 ---
 
+
+
+<br>
+
+---
+
+
+<br>
 
 1501001_笠井泰輔    
 
@@ -114,7 +129,12 @@ index.mdに下記のように記述してもらい、報告してもらいます
 [https://drive.google.com/drive/folders/1JF2Zp738uYIsokwuDQrNQ_wjDxeuIuUb](https://drive.google.com/drive/folders/1JF2Zp738uYIsokwuDQrNQ_wjDxeuIuUb)
 
 
+<br>
+
 ---
+
+
+<br>
 
 
 1501002_倉田海都    
@@ -124,8 +144,12 @@ index.mdに下記のように記述してもらい、報告してもらいます
 
 [https://github.com/mikun1218/GameDev/blob/main/index.md](https://github.com/mikun1218/GameDev/blob/main/index.md)
 
+<br>
+
 ---
 
+
+<br>
 
 1501003_根冝ことみ
 
@@ -133,10 +157,15 @@ index.mdに下記のように記述してもらい、報告してもらいます
 [https://docs.google.com/spreadsheets/d/14j191FeV_lpNfS20I2R4EpkEdg75qSuBUaaU7Pu9LQU/edit?usp=drive_link](https://docs.google.com/spreadsheets/d/14j191FeV_lpNfS20I2R4EpkEdg75qSuBUaaU7Pu9LQU/edit?usp=drive_link)
 
 
+
+[https://n-kotomi-kd.github.io/4_TechResearch/](https://n-kotomi-kd.github.io/4_TechResearch/)
+
+<br>
+
 ---
 
 
-
+<br>
 
 1501004_濱口裕基
 
@@ -145,3 +174,11 @@ index.mdに下記のように記述してもらい、報告してもらいます
 
 
 [https://hamagutiyuuki.github.io/2024Task/](https://hamagutiyuuki.github.io/2024Task/)
+
+
+<br>
+
+---
+
+
+<br>

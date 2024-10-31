@@ -1,8 +1,9 @@
- [参照型・値型](https://drive.google.com/file/d/1vthhKTKuXWux-D-0Wus-gqjaDk-XbfrN/view?usp=drive_link)
+<a href="https://drive.google.com/file/d/1vthhKTKuXWux-D-0Wus-gqjaDk-XbfrN/view?usp=drive_link" target="_blank">参照型・値型</a>
 
 
- その他
- # Sample1-1
+
+
+# Sample1-1
 
 ```cs
 using System.Collections;
@@ -25,13 +26,12 @@ namespace Value_and_Reference1
 }
 ```
 
-
 <br>
 
- # Sample1-2
+
+# Sample1-2
 
  
-
  ```cs
  using UnityEngine;
 
@@ -57,7 +57,7 @@ namespace Value_and_Reference1{
 # Sample2
 
 ```cs
-sing System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 

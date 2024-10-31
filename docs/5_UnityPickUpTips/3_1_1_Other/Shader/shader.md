@@ -19,37 +19,47 @@
 
 # 参考0  
 
-公式Youtube    
-シェーダを書けるプログラマになろう #1  
-https://www.youtube.com/watch?v=wUx_Y9BgC7k
+<a href="https://www.youtube.com/watch?v=wUx_Y9BgC7k" target="_blank">公式Youtube    シェーダを書けるプログラマになろう #1  </a>
+
+
+
+
 
 
 [上記に関するスライド等](https://drive.google.com/drive/folders/1ag0gMAOHYUzGGLT-Oar-vHUnkxp9Rg6u)
 
 <br>
 
-# 参考1
+# 参考1　外部サイト
+
+<a href="" target="_blank"></a>
 
 そろそろShaderをやる  
 https://zenn.dev/kento_o
 
 
 
+<a href="" target="_blank"></a>
+
 Unity ShaderGraph CookBook
 https://zenn.dev/r_ngtm/books/shadergraph-cookbook  
 https://zenn.dev/r_ngtm
 
+
+<a href="" target="_blank"></a>
 
 
 【Unity】無料のオススメシェーダまとめ（110個）
 https://baba-s.hatenablog.com/entry/2018/10/29/090000
 
 
+<a href="" target="_blank"></a>
 
 7日間でマスターするUnityシェーダ入門
 https://nn-hokuson.hatenablog.com/entry/2018/02/15/140037
 
 
+<a href="" target="_blank"></a>
 
 【Unity】シェーダに関するオススメ記事まとめ（120個）
 https://baba-s.hatenablog.com/entry/2018/03/02/090000
@@ -431,6 +441,11 @@ Shader "Custom/MyVertexShader"
 # その他のシェーダータイプ
 
 高度なシェーダーでは、**Geometry Shader**や**Compute Shader**なども使用されることがありますが、基本的なシェーダーの理解としては、Vertex ShaderとFragment Shaderをしっかりと押さえておくことが重要です。
+
+<br>
+
+
+[ShaderGraph](ShaderGraph/sg.md)
 
 <br>
 

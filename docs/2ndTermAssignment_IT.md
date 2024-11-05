@@ -1,6 +1,6 @@
 # 最低課題
 
-[Githubについて](13_OtherThanGames/Github/Github.md)
+[Githubについて](13_OtherThanGames/0_Github/Github.md)
 
 ※（注意）欠席者も必ず目を通して下さい。以下作業を行わない者に上善担当の授業単位は与えません
 
@@ -51,7 +51,7 @@ htmlのタグやcssも使用可能です。
 今後の進捗確認の際には、リポジトリを見せてもらう予定です。  
 時期が来たらDiscordに、GithubのUrlを貼り付けてもらうことになると思います。 
 
-[Githubについて](13_OtherThanGames/Github/Github.md)
+[Githubについて](13_OtherThanGames/0_Github/Github.md)
 
 <br>
 

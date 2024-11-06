@@ -21,6 +21,9 @@
 
 
 
+Canvas
+
+RectTransform
 
 
 

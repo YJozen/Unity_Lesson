@@ -9,7 +9,7 @@
 - 授業スライドや資料  
   -  <a href="https://drive.google.com/drive/folders/1Qxd4PeikBb7pztRt8RDlirOxi1tCofYk" target="_blank">環境設定等(MLAgentsをとりあえず動かしてみよう(スライド))</a>
 
-  - <u><a href="Textbook/0.md">ML-Agents 詳細解説(サンプル付き)</a></u>
+  - [Textbook/0.md](ML-Agents 詳細解説(サンプル付き))
 
   - [全体のまとめ(必須項目のみ)](3_ALL.md)
      + [YAML_Settings](3_YAML_Settings.md)

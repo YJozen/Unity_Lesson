@@ -11,6 +11,8 @@
 
   - [ML-Agents 詳細解説(サンプル付き)](Textbook/0.md)
 
+  - <a href="Textbook/0.md" style="color: red;">ML-Agents 詳細解説(サンプル付き)</a>
+
   - [全体のまとめ(必須項目のみ)](3_ALL.md)
 
 

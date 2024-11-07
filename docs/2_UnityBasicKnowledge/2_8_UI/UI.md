@@ -3,6 +3,13 @@
 一旦配布サンプルプロジェクト参照
 
 
+Canvas
+
+RectTransform
+
+
+画面 indicator
+
 
 [UI](1.md)
 

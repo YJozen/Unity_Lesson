@@ -1,0 +1,6 @@
+SpeechRecognition
+
+
+
+mecab
+

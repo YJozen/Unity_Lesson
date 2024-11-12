@@ -1,17 +1,17 @@
-<a href="https://drive.google.com/drive/folders/1wERc8OBgpYX3IYyQwG1kEKyiMEyuSYhc" target="_blank">参考スライド</a>  
+
 
 # Unity前提知識  
    0. いろんな言語について  
       - [様々な言語の違いについて](0_言語違い.md) 
 
-   1. スクリプトの作成_(スライド番号4,5,6)  
-      (変数・関数・クラス・継承・名前空間について)  
-      + <a href="https://docs.google.com/presentation/d/1IqIA1zVIiNqAuvInyHzmv8hJiMidcBx5e0E52WCuGtM/edit#slide=id.g1199c5f4c43_1_130" target="_blank">一番初め</a>
+   1. スクリプトの作成 
+
+      + <a href="https://drive.google.com/drive/folders/1wERc8OBgpYX3IYyQwG1kEKyiMEyuSYhc" target="_blank">参考スライド</a>  
+      + <a href="https://docs.google.com/presentation/d/1IqIA1zVIiNqAuvInyHzmv8hJiMidcBx5e0E52WCuGtM/edit#slide=id.g1199c5f4c43_1_130" target="_blank">変数・関数・クラス・継承・名前空間など</a>
+
+      >  (1_参照と実体.pdf」さえ分かれば、１人でUnityの読めるコードの量が増えるはず。)
 
 
-     <b>「1_参照と実体.pdf」さえ分かれば、１人でUnityの読めるコードの量が増えるはず。</b>
-
-        
    2. 参照型・値型  
       + [参照型・値型](2_Value_and_Reference/index1_2_Value_and_Reference.md)
 

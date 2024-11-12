@@ -31,9 +31,9 @@ using System.IO;
 
 public static class SaveLoadManager
 {
-    private static string saveFilePath = Path.Combine(Application.persistentDataPath, "gamedata.json");
+    private static string saveFilePath = Path.Combine(Application.persistentDataPath, "gamedata.json");//データの保存先 , 保存データの名前
 
-    // ゲームデータを保存する
+    // ゲームデータを保存する(どこからでも呼べるようにstatic)
     public static void SaveGame(GameData data)
     {
         string json = JsonUtility.ToJson(data, true);
@@ -291,3 +291,124 @@ public class GameController : MonoBehaviour
 
 
 ```
+
+
+<br>
+
+---
+
+<br>
+
+<br>
+
+---
+
+<br>
+
+
+書き方の例
+
+
+
+`JsonSaveUtility.cs`
+
+```cs
+using System.IO;
+using UnityEngine;
+
+public static class JsonSaveUtility
+{
+    public static string SaveFilePath = $"{Application.persistentDataPath}/SaveData.json"; 
+
+    public static void Save<T>(T data) where T : class
+    {
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(SaveFilePath, json);
+        Debug.Log(SaveFilePath);
+    }
+
+    public static T Load<T>()where T : class
+    {
+        if (!File.Exists(SaveFilePath))
+        {
+            string json = File.ReadAllText(SaveFilePath);
+            return JsonUtility.FromJson<T>(json);
+        }
+        else
+        {
+            Debug.Log("ファイルがありません。");
+            return null;
+        }
+
+    }
+}
+```
+
+
+<br>
+
+`PlayerSaveData.cs`
+
+```cs
+
+namespace SampleGame1
+{
+    [System.Serializable]
+    public class PlayerSaveData
+    {
+        public string name;
+        public int score;
+
+
+        public PlayerSaveData(string name ,int score)
+        {
+            this.name = name;
+            this.score = score;
+        }
+    }
+}
+
+```
+
+
+`Sample.cs`
+
+```cs
+
+using UnityEngine;
+
+class Sample : MonoBehaviour { 
+    void Start() {
+        var SaveData = new SampleGame1.PlayerSaveData(string.Empty, 0);
+        JsonSaveUtility.Save(SaveData);
+    }       
+    
+} 
+
+```
+
+<br>
+
+---
+
+<br>
+
+<br>
+
+---
+
+<br>
+
+[Applicationクラスについて](Application.md)
+
+
+[System.Serializableについて](System_Serializable.md)
+
+
+
+
+
+
+
+
+

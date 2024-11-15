@@ -1,12 +1,12 @@
 
 ### 外部サイト
 
-<a href="https://zenn.dev/meson/articles/make-dll-for-unity" target="_blank">C++ライブラリ（DLL）をUnity（C#）向けに作成して利用するシンプルな方法</a>
+<a href="https://zenn.dev/meson/articles/make-dll-for-unity" target="_blank">・C++ライブラリ（DLL）をUnity（C#）向けに作成して利用するシンプルな方法</a>
 
 
-<a href="https://dokuro.moe/unity-how-to-make-dll-from-c-charp-scripts/" target="_blank">【Unity】C#スクリプトをDLL化する手順</a>
+<a href="https://dokuro.moe/unity-how-to-make-dll-from-c-charp-scripts/" target="_blank">・【Unity】C#スクリプトをDLL化する手順</a>
 
-<a href="https://qiita.com/r-ngtm/items/50afdb29c671001bb290" target="_blank">C#スクリプトをDLL化してUnityで使う</a>
+<a href="https://qiita.com/r-ngtm/items/50afdb29c671001bb290" target="_blank">・C#スクリプトをDLL化してUnityで使う</a>
 
 <br>
 
@@ -15,7 +15,8 @@
 
 # DLLを用意する
 
-C++の関数を外部ライブラリとしてDLL（動的リンクライブラリ）ファイルにコンパイルする方法を解説します。以下は、Windows環境でVisual Studioを使用する方法を説明しますが、他のコンパイラやIDEを使用する場合でも概念は同じです。
+C++の関数を外部ライブラリとしてDLL（動的リンクライブラリ）ファイルにコンパイルする方法を解説します。  
+以下は、Windows環境でVisual Studioを使用する方法を説明しますが、他のコンパイラやIDEを使用する場合でも概念は同じです。
 
 ### 手順
 
@@ -112,7 +113,8 @@ int main() {
 # DLLをUnityで使用する
 
 
-C++で作成したDLLをUnityで使用するには、UnityからそのDLLを呼び出せるように設定する必要があります。以下は、UnityでC++ DLLを使用する方法を説明します。
+C++で作成したDLLをUnityで使用するには、UnityからそのDLLを呼び出せるように設定する必要があります。  
+以下は、UnityでC++ DLLを使用する方法を説明します。
 
 ### 手順
 

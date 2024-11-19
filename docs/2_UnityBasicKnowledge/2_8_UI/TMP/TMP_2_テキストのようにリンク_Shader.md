@@ -1,3 +1,6 @@
+https://github.com/coposuke/TextMeshProAnimator
+
+
 
 # TextMwshをクリックしたら反応するようにする
 

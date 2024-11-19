@@ -64,6 +64,7 @@ var pos = mainCamera.WorldToScreenPoint(target.position) - center;
 
 
 - `canvasScale`：  
+
 [キャンバスのスケール](キャンバススケール.md)を取得します。  
 `transform.root.localScale.z`により親オブジェクトのスケールを取得し、スケーリングを適用します。  
 
@@ -115,7 +116,7 @@ float d = Mathf.Max(
 );
 ```
 
-<details><summary>詳細</summary>
+<details><summary><font color = blue>詳細</font></summary>
 この部分は、UI要素（インジケータ）が画面内でどれくらい大きな比率で外側に近づいているかを計算する処理です。
 
 ---
@@ -231,7 +232,7 @@ if (isOffscreen) {
 - 画面外に出ている場合、`pos.x`と`pos.y`を`d`で割ることで、インジケーターが画面端にぴったりくるように調整します。
 
 
-<details><summary>`pos.x /= d;` および `pos.y /= d;`について</summary>
+<details><summary><font color = blue>`pos.x /= d;` および `pos.y /= d;`について</font></summary>
 `pos.x /= d;` および `pos.y /= d;` の処理は、**インジケータ（UI要素）の位置を画面内に収めるための調整**です。
 
 ---
@@ -297,7 +298,7 @@ textObj.gameObject.SetActive(true);
 - `rectTransform.anchoredPosition`：インジケーターの位置を最終的に設定します。`pos / canvasScale`で、インジケーターの位置をキャンバスのスケールに合わせて調整します。
 - `textObj.gameObject.SetActive(true)`：ターゲットが表示されている限り、インジケーターを表示するようにします。
 
-<details><summary>rectTransform.anchoredPosition = pos / canvasScale について</summary>
+<details><summary>rectTransform.anchoredPosition = pos / canvasScale について</font></summary>
 
 この行のコードは、**UI要素（`RectTransform`）の位置を計算して画面上の正しい位置に配置する**ための処理です。
 ---

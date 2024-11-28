@@ -1,0 +1,19 @@
+外部ツールの図表を取り込む
+スライドの内容に、様々なチャート、グラフをエディタから、または言語やデータセットから生成して表示したいことがあります。Kroki.io, Draw.io, Vegaは、そういった時に、すぐに組合わせて使えて便利です。
+
+Kroki.io
+https://kroki.io/
+PlantUML, Graphviz, Mermaidなどお馴染みの記法から、少しニッチなものまで、20以上の記法に対応する、オープンソースのレンダリングエンジン、Web APIサービス。
+
+Draw.io
+https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio
+VSCodeでDraw.ioが使えるようになったらしい！ - Qiita
+お馴染みのSVGエディタ。VSCodeのプラグインで、オフラインエディタをVSCode画面内で扱える。またそこで保存したSVGを、そのままMarpスライド内で活用できる。
+
+Vega
+https://vega.github.io/vega/
+https://marketplace.visualstudio.com/items?itemName=RandomFractalsInc.vscode-vega-viewer
+データセットと、その描画方法をJSONで指定すると、綺麗なグラフを返してくれるVega。Draw.io同様、VSCodeプラグインがあり、生成したSVGを、Marpスライド内で活用できる。
+
+表示例
+上の3つを、3スライドに分けて表示してみた例です。それぞれKrokiは ![bg](GETのendpoint) 、Draw.ioやVegaは ![bg](hoge.svg) で呼び出しています。

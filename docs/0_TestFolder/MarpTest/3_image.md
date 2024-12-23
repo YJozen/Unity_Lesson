@@ -7,7 +7,7 @@ _color: white
 _footer: 'Photo by Benjamin Rascoe on Unsplash'
 -->
 
-![bg brightness:0.6](images/test.webp)
+![bg brightness:0.6](images/Instagram_(2).png)
 
 # タイトル全面背景
 
@@ -34,8 +34,8 @@ _backgroundColor: white
 _footer: 'Photo by Chris Campbell, Dan on Unsplash'
 -->
 
-![bg right:60% contrast:1.5 brightness:1.2](images/test.webp)
-![bg 350% contrast:1.2 brightness:1](images/test.webp)
+![bg right:60% contrast:1.5 brightness:1.2](Instagram_(2).png)
+![bg 350% contrast:1.2 brightness:1](images/Instagram_(2).png)
 
 # 進め、
 #### 新しいわたし。
